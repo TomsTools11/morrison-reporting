@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Michael Morrison Insurance Agency — Performance Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#057BE5; --navy:#00172D; --navy-deep:#001020; --mint:#3BEECA;
+  --ink:#0F1B2D; --body:#2B3442; --muted:#6A7482;
+  --white:#fff; --gray:#EFF2F7; --line:#E2E8F0;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-font-smoothing:antialiased;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--gray);color:var(--body);line-height:1.55;}
+.top{background:var(--navy);color:#cfe0ee;padding:22px 48px;display:flex;align-items:center;justify-content:space-between;}
+.top img{height:24px;}
+.top .r{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mint);font-weight:700;}
+.wrap{max-width:1240px;margin:0 auto;padding:56px 48px 80px;}
+.lead{max-width:720px;margin-bottom:48px;}
+.lead .eb{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);}
+.lead h1{font-size:40px;font-weight:900;letter-spacing:-.02em;color:var(--ink);line-height:1.08;margin:14px 0 16px;}
+.lead p{font-size:16px;color:var(--body);line-height:1.62;}
+.lead p b{color:var(--ink);font-weight:700;}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+.card{background:var(--white);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 4px 16px rgba(0,23,45,.06);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(0,23,45,.14);}
+.thumb{position:relative;height:300px;overflow:hidden;border-bottom:1px solid var(--line);background:var(--gray);}
+.thumb iframe{position:absolute;top:0;left:0;width:1040px;border:none;transform-origin:top left;pointer-events:none;}
+.thumb .veil{position:absolute;inset:0;cursor:pointer;}
+.meta{padding:22px 24px;display:flex;flex-direction:column;flex:1;}
+.meta .tag{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);}
+.meta h3{font-size:19px;font-weight:800;color:var(--ink);margin:7px 0 8px;letter-spacing:-.01em;}
+.meta p{font-size:13.5px;color:var(--muted);line-height:1.55;flex:1;}
+.meta .traits{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 18px;}
+.meta .traits span{font-size:11px;font-weight:600;color:var(--body);background:var(--gray);border:1px solid var(--line);padding:4px 9px;border-radius:20px;}
+.meta a.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--blue);color:#fff;text-decoration:none;font-size:14px;font-weight:700;padding:11px 18px;border-radius:9px;transition:background .15s;}
+.meta a.btn:hover{background:#0C6EC5;}
+.note{margin-top:46px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:22px;max-width:720px;}
+.note b{color:var(--ink);font-weight:700;}
+@media(max-width:980px){ .grid{grid-template-columns:1fr;} .thumb{height:340px;} }
+</style>
+</head>
+<body>
+<div class="top">
+  <img src="assets/goal-wordmark-white.png" alt="GOAL">
+  <div class="r">The Michael Morrison Insurance Agency · Performance Review</div>
+</div>
+<div class="wrap">
+  <div class="lead">
+    <div class="eb">Account Review &middot; June 2026</div>
+    <h1>Three report themes for The Michael Morrison Insurance Agency</h1>
+    <p>Same report, same data, same GOAL palette — three distinct treatments of <b>style, layout, and theme</b>. Each is a complete, print-ready report for <b>The Michael Morrison Insurance Agency</b>. Open any one full-size to compare the looks, then pick the one to send.</p>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="thumb"><iframe src="reports/1 - Refined Light.html" scrolling="no" tabindex="-1"></iframe><a class="veil" href="reports/1 - Refined Light.html"></a></div>
+      <div class="meta">
+        <div class="tag">Direction 01</div>
+        <h3>Refined Light</h3>
+        <p>The by-the-book GOAL marketing look applied to a report: airy white, strong hierarchy, mint-underline accents, and a numbered narrative flow. Safe, polished, instantly on-brand.</p>
+        <div class="traits"><span>Light</span><span>Editorial flow</span><span>Animated bars</span></div>
+        <a class="btn" href="reports/1 - Refined Light.html">Open full report →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="thumb"><iframe src="reports/2 - Navy Editorial.html" scrolling="no" tabindex="-1"></iframe><a class="veil" href="reports/2 - Navy Editorial.html"></a></div>
+      <div class="meta">
+        <div class="tag">Direction 02</div>
+        <h3>Navy Editorial</h3>
+        <p>Navy-led and magazine-bold. Oversized type, the radar mark as a hero motif, mint highlights, and a light inverse finale. Premium and memorable for a flagship review.</p>
+        <div class="traits"><span>Dark theme</span><span>Oversized type</span><span>High drama</span></div>
+        <a class="btn" href="reports/2 - Navy Editorial.html">Open full report →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="thumb"><iframe src="reports/3 - Structured Dashboard.html" scrolling="no" tabindex="-1"></iframe><a class="veil" href="reports/3 - Structured Dashboard.html"></a></div>
+      <div class="meta">
+        <div class="tag">Direction 03</div>
+        <h3>Structured Dashboard</h3>
+        <p>A SaaS-style layout: sticky navy sidebar with section nav, card-based content, and richer data-viz — a lead-mix donut and conversion funnel. Confident and data-driven.</p>
+        <div class="traits"><span>Sidebar nav</span><span>Donut + funnel</span><span>Data-forward</span></div>
+        <a class="btn" href="reports/3 - Structured Dashboard.html">Open full report →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="note"><b>All three</b> keep the GOAL color system (Primary Blue, Navy, Mint), use the Inter typeface, animate charts on scroll, and include print styles so they export cleanly to PDF.</div>
+</div>
+
+<script>
+function fit(){document.querySelectorAll('.thumb').forEach(t=>{const f=t.querySelector('iframe');const s=t.clientWidth/1040;f.style.transform='scale('+s+')';f.style.height=(t.clientHeight/s)+'px';});}
+window.addEventListener('load',fit);window.addEventListener('resize',fit);fit();
+</script>
+</body>
+</html>
