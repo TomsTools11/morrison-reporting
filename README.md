@@ -4,12 +4,15 @@ Static performance-review reports for **The Michael Morrison Insurance Agency**,
 
 ## Structure
 
-- `index.html` — landing page comparing the three report themes
-- `reports/` — three full, print-ready report treatments (Refined Light, Navy Editorial, Structured Dashboard)
+- `index.html` — account hub / landing page with a card for each current report
+- `reports/` — full, print-ready performance reports (Structured Dashboard theme):
+  - `auto-performance-review.html` — Auto campaign, last 30 days
+  - `home-performance-review.html` — Home campaign, last 30 days
 - `assets/` — GOAL logo marks
 - `vercel.json` — static hosting configuration
 
-> The reports currently contain placeholder data.
+Each report has an **Account hub** back link in the top-left of its sidebar that
+returns to `index.html`.
 
 ## Deployment
 
