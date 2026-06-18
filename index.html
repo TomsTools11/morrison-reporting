@@ -3,101 +3,108 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Michael Morrison Insurance Agency — Performance Review</title>
+<title>The Michael Morrison Insurance Agency — Account Hub</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --blue:#057BE5; --navy:#00172D; --navy-deep:#001020; --mint:#3BEECA;
+  --blue:#057BE5; --blue-hover:#0C6EC5; --sky:#308ED6; --mint:#3BEECA; --mint-d:#0fae8f;
+  --navy:#00172D; --navy-2:#062c4e; --navy-deep:#001020;
   --ink:#0F1B2D; --body:#2B3442; --muted:#6A7482;
-  --white:#fff; --gray:#EFF2F7; --line:#E2E8F0;
+  --white:#fff; --off:#F8FAFC; --gray:#EFF2F7; --divider:#EDF1F5; --line:#E2E8F0;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-html{-webkit-font-smoothing:antialiased;}
+html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth;}
 body{font-family:'Inter',system-ui,sans-serif;background:var(--gray);color:var(--body);line-height:1.55;}
-.top{background:var(--navy);color:#cfe0ee;padding:22px 48px;display:flex;align-items:center;justify-content:space-between;}
-.top img{height:24px;}
-.top .r{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mint);font-weight:700;}
-.wrap{max-width:1240px;margin:0 auto;padding:56px 48px 80px;}
-.lead{max-width:720px;margin-bottom:48px;}
-.lead .eb{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);}
-.lead h1{font-size:40px;font-weight:900;letter-spacing:-.02em;color:var(--ink);line-height:1.08;margin:14px 0 16px;}
-.lead p{font-size:16px;color:var(--body);line-height:1.62;}
-.lead p b{color:var(--ink);font-weight:700;}
+.page{max-width:1280px;margin:0 auto;background:var(--white);min-height:100vh;box-shadow:0 0 60px rgba(0,23,45,.06);}
 
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
-.card{background:var(--white);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 4px 16px rgba(0,23,45,.06);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;}
-.card:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(0,23,45,.14);}
-.thumb{position:relative;height:300px;overflow:hidden;border-bottom:1px solid var(--line);background:var(--gray);}
-.thumb iframe{position:absolute;top:0;left:0;width:1040px;border:none;transform-origin:top left;pointer-events:none;}
-.thumb .veil{position:absolute;inset:0;cursor:pointer;}
-.meta{padding:22px 24px;display:flex;flex-direction:column;flex:1;}
-.meta .tag{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);}
-.meta h3{font-size:19px;font-weight:800;color:var(--ink);margin:7px 0 8px;letter-spacing:-.01em;}
-.meta p{font-size:13.5px;color:var(--muted);line-height:1.55;flex:1;}
-.meta .traits{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 18px;}
-.meta .traits span{font-size:11px;font-weight:600;color:var(--body);background:var(--gray);border:1px solid var(--line);padding:4px 9px;border-radius:20px;}
-.meta a.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--blue);color:#fff;text-decoration:none;font-size:14px;font-weight:700;padding:11px 18px;border-radius:9px;transition:background .15s;}
-.meta a.btn:hover{background:#0C6EC5;}
-.note{margin-top:46px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:22px;max-width:720px;}
-.note b{color:var(--ink);font-weight:700;}
-@media(max-width:980px){ .grid{grid-template-columns:1fr;} .thumb{height:340px;} }
+/* Hero */
+.hero{background:var(--navy);color:#cfe0ee;padding:34px 56px 64px;position:relative;overflow:hidden;}
+.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle at center,rgba(59,238,202,.10),transparent 62%);pointer-events:none;}
+.hbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:54px;position:relative;z-index:1;}
+.hbar img{height:26px;}
+.hbar .acct{font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#2D90EE;}
+.hero .eb{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--mint);position:relative;z-index:1;}
+.hero h1{font-size:46px;font-weight:900;letter-spacing:-.025em;color:#fff;line-height:1.04;margin:16px 0 20px;max-width:14ch;position:relative;z-index:1;}
+.hero p{font-size:16px;line-height:1.62;color:#a7c2da;max-width:760px;position:relative;z-index:1;}
+.hero p b{color:#fff;font-weight:600;}
+
+/* Reports section */
+.reports{padding:46px 56px 30px;}
+.shead{display:flex;align-items:center;gap:14px;margin-bottom:6px;}
+.shead .pill{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);background:#E6F1FD;padding:6px 11px;border-radius:7px;}
+.shead h2{font-size:24px;font-weight:800;color:var(--ink);letter-spacing:-.01em;}
+.sub{font-size:13.5px;color:var(--muted);margin:2px 0 30px 0;}
+
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+.card{position:relative;background:var(--white);border:1px solid var(--line);border-radius:16px;padding:30px 32px 30px;display:flex;flex-direction:column;box-shadow:0 4px 16px rgba(0,23,45,.05);transition:transform .2s,box-shadow .2s,border-color .2s;overflow:hidden;}
+.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--blue),var(--mint));}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(0,23,45,.13);border-color:#cfe0ef;}
+.card .tag{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);}
+.card h3{font-size:22px;font-weight:800;color:var(--ink);letter-spacing:-.01em;line-height:1.16;margin:9px 0 12px;}
+.card p{font-size:14px;color:var(--body);line-height:1.6;flex:1;}
+.card .traits{display:flex;flex-wrap:wrap;gap:7px;margin:18px 0 22px;}
+.card .traits span{font-size:11.5px;font-weight:600;color:var(--body);background:var(--off);border:1px solid var(--line);padding:5px 11px;border-radius:20px;}
+.card a.btn{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;text-decoration:none;font-size:14px;font-weight:700;padding:12px 22px;border-radius:9px;transition:background .15s;}
+.card a.btn:hover{background:var(--blue-hover);}
+
+.foot{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:26px 56px 40px;margin-top:26px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted);}
+.foot b{color:var(--ink);font-weight:700;}
+
+@media(max-width:860px){
+  .hero{padding:28px 30px 48px;} .hero h1{font-size:34px;} .hbar{margin-bottom:38px;}
+  .reports{padding:36px 30px 24px;} .grid{grid-template-columns:1fr;}
+  .foot{padding:24px 30px 36px;}
+}
 </style>
 </head>
 <body>
-<div class="top">
-  <img src="assets/goal-wordmark-white.png" alt="GOAL">
-  <div class="r">The Michael Morrison Insurance Agency · Performance Review</div>
+<div class="page">
+
+  <header class="hero">
+    <div class="hbar">
+      <img src="assets/goal-wordmark-white.png" alt="GOAL">
+      <div class="acct">The Michael Morrison Insurance Agency &middot; Account Hub</div>
+    </div>
+    <div class="eb">Account Landing Page</div>
+    <h1>The Michael Morrison Insurance Agency</h1>
+    <p>Your reporting hub on GOAL. Below are your current reports — the <b>Auto Performance Review</b> and the <b>Home Performance Review</b>, each covering the last 30 days (May 19 &ndash; June 18, 2026) of your Texas lead campaigns. Open any report full-size to read or print to PDF.</p>
+  </header>
+
+  <section class="reports">
+    <div class="shead">
+      <span class="pill">Reports</span>
+      <h2>Current reports</h2>
+    </div>
+    <div class="sub">Prepared for Michael Morrison &middot; Texas &middot; GOAL Performance Marketing</div>
+
+    <div class="grid">
+
+      <article class="card">
+        <div class="tag">Performance Review &middot; June 2026</div>
+        <h3>Auto Performance Review</h3>
+        <p>The 30-day read on the Texas Auto campaign, May 19 &ndash; June 18: 153 exclusive leads and 13 inbound calls, a 45% contact rate and 24 quotes, the full source-by-source breakdown, the conversion funnel, audience and geography, and the budget increase to $170/day that went live June 3.</p>
+        <div class="traits"><span>Key metrics</span><span>Lead sources</span><span>Recommendations</span></div>
+        <a class="btn" href="reports/auto-performance-review.html">Open report &rarr;</a>
+      </article>
+
+      <article class="card">
+        <div class="tag">Performance Review &middot; June 2026</div>
+        <h3>Home Performance Review</h3>
+        <p>The 30-day read on the Texas Home campaign, May 19 &ndash; June 18: 79 exclusive leads and 12 inbound calls, a 57% contact rate and 12 quotes, the source mix, the conversion funnel, audience and geography, and the focused $50/day budget set on June 3.</p>
+        <div class="traits"><span>Key metrics</span><span>Conversion funnel</span><span>Recommendations</span></div>
+        <a class="btn" href="reports/home-performance-review.html">Open report &rarr;</a>
+      </article>
+
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div><b>GOAL</b> &middot; Performance Marketing for Insurance Agencies</div>
+    <div>Prepared for The Michael Morrison Insurance Agency &middot; Updated before each review</div>
+  </footer>
+
 </div>
-<div class="wrap">
-  <div class="lead">
-    <div class="eb">Account Review &middot; June 2026</div>
-    <h1>Three report themes for The Michael Morrison Insurance Agency</h1>
-    <p>Same report, same data, same GOAL palette — three distinct treatments of <b>style, layout, and theme</b>. Each is a complete, print-ready report for <b>The Michael Morrison Insurance Agency</b>. Open any one full-size to compare the looks, then pick the one to send.</p>
-  </div>
-
-  <div class="grid">
-    <div class="card">
-      <div class="thumb"><iframe src="reports/1 - Refined Light.html" scrolling="no" tabindex="-1"></iframe><a class="veil" href="reports/1 - Refined Light.html"></a></div>
-      <div class="meta">
-        <div class="tag">Direction 01</div>
-        <h3>Refined Light</h3>
-        <p>The by-the-book GOAL marketing look applied to a report: airy white, strong hierarchy, mint-underline accents, and a numbered narrative flow. Safe, polished, instantly on-brand.</p>
-        <div class="traits"><span>Light</span><span>Editorial flow</span><span>Animated bars</span></div>
-        <a class="btn" href="reports/1 - Refined Light.html">Open full report →</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="thumb"><iframe src="reports/2 - Navy Editorial.html" scrolling="no" tabindex="-1"></iframe><a class="veil" href="reports/2 - Navy Editorial.html"></a></div>
-      <div class="meta">
-        <div class="tag">Direction 02</div>
-        <h3>Navy Editorial</h3>
-        <p>Navy-led and magazine-bold. Oversized type, the radar mark as a hero motif, mint highlights, and a light inverse finale. Premium and memorable for a flagship review.</p>
-        <div class="traits"><span>Dark theme</span><span>Oversized type</span><span>High drama</span></div>
-        <a class="btn" href="reports/2 - Navy Editorial.html">Open full report →</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="thumb"><iframe src="reports/3 - Structured Dashboard.html" scrolling="no" tabindex="-1"></iframe><a class="veil" href="reports/3 - Structured Dashboard.html"></a></div>
-      <div class="meta">
-        <div class="tag">Direction 03</div>
-        <h3>Structured Dashboard</h3>
-        <p>A SaaS-style layout: sticky navy sidebar with section nav, card-based content, and richer data-viz — a lead-mix donut and conversion funnel. Confident and data-driven.</p>
-        <div class="traits"><span>Sidebar nav</span><span>Donut + funnel</span><span>Data-forward</span></div>
-        <a class="btn" href="reports/3 - Structured Dashboard.html">Open full report →</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="note"><b>All three</b> keep the GOAL color system (Primary Blue, Navy, Mint), use the Inter typeface, animate charts on scroll, and include print styles so they export cleanly to PDF.</div>
-</div>
-
-<script>
-function fit(){document.querySelectorAll('.thumb').forEach(t=>{const f=t.querySelector('iframe');const s=t.clientWidth/1040;f.style.transform='scale('+s+')';f.style.height=(t.clientHeight/s)+'px';});}
-window.addEventListener('load',fit);window.addEventListener('resize',fit);fit();
-</script>
 </body>
 </html>
