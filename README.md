@@ -5,9 +5,10 @@ Static performance-review reports for **The Michael Morrison Insurance Agency**,
 ## Structure
 
 - `index.html` — account hub / landing page with a card for each current report
-- `reports/` — full, print-ready performance reports (Structured Dashboard theme):
+- `reports/` — full, print-ready reports (Structured Dashboard theme):
   - `auto-performance-review.html` — Auto campaign, last 30 days
   - `home-performance-review.html` — Home campaign, last 30 days
+  - `geographic-targeting-overlap.html` — Texas target ZIPs vs. carrier catastrophe-exclusion list, May 2026
 - `assets/` — GOAL logo marks
 - `vercel.json` — static hosting configuration
 
