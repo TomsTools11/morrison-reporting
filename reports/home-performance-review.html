@@ -103,11 +103,6 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--gray);color:var(-
 .pstep .num{flex-shrink:0;width:36px;height:36px;border-radius:9px;background:#E6F1FD;color:var(--blue);font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;}
 .pstep .h{font-size:15px;font-weight:800;color:var(--ink);}
 .pstep .b{font-size:13.5px;color:var(--body);line-height:1.55;margin-top:3px;}
-.cad{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px;max-width:520px;}
-.cad .c{border:1px solid var(--line);border-radius:9px;padding:12px 14px;background:var(--off);}
-.cad .c .w{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;}
-.cad .c .n{font-size:18px;font-weight:900;color:var(--blue);margin:4px 0 1px;}
-.cad .c .s{font-size:11px;color:var(--muted);}
 
 @media print{
   body{background:#fff;} .shell{display:block;max-width:none;}
@@ -123,7 +118,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--gray);color:var(-
   .kgrid{grid-template-columns:1fr 1fr;}
   .split,.grid2{grid-template-columns:1fr;}
 }
-@media(max-width:560px){ .kgrid,.cad{grid-template-columns:1fr;} .fstep .lab{width:104px;} }
+@media(max-width:560px){ .kgrid{grid-template-columns:1fr;} .fstep .lab{width:104px;} }
 </style>
 </head>
 <body>
@@ -139,7 +134,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--gray);color:var(-
     </svg>
     <div class="eb">Home · Performance Review</div>
     <h1>The Michael Morrison Insurance Agency</h1>
-    <div class="who">Prepared for <b>Mike Morrison</b><br>Texas · Allstate<br>30 days ending June 18, 2026</div>
+    <div class="who">Prepared for <b>Mike Morrison</b><br>Texas · Allstate<br>30 days ending July 8, 2026</div>
     <nav>
       <a href="#s1"><span class="dot"></span>Key metrics</a>
       <a href="#s2"><span class="dot"></span>Performance by source</a>
@@ -154,18 +149,18 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--gray);color:var(-
   <main class="main">
 
     <div class="exec">
-      <p>30 days ending June 18, 2026. The Home campaign produced <b>79 leads</b>, 12 inbound calls, and <b>1 bound policy</b> from 432 ad placements, about <b>2.6 leads per day</b>. 42 leads were contacted and 12 were quoted. The daily budget was adjusted on June 3 to concentrate on lead quality. Recommendations are in Section 06.</p>
+      <p>30 days ending July 8, 2026. The Home campaign produced <b>55 leads</b>, 7 inbound calls, and <b>9 quotes</b> from 270 ad placements, about <b>1.8 leads per day</b>. 18 of 55 leads were contacted and 9 were quoted. On June 18 we added an existing-Allstate-customer exclusion and raised the single-family modifier to focus spend on new-customer, single-family households. Recommendations are in Section 06.</p>
     </div>
 
     <section class="block" id="s1">
-      <div class="bhead"><span class="ix">01</span><div><h2>Key metrics</h2><p>30 days ending June 18, 2026</p></div></div>
+      <div class="bhead"><span class="ix">01</span><div><h2>Key metrics</h2><p>30 days ending July 8, 2026</p></div></div>
       <div class="kgrid">
-        <div class="kc"><div class="v">79</div><div class="k">Leads</div><div class="d">~2.6 per day</div></div>
-        <div class="kc"><div class="v">12</div><div class="k">Inbound calls</div><div class="d">Direct from prospects</div></div>
-        <div class="kc"><div class="v">53.2%</div><div class="k">Contact rate</div><div class="d">42 of 79 leads</div></div>
-        <div class="kc"><div class="v">15.2%</div><div class="k">Quote rate</div><div class="d">12 of 79 leads</div></div>
-        <div class="kc"><div class="v">12</div><div class="k">Quotes presented</div><div class="d">Across all sources</div></div>
-        <div class="kc"><div class="v">1</div><div class="k">Policy bound</div><div class="d">Closed late May · Tier 1</div></div>
+        <div class="kc"><div class="v">55</div><div class="k">Leads</div><div class="d">~1.8 per day</div></div>
+        <div class="kc"><div class="v">7</div><div class="k">Inbound calls</div><div class="d">Direct from prospects</div></div>
+        <div class="kc"><div class="v">32.7%</div><div class="k">Contact rate</div><div class="d">18 of 55 leads</div></div>
+        <div class="kc"><div class="v">16.4%</div><div class="k">Quote rate</div><div class="d">9 of 55 leads</div></div>
+        <div class="kc"><div class="v">9</div><div class="k">Quotes presented</div><div class="d">Across all sources</div></div>
+        <div class="kc"><div class="v">0</div><div class="k">Policies bound</div><div class="d">This 30-day window</div></div>
       </div>
     </section>
 
@@ -178,18 +173,16 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--gray);color:var(-
             <div class="donut">
               <svg viewBox="0 0 42 42" width="180" height="180">
                 <circle cx="21" cy="21" r="15.915" fill="none" stroke="#EFF2F7" stroke-width="6"></circle>
-                <circle class="seg" cx="21" cy="21" r="15.915" fill="none" stroke="#057BE5" stroke-width="6" stroke-dasharray="0 100" data-dash="48.1" transform="rotate(-90 21 21)"></circle>
-                <circle class="seg" cx="21" cy="21" r="15.915" fill="none" stroke="#2D90EE" stroke-width="6" stroke-dasharray="0 100" data-dash="34.2" data-offset="48.1" transform="rotate(-90 21 21)"></circle>
-                <circle class="seg" cx="21" cy="21" r="15.915" fill="none" stroke="#0fae8f" stroke-width="6" stroke-dasharray="0 100" data-dash="16.4" data-offset="82.3" transform="rotate(-90 21 21)"></circle>
-                <circle class="seg" cx="21" cy="21" r="15.915" fill="none" stroke="#B8C2CE" stroke-width="6" stroke-dasharray="0 100" data-dash="1.3" data-offset="98.7" transform="rotate(-90 21 21)"></circle>
+                <circle class="seg" cx="21" cy="21" r="15.915" fill="none" stroke="#057BE5" stroke-width="6" stroke-dasharray="0 100" data-dash="47.3" transform="rotate(-90 21 21)"></circle>
+                <circle class="seg" cx="21" cy="21" r="15.915" fill="none" stroke="#2D90EE" stroke-width="6" stroke-dasharray="0 100" data-dash="29.1" data-offset="47.3" transform="rotate(-90 21 21)"></circle>
+                <circle class="seg" cx="21" cy="21" r="15.915" fill="none" stroke="#0fae8f" stroke-width="6" stroke-dasharray="0 100" data-dash="23.6" data-offset="76.4" transform="rotate(-90 21 21)"></circle>
               </svg>
-              <div class="center"><div class="n">79</div><div class="l">leads</div></div>
+              <div class="center"><div class="n">55</div><div class="l">leads</div></div>
             </div>
             <div class="legend">
-              <div class="li"><span class="sw" style="background:#057BE5"></span><span class="nm">Tier 3</span><span class="vl">38</span></div>
-              <div class="li"><span class="sw" style="background:#2D90EE"></span><span class="nm">Tier 1</span><span class="vl">27</span></div>
+              <div class="li"><span class="sw" style="background:#057BE5"></span><span class="nm">Tier 1</span><span class="vl">26</span></div>
+              <div class="li"><span class="sw" style="background:#2D90EE"></span><span class="nm">Tier 3</span><span class="vl">16</span></div>
               <div class="li"><span class="sw" style="background:#0fae8f"></span><span class="nm">Tier 2</span><span class="vl">13</span></div>
-              <div class="li"><span class="sw" style="background:#B8C2CE"></span><span class="nm">Other sources</span><span class="vl">1</span></div>
             </div>
           </div>
         </div>
@@ -198,22 +191,22 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--gray);color:var(-
             <thead><tr><th>Source</th><th class="r">Leads</th><th class="r">Quotes</th><th>Notes</th></tr></thead>
             <tbody>
               <tr>
-                <td><div class="nm"><span class="bd" style="background:#057BE5"></span>Tier 3</div><span class="tag blue">Primary</span></td>
-                <td class="r"><span class="big">38</span></td>
-                <td class="r"><span class="big">5</span></td>
-                <td><div class="sub">Most leads and quotes this period; steady placement and volume.</div></td>
+                <td><div class="nm"><span class="bd" style="background:#057BE5"></span>Tier 1</div><span class="tag blue">Primary</span></td>
+                <td class="r"><span class="big">26</span></td>
+                <td class="r"><span class="big">3</span></td>
+                <td><div class="sub">Most Home leads this period and the widest search coverage.</div></td>
               </tr>
               <tr>
-                <td><div class="nm"><span class="bd" style="background:#2D90EE"></span>Tier 1</div><span class="tag mint">Highest quality</span></td>
-                <td class="r"><span class="big">27</span></td>
+                <td><div class="nm"><span class="bd" style="background:#2D90EE"></span>Tier 3</div><span class="tag mint">Efficient</span></td>
+                <td class="r"><span class="big">16</span></td>
                 <td class="r"><span class="big">4</span></td>
-                <td><div class="sub">Highest-quality leads and the bound policy. Largest pool of available auctions, currently winning few placements at its bid. Under review and re-bid.</div></td>
+                <td><div class="sub">Most quotes of any source (4 of 9); 10.9% win rate.</div></td>
               </tr>
               <tr>
                 <td><div class="nm"><span class="bd" style="background:#0fae8f"></span>Tier 2</div><span class="tag blue">Steady</span></td>
                 <td class="r"><span class="big">13</span></td>
                 <td class="r"><span class="big">2</span></td>
-                <td><div class="sub">Mid-tier volume and quality; placement steady.</div></td>
+                <td><div class="sub">Consistent lead flow; 12.1% win rate.</div></td>
               </tr>
               <tr>
                 <td><div class="nm"><span class="bd" style="background:#F0A93B"></span>Home Search</div><span class="tag amber">Throttled</span></td>
@@ -230,13 +223,13 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--gray);color:var(-
     <section class="block" id="s3">
       <div class="bhead"><span class="ix">03</span><div><h2>Conversion funnel</h2><p>Ad placements through policies; conversion rate at each stage</p></div></div>
       <div class="fpanel">
-        <div class="fstep"><div class="lab">Your ad shown<small>impressions</small></div><div class="fbar"><i style="background:#9cc4ec" data-w="100">432</i></div><div class="pct">100%</div></div>
-        <div class="fstep"><div class="lab">Clicks<small>to your form</small></div><div class="fbar"><i style="background:#3a92e0" data-w="58">130</i></div><div class="pct">30.1%</div></div>
-        <div class="fstep"><div class="lab">Leads<small>submitted</small></div><div class="fbar"><i style="background:#057BE5" data-w="48">79</i></div><div class="pct">60.8%</div></div>
-        <div class="fstep"><div class="lab">Contacted<small>reached</small></div><div class="fbar"><i style="background:#0c5fb0" data-w="32">42</i></div><div class="pct">53.2%</div></div>
-        <div class="fstep"><div class="lab">Quotes<small>presented</small></div><div class="fbar"><i style="background:#0a3a6b" data-w="16">12</i></div><div class="pct">28.6%</div></div>
-        <div class="fstep"><div class="lab">Policies<small>bound</small></div><div class="fbar"><i style="background:#0fae8f;color:#062b4e" data-w="8">1</i></div><div class="pct">8.3%</div></div>
-        <div class="fnote">Of 432 ad placements, <b>30.1%</b> became clicks and <b>60.8%</b> of clicks became a lead. <b>53.2%</b> of leads were contacted, <b>28.6%</b> of contacted leads were quoted, and 1 policy bound. The bound policy closed in late May (5/28).</div>
+        <div class="fstep"><div class="lab">Your ad shown<small>impressions</small></div><div class="fbar"><i style="background:#9cc4ec" data-w="100">270</i></div><div class="pct">100%</div></div>
+        <div class="fstep"><div class="lab">Clicks<small>to your form</small></div><div class="fbar"><i style="background:#3a92e0" data-w="58">81</i></div><div class="pct">30.0%</div></div>
+        <div class="fstep"><div class="lab">Leads<small>submitted</small></div><div class="fbar"><i style="background:#057BE5" data-w="44">55</i></div><div class="pct">67.9%</div></div>
+        <div class="fstep"><div class="lab">Contacted<small>reached</small></div><div class="fbar"><i style="background:#0c5fb0" data-w="24">18</i></div><div class="pct">32.7%</div></div>
+        <div class="fstep"><div class="lab">Quotes<small>presented</small></div><div class="fbar"><i style="background:#0a3a6b" data-w="15">9</i></div><div class="pct">50.0%</div></div>
+        <div class="fstep"><div class="lab">Policies<small>bound</small></div><div class="fbar"><i style="background:#0fae8f;color:#062b4e" data-w="2">0</i></div><div class="pct">0%</div></div>
+        <div class="fnote">Of 270 ad placements, <b>30.0%</b> became clicks and <b>67.9%</b> of clicks became a lead. <b>32.7%</b> of leads were contacted and <b>50.0%</b> of contacted leads were quoted. No policies bound in this 30-day window.</div>
       </div>
     </section>
 
@@ -244,33 +237,32 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--gray);color:var(-
       <div class="bhead"><span class="ix">04</span><div><h2>Audience</h2><p>Leads by property profile</p></div></div>
       <div class="fpanel">
         <div class="pt" style="font-size:13px;font-weight:700;color:var(--ink);text-transform:uppercase;letter-spacing:.04em;margin-bottom:18px;">Property type</div>
-        <div class="fstep"><div class="lab">Single-family</div><div class="fbar"><i style="background:#057BE5" data-w="100">71</i></div><div class="pct">90%</div></div>
-        <div class="fstep"><div class="lab">All other types</div><div class="fbar"><i style="background:#2D90EE" data-w="12">8</i></div><div class="pct">10%</div></div>
-        <div class="fnote">Single-family homes account for 71 of 79 leads and the bound policy. Most leads come from owners aged 67&ndash;83.</div>
+        <div class="fstep"><div class="lab">Single-family</div><div class="fbar"><i style="background:#057BE5" data-w="100">54</i></div><div class="pct">98%</div></div>
+        <div class="fstep"><div class="lab">All other types</div><div class="fbar"><i style="background:#2D90EE" data-w="3">1</i></div><div class="pct">2%</div></div>
+        <div class="fnote">Single-family homes account for 54 of 55 leads (98%) and all 9 quotes. Homes around 30 years old are the most common age group. Most leads come from owners aged 65 to 79.</div>
       </div>
     </section>
 
     <section class="block" id="s5">
       <div class="bhead"><span class="ix">05</span><div><h2>Geography</h2><p>Top counties by leads · Texas</p></div></div>
       <div class="fpanel">
-        <div class="fstep"><div class="lab">Harris</div><div class="fbar"><i style="background:#057BE5" data-w="100">36</i></div><div class="pct">46%</div></div>
-        <div class="fstep"><div class="lab">Fort Bend</div><div class="fbar"><i style="background:#2D90EE" data-w="22">8</i></div><div class="pct">10%</div></div>
-        <div class="fstep"><div class="lab">Dallas</div><div class="fbar"><i style="background:#2D90EE" data-w="22">8</i></div><div class="pct">10%</div></div>
-        <div class="fstep"><div class="lab">Tarrant</div><div class="fbar"><i style="background:#2D90EE" data-w="14">5</i></div><div class="pct">6%</div></div>
-        <div class="fstep"><div class="lab">Bexar</div><div class="fbar"><i style="background:#2D90EE" data-w="11">4</i></div><div class="pct">5%</div></div>
-        <div class="fnote">The five counties shown account for 61 of 79 Home leads (77%). Harris County (Houston metro) is the largest single market and includes the bound policy.</div>
+        <div class="fstep"><div class="lab">Harris</div><div class="fbar"><i style="background:#057BE5" data-w="100">10</i></div><div class="pct">18%</div></div>
+        <div class="fstep"><div class="lab">Dallas</div><div class="fbar"><i style="background:#2D90EE" data-w="80">8</i></div><div class="pct">15%</div></div>
+        <div class="fstep"><div class="lab">Bexar</div><div class="fbar"><i style="background:#2D90EE" data-w="50">5</i></div><div class="pct">9%</div></div>
+        <div class="fstep"><div class="lab">Travis</div><div class="fbar"><i style="background:#2D90EE" data-w="40">4</i></div><div class="pct">7%</div></div>
+        <div class="fstep"><div class="lab">Lubbock</div><div class="fbar"><i style="background:#2D90EE" data-w="30">3</i></div><div class="pct">5%</div></div>
+        <div class="fnote">The five counties shown account for 30 of 55 Home leads (55%). Harris County (Houston metro) is the largest single market.</div>
       </div>
     </section>
 
     <section class="block" id="s6" style="margin-bottom:0;">
       <div class="bhead"><span class="ix">06</span><div><h2>Recommendations</h2></div></div>
       <div class="plan">
-        <div class="pstep"><div class="num">1</div><div><div class="h">Investigate and re-bid Tier 1</div><div class="b">Tier 1 is the largest pool of available Home leads (18,000+ opportunities) but is winning about 0.5% of auctions at its current bid. It has produced the highest-quality leads and the bound policy. We are confirming delivery with the platform team and raising the bid into the in-market competitive range.</div></div></div>
-        <div class="pstep"><div class="num">2</div><div><div class="h">Exclude existing Allstate customers</div><div class="b">On June 18 we tightened targeting to filter out existing Allstate customers. Home carried the majority of these: 34 of 54 flagged in Lead Manager since launch. We are monitoring the effect through June 24.</div></div></div>
-        <div class="pstep"><div class="num">3</div><div><div class="h">Prioritize single-family homes</div><div class="b">On June 18 we raised the Single Family Home modifier and reduced bids on renter property types (apartment, condominium, duplex, townhome). Single-family homes account for 71 of 79 leads, 11 of 12 quotes, and the bound policy.</div></div></div>
-        <div class="pstep"><div class="num">4</div><div><div class="h">Work every lead on the 30-day follow-up cadence</div><div class="b">Our recommended 30-day, 60+ touch cadence across phone, text, and email: <a href="https://goal-followup-best-practices.vercel.app/" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700;text-decoration:none;">GOAL 30-Day Lead Follow-Up Playbook &rarr;</a></div></div></div>
-        <div class="pstep"><div class="num">5</div><div><div class="h">Hold Tier 3</div><div class="b">Tier 3 is the primary source of Home leads and quotes this period. Placement and volume are steady; we are leaving it unchanged.</div></div></div>
-        <div class="pstep"><div class="num">6</div><div><div class="h">Maintain the reduced bid on Home Search</div><div class="b">Market clearing prices for this source run well above the rest of the campaign. Budget is better deployed on Tier 1 through Tier 3.</div></div></div>
+        <div class="pstep"><div class="num">1</div><div><div class="h">Prioritize single-family, new-customer households</div><div class="b">On June 18 we added an existing-Allstate-customer exclusion and raised the Single Family Home modifier while reducing bids on renter property types (apartment, condominium, duplex, townhome). Single-family homes are 98% of leads and all 9 quotes this period.</div></div></div>
+        <div class="pstep"><div class="num">2</div><div><div class="h">Improve top-of-wall visibility on Tier 1</div><div class="b">Tier 1 holds the widest search coverage and produced the most Home leads (26). We are reviewing its ad-wall placement to win more of that available volume.</div></div></div>
+        <div class="pstep"><div class="num">3</div><div><div class="h">Hold the converting tiers</div><div class="b">Tier 3 produced the most quotes (4 of 9) and Tier 2 added steady volume at a 12.1% win rate. Placement is steady; we are leaving these unchanged.</div></div></div>
+        <div class="pstep"><div class="num">4</div><div><div class="h">Maintain the reduced bid on Home Search</div><div class="b">Market clearing prices for this source run well above the rest of the campaign. Budget is better deployed across Tier 1 through Tier 3.</div></div></div>
+        <div class="pstep"><div class="num">5</div><div><div class="h">Work every lead on the 30-day follow-up cadence</div><div class="b">Contact rate was 32.7% and half of contacted leads were quoted. Consistent follow-up across phone, text, and email is what moves leads to quotes and binds: <a href="https://goal-followup-best-practices.vercel.app/" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700;text-decoration:none;">GOAL 30-Day Lead Follow-Up Playbook &rarr;</a></div></div></div>
       </div>
     </section>
 
