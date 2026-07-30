@@ -37,6 +37,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--gray);color:var(-
 .sub{font-size:13.5px;color:var(--muted);margin:2px 0 30px 0;}
 
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.card.feature{grid-column:1 / -1;}
 .card{position:relative;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px 22px 24px;display:flex;flex-direction:column;box-shadow:0 3px 12px rgba(0,23,45,.05);transition:transform .2s,box-shadow .2s,border-color .2s;overflow:hidden;}
 .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(var(--blue),var(--mint));}
 .card:hover{transform:translateY(-4px);box-shadow:0 16px 38px rgba(0,23,45,.13);border-color:#cfe0ef;}
@@ -69,7 +70,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--gray);color:var(-
       <div class="acct">The Michael Morrison Insurance Agency &middot; Account Hub</div>
     </div>
     <h1>The Michael Morrison Insurance Agency</h1>
-    <p>Your reporting hub on GOAL. Below are your current reports — the <b>Auto Performance Review</b>, the <b>Home Performance Review</b>, and the <b>Geographic Targeting Overlap</b>. The two performance reviews each cover the last 30 days (ending July 8, 2026) of your Texas lead campaigns; the overlap report maps your May 2026 target ZIP list against the carrier catastrophe-exclusion list. Open any report full-size to read or print to PDF.</p>
+    <p>Your reporting hub on GOAL. Below are your current reports — the <b>Blended Performance Review</b> covering Auto and Home together, the individual <b>Auto</b> and <b>Home Performance Reviews</b>, and the <b>Geographic Targeting Overlap</b>. The three performance reviews cover your Texas lead campaigns from launch through July 30, 2026; the overlap report maps your May 2026 target ZIP list against the carrier catastrophe-exclusion list. Open any report full-size to read or print to PDF.</p>
   </header>
 
   <section class="reports">
@@ -81,18 +82,26 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--gray);color:var(-
 
     <div class="grid">
 
+      <article class="card feature">
+        <div class="tag">Blended Review &middot; Campaign to date</div>
+        <h3>Blended Performance Review</h3>
+        <p>Auto and Home together, from campaign launch through July 30, 2026: <b>570 leads</b>, 59 inbound calls, 113 quotes, and <b>8 bound policies</b> on $12,330.15 of spend, at a 45.3% contact rate and a 19.8% quote rate. Includes cost and acquisition by campaign and source group, the Auto-vs-Home comparison, the blended conversion funnel, inbound call performance, and combined audience and geography.</p>
+        <div class="traits"><span>Combined KPIs</span><span>Cost &amp; acquisition</span><span>Auto vs Home</span><span>Inbound calls</span><span>Recommendations</span></div>
+        <a class="btn" href="reports/blended-performance-review.html">Open report &rarr;</a>
+      </article>
+
       <article class="card">
-        <div class="tag">Performance Review &middot; July 2026</div>
+        <div class="tag">Performance Review &middot; Campaign to date</div>
         <h3>Auto Performance Review</h3>
-        <p>The 30-day read on the Texas Auto campaign ending July 8: 154 leads, 15 inbound calls, and 18 quotes, a 34.4% contact rate, the full source-by-source breakdown, the conversion funnel, audience and geography, and the daily budget held at $160.</p>
+        <p>The Texas Auto campaign from launch through July 30, 2026: 408 leads, 42 inbound calls, 83 quotes, and 7 bound policies on $8,617.35 of spend, at $103.82 per quote &mdash; with the source-by-source breakdown, conversion funnel, audience, and geography.</p>
         <div class="traits"><span>Key metrics</span><span>Lead sources</span><span>Recommendations</span></div>
         <a class="btn" href="reports/auto-performance-review.html">Open report &rarr;</a>
       </article>
 
       <article class="card">
-        <div class="tag">Performance Review &middot; July 2026</div>
+        <div class="tag">Performance Review &middot; Campaign to date</div>
         <h3>Home Performance Review</h3>
-        <p>The 30-day read on the Texas Home campaign ending July 8: 55 leads, 7 inbound calls, and 9 quotes, a 32.7% contact rate, the source mix, the conversion funnel, audience and geography, and the single-family, new-customer focus set on June 18.</p>
+        <p>The Texas Home campaign from launch through July 30, 2026: 162 leads, 17 inbound calls, 30 quotes, and 1 bound policy on $3,712.80 of spend, at $123.76 per quote &mdash; with the Tier source mix, conversion funnel, shopper and property profile, and geography.</p>
         <div class="traits"><span>Key metrics</span><span>Conversion funnel</span><span>Recommendations</span></div>
         <a class="btn" href="reports/home-performance-review.html">Open report &rarr;</a>
       </article>
