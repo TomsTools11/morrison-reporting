@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Michael Morrison Insurance Agency · Geographic Performance Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#0479DF; --blue-hover:#0C6EC5; --sky:#308ED6; --mint:#3BEECA; --mint-d:#0fae8f;
+  --navy:#00172D; --navy-2:#062c4e; --navy-deep:#001020;
+  --ink:#0F1B2D; --body:#2B3442; --muted:#6A7482;
+  --white:#fff; --off:#F8FAFC; --gray:#EFF2F7; --divider:#EDF1F5; --line:#E2E8F0;
+  --success:#2BBF7A; --warning:#F0A93B;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--gray);color:var(--body);line-height:1.55;}
+.shell{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:288px 1fr;min-height:100vh;background:var(--white);}
+.side,.main{min-width:0;}
+
+/* ---------- Sidebar ---------- */
+.side{background:var(--navy);color:#cfe0ee;padding:34px 30px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;}
+.side .logo{height:30px;width:auto;color:#fff;align-self:flex-start;margin-bottom:38px;}
+.backlink{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;font-size:12.5px;font-weight:600;color:#9fbcd6;text-decoration:none;margin-bottom:22px;padding:8px 13px;border:1px solid rgba(255,255,255,.16);border-radius:8px;transition:background .15s,color .15s,border-color .15s;}
+.backlink:hover{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.3);}
+@media print{.backlink{display:none;}}
+.side .eb{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#2D90EE;}
+.side h1{font-size:25px;font-weight:900;color:#fff;line-height:1.1;letter-spacing:-.02em;margin:10px 0 14px;}
+.side .who{font-size:13px;color:#a7c2da;line-height:1.6;}
+.side .who b{color:#fff;font-weight:600;}
+.side nav{margin-top:34px;display:flex;flex-direction:column;gap:2px;}
+.side nav a{font-size:13.5px;color:#9fbcd6;text-decoration:none;padding:9px 12px;border-radius:8px;display:flex;align-items:center;gap:11px;transition:background .15s,color .15s;}
+.side nav a:hover{background:rgba(255,255,255,.06);color:#fff;text-decoration:none;}
+.side nav a .dot{width:6px;height:6px;border-radius:50%;background:#3a6386;flex-shrink:0;}
+.side nav a:hover .dot{background:var(--mint);}
+.side .foot{margin-top:auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:11px;color:#6f93b3;line-height:1.6;}
+
+/* ---------- Main ---------- */
+.main{padding:46px 52px 60px;}
+.block{margin-bottom:44px;scroll-margin-top:24px;}
+.bhead{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.bhead .ix{font-size:12px;font-weight:800;color:var(--blue);font-variant-numeric:tabular-nums;background:#E6F1FD;padding:4px 9px;border-radius:6px;}
+.bhead h2{font-size:22px;font-weight:800;color:var(--ink);letter-spacing:-.01em;}
+.bhead p{font-size:13.5px;color:var(--muted);margin-top:3px;}
+
+/* ---------- Exec ---------- */
+.exec{background:var(--off);border:1px solid var(--line);border-radius:14px;padding:24px 28px;margin-bottom:44px;}
+.exec p{font-size:15.5px;line-height:1.62;color:var(--body);}
+.exec p b{color:var(--ink);font-weight:700;}
+.exec .src{font-size:11.5px;color:var(--muted);margin-top:12px;padding-top:10px;border-top:1px solid var(--line);line-height:1.5;}
+
+/* ---------- KPI cards ---------- */
+.kgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.kc{border:1px solid var(--line);border-radius:12px;padding:20px;background:var(--white);}
+.kc .v{font-size:26px;font-weight:900;color:var(--ink);letter-spacing:-.02em;line-height:1;}
+.kc .k{font-size:12.5px;color:var(--body);font-weight:600;margin-top:9px;}
+.kc .d{font-size:11.5px;color:var(--muted);margin-top:2px;}
+
+/* ---------- split: donut + table ---------- */
+.split{display:grid;grid-template-columns:300px 1fr;gap:18px;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.panel{border:1px solid var(--line);border-radius:14px;padding:24px;background:var(--white);}
+.panel .pt{font-size:13px;font-weight:700;color:var(--ink);text-transform:uppercase;letter-spacing:.04em;margin-bottom:18px;}
+.donut-wrap{display:flex;flex-direction:column;align-items:center;}
+.donut{position:relative;width:180px;height:180px;}
+.donut .center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.donut .center .n{font-size:38px;font-weight:900;color:var(--ink);letter-spacing:-.02em;line-height:1;}
+.donut .center .l{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-top:2px;}
+.legend{width:100%;margin-top:20px;display:flex;flex-direction:column;gap:9px;}
+.legend .li{display:flex;align-items:center;gap:9px;font-size:13px;}
+.legend .li .sw{width:10px;height:10px;border-radius:3px;}
+.legend .li .nm{color:var(--body);font-weight:500;}
+.legend .li .vl{margin-left:auto;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;}
+.ltable{width:100%;border-collapse:collapse;}
+.ltable th{font-size:10.5px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;text-align:left;padding:0 0 12px;border-bottom:1px solid var(--line);}
+.ltable th.r,.ltable td.r{text-align:right;padding-right:26px;}
+.ltable td{padding:15px 0;border-bottom:1px solid var(--divider);font-size:13.5px;color:var(--body);vertical-align:top;}
+.ltable tr:last-child td{border-bottom:none;}
+.ltable .nm{font-weight:800;color:var(--ink);font-size:14px;display:flex;align-items:center;gap:9px;}
+.ltable .nm .bd{width:8px;height:8px;border-radius:50%;}
+.ltable .tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border-radius:6px;margin-top:5px;}
+.tag.blue{background:#E3F0FD;color:var(--blue-hover);} .tag.mint{background:#D6F7EE;color:var(--mint-d);} .tag.amber{background:#FDF0DA;color:#9a6712;}
+.ltable .big{font-size:20px;font-weight:900;color:var(--ink);letter-spacing:-.02em;}
+.ltable .sub{font-size:11.5px;color:var(--muted);line-height:1.45;max-width:300px;}
+.ltable.cost td{padding:13px 0;}
+.ltable.cost .nm{font-size:13.5px;}
+.ltable.cost td.r{font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink);}
+.ltable.cost tr.total td{border-top:2px solid var(--line);border-bottom:none;}
+
+/* ---------- bars (funnel + audience + geo) ---------- */
+.fpanel{border:1px solid var(--line);border-radius:14px;padding:26px 28px;background:var(--white);}
+.fstep{display:flex;align-items:center;gap:16px;margin-bottom:11px;}
+.fstep:last-of-type{margin-bottom:0;}
+.fstep .lab{width:150px;flex-shrink:0;text-align:right;font-size:13px;font-weight:600;color:var(--ink);}
+.fstep .lab small{display:block;font-weight:500;color:var(--muted);font-size:11px;}
+.fbar{flex:1;height:40px;background:var(--gray);border-radius:8px;overflow:hidden;}
+.fbar i{display:flex;align-items:center;height:100%;border-radius:8px;width:0;color:#fff;font-weight:800;font-size:14.5px;padding-left:14px;transition:width 1.1s cubic-bezier(.2,.7,.2,1);}
+.fstep .pct{width:62px;flex-shrink:0;font-size:12px;color:var(--muted);font-weight:700;text-align:right;}
+.fnote{font-size:13px;color:var(--muted);line-height:1.6;margin-top:18px;padding-top:16px;border-top:1px solid var(--divider);}
+.fnote b{color:var(--ink);font-weight:700;}
+
+/* ---------- Map ---------- */
+.mapwrap{border:1px solid var(--line);border-radius:14px;background:var(--white);overflow:hidden;margin-bottom:18px;}
+.mapwrap .mh{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap;padding:18px 24px 14px;border-bottom:1px solid var(--divider);}
+.mapwrap .mh .t{font-size:13px;font-weight:700;color:var(--ink);text-transform:uppercase;letter-spacing:.04em;}
+.mapwrap .mh .n{font-size:12px;color:var(--muted);}
+.mapwrap svg{width:100%;height:auto;display:block;padding:14px 18px;}
+.mlgnd{display:flex;gap:16px;flex-wrap:wrap;align-items:center;padding:13px 24px;border-top:1px solid var(--divider);background:var(--off);}
+.mlgnd .mlt{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);}
+.mlg{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--body);}
+.mlg .sq{width:14px;height:14px;border-radius:3px;border:1px solid rgba(0,0,0,.08);flex:none;}
+.mlg .pmk{width:18px;height:18px;border-radius:50%;background:var(--mint-d);color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none;}
+.mnote{font-size:11.5px;color:var(--muted);padding:0 24px 14px;background:var(--off);margin:0;line-height:1.55;}
+@media print{.mapwrap{break-inside:avoid;}}
+
+/* ---------- Recommendations ---------- */
+.plan{border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+.pstep{display:flex;gap:18px;padding:20px 24px;border-top:1px solid var(--divider);background:var(--white);}
+.pstep:first-child{border-top:none;}
+.pstep .num{flex-shrink:0;width:36px;height:36px;border-radius:9px;background:#E6F1FD;color:var(--blue);font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;}
+.pstep .h{font-size:15px;font-weight:800;color:var(--ink);}
+.pstep .b{font-size:13.5px;color:var(--body);line-height:1.55;margin-top:3px;}
+
+@media print{
+  body{background:#fff;} .shell{display:block;max-width:none;}
+  .side{position:static;height:auto;flex-direction:row;align-items:center;justify-content:space-between;padding:20px 30px;}
+  .side nav,.side .foot{display:none;} .side h1{margin:0;}
+  .kc,.fpanel,.panel,.plan{break-inside:avoid;}
+}
+@media(max-width:900px){
+  .shell{grid-template-columns:1fr;}
+  .side{position:static;height:auto;}
+  .side nav{display:none;}
+  .main{padding:32px 22px;}
+  .kgrid{grid-template-columns:1fr 1fr;}
+  .split,.grid2{grid-template-columns:1fr;}
+}
+@media(max-width:900px){
+  /* wide tables scroll inside their own card instead of widening the page */
+  .panel{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .panel .ltable{min-width:600px;}
+}
+@media(max-width:560px){ .kgrid{grid-template-columns:1fr;} .fstep .lab{width:104px;} }
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <aside class="side">
+    <a class="backlink" href="../index.html">&larr; All Reports</a>
+    <svg class="logo" viewBox="0 0 150 34" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GOAL">
+      <circle cx="17" cy="17" r="14.4" stroke="currentColor" stroke-width="2.4" opacity="0.30"/>
+      <circle cx="17" cy="17" r="8.4" stroke="currentColor" stroke-width="2.4" opacity="0.55"/>
+      <circle cx="17" cy="17" r="3" fill="currentColor"/>
+      <text x="41" y="24.5" font-family="Inter, sans-serif" font-size="23" font-weight="900" letter-spacing="0.5" fill="currentColor">GOAL</text>
+    </svg>
+    <div class="eb">Geography &middot; Performance Review</div>
+    <h1>The Michael Morrison Insurance Agency</h1>
+    <div class="who">Prepared for <b>Mike Morrison</b><br>Texas &middot; Allstate<br>Campaign launch through July 30, 2026</div>
+    <nav>
+      <a href="#s1"><span class="dot"></span>Key metrics</a>
+      <a href="#s2"><span class="dot"></span>County map &amp; performance</a>
+      <a href="#s3"><span class="dot"></span>Quality by county</a>
+      <a href="#s4"><span class="dot"></span>Policy geography</a>
+      <a href="#s5"><span class="dot"></span>City performance</a>
+      <a href="#s6"><span class="dot"></span>Recommendations</a>
+    </nav>
+    <div class="foot">GOAL Performance Marketing<br>All conversion metrics calculated based on Leads, not Clicks.</div>
+  </aside>
+
+  <main class="main">
+
+    <div class="exec">
+      <p>Campaign launch through July 30, 2026. The Auto and Home campaigns combined delivered <b>570 leads across 70 Texas counties</b>. The top five counties account for <b>334 leads (59%)</b>. <b>8 policies bound across 7 counties.</b> Among counties with 15 or more leads, Dallas holds the highest quote rate (25.0%) and Tarrant the highest contact rate (56.1%).</p>
+      <div class="src">Data sources: GOAL platform Auto (TX) and Home (TX) county and city exports pulled July 30, 2026, combined and cross-checked against the blended geography exports &middot; CRM disposition import through July 29, 2026.</div>
+    </div>
+
+    <section class="block" id="s1">
+      <div class="bhead"><span class="ix">01</span><div><h2>Key metrics</h2><p>Auto + Home (TX) &middot; campaign launch through July 30, 2026</p></div></div>
+      <div class="kgrid">
+        <div class="kc"><div class="v">570</div><div class="k">Leads mapped</div><div class="d">70 Texas counties</div></div>
+        <div class="kc"><div class="v">59%</div><div class="k">Top-5 county share</div><div class="d">334 of 570 leads</div></div>
+        <div class="kc"><div class="v">56.1%</div><div class="k">Highest contact rate</div><div class="d">Tarrant &middot; counties with 15+ leads</div></div>
+        <div class="kc"><div class="v">25.0%</div><div class="k">Highest quote rate</div><div class="d">Dallas &middot; counties with 15+ leads</div></div>
+        <div class="kc"><div class="v">8</div><div class="k">Policies bound</div><div class="d">Across 7 counties</div></div>
+        <div class="kc"><div class="v">$83.84</div><div class="k">Lowest cost per quote</div><div class="d">Dallas &middot; counties with 15+ leads</div></div>
+      </div>
+    </section>
+
+    <section class="block" id="s2">
+      <div class="bhead"><span class="ix">02</span><div><h2>County performance</h2><p>Statewide map and top 10 counties by leads &middot; campaign launch through July 30, 2026</p></div></div>
+<div class="mapwrap">
+     <div class="mh"><span class="t">Leads by county &middot; bound policies overlaid</span><span class="n">570 leads &middot; 70 of 254 Texas counties &middot; 8 policies</span></div>
+     <svg viewBox="0 0 1000 950" role="img" aria-label="Choropleth map of Texas counties shaded by lead volume, with bound-policy counts overlaid">
+      <style>
+       .cty path{stroke:#fff;stroke-width:.8;stroke-linejoin:round}
+       .cl,.cn{paint-order:stroke fill;stroke:#fff;stroke-width:3.5px;stroke-linejoin:round}
+       .cl{font:700 15px Inter,sans-serif;fill:#0F1B2D}
+       .cn{font:800 15px Inter,sans-serif;fill:#06437D}
+       .pl{stroke:#0fae8f;stroke-width:1.6}
+       .pm{fill:#0fae8f;stroke:#fff;stroke-width:2.5}
+       .pt2{font:800 13px Inter,sans-serif;fill:#fff}
+      </style>
+      <g class="cty">
+       <path d="M435.5 8.1L436.8 8.1L439.4 8.1L439.4 8.1L441.3 8.1L441.9 8.1L443.9 8.1L443.9 8.1L445.3 8.1L445.3 8.1L445.5 8.1L445.5 8.1L448.6 8.1L448.6 8.1L451.4 8.1L451.4 8.1L452.6 8.1L452.6 8.1L456.4 8.1L456.4 8.1L457.1 8.1L457.1 8.1L461.3 8.1L461.3 8.1L461.3 8.1L462.0 8.1L462.0 8.1L462.4 8.1L462.4 8.1L464.8 8.1L464.8 47.0L424.3 46.9L424.3 8.1L426.8 8.1L427.3 8.1L432.4 8.1L434.2 8.1L435.5 8.1Z" fill="#F1F5F9"><title>Ochiltree County — 0 leads</title></path>
+       <path d="M277.3 123.6L277.3 121.1L277.4 85.1L343.4 84.6L343.4 84.9L343.4 85.3L343.0 123.6L277.3 123.6Z" fill="#F1F5F9"><title>Oldham County — 0 leads</title></path>
+       <path d="M690.3 315.8L689.8 352.2L689.8 354.4L684.8 354.3L651.0 354.0L651.9 315.0L662.0 315.2L690.2 315.8L690.3 315.8Z" fill="#CFE3F7" data-leads="3"><title>Parker County — 3 leads</title></path>
+       <path d="M831.4 318.8L833.7 339.9L819.1 335.8L811.2 329.6L807.2 326.2L810.4 317.1L816.6 317.1L831.4 318.8Z" fill="#F1F5F9"><title>Rains County — 0 leads</title></path>
+       <path d="M342.9 161.9L343.0 123.6L383.9 123.7L383.4 161.7L383.5 161.9L355.7 161.8L342.9 161.9Z" fill="#F1F5F9"><title>Randall County — 0 leads</title></path>
+       <path d="M465.3 85.4L424.3 85.4L424.3 84.8L424.3 47.1L424.3 46.9L464.8 47.0L465.3 47.0L465.3 85.4Z" fill="#CFE3F7" data-leads="1"><title>Roberts County — 1 lead</title></path>
+       <path d="M767.3 331.7L767.3 326.4L767.4 326.1L767.4 324.8L767.5 316.9L784.0 316.9L784.0 329.2L784.0 331.6L767.3 331.7Z" fill="#F1F5F9"><title>Rockwall County — 0 leads</title></path>
+       <path d="M623.0 488.3L622.6 497.8L583.6 497.8L574.0 497.8L574.0 496.1L574.1 450.4L581.6 448.4L583.4 452.6L590.5 451.9L591.9 454.6L598.0 454.8L598.8 458.0L601.5 453.3L613.8 470.7L617.7 477.2L616.7 483.1L623.0 488.3Z" fill="#F1F5F9"><title>San Saba County — 0 leads</title></path>
+       <path d="M666.2 395.4L660.5 383.6L660.1 382.6L672.4 375.3L685.0 375.1L685.0 385.2L666.2 395.4Z" fill="#F1F5F9"><title>Somervell County — 0 leads</title></path>
+       <path d="M612.8 319.3L612.8 357.9L573.7 357.9L573.7 319.1L584.6 319.1L612.8 319.3Z" fill="#F1F5F9"><title>Stephens County — 0 leads</title></path>
+       <path d="M506.7 318.8L495.0 318.8L466.8 318.6L467.0 280.4L506.5 280.4L506.7 318.8Z" fill="#F1F5F9"><title>Stonewall County — 0 leads</title></path>
+       <path d="M339.9 318.9L310.9 318.9L310.9 281.2L349.9 281.1L349.9 318.9L339.9 318.9Z" fill="#F1F5F9"><title>Terry County — 0 leads</title></path>
+       <path d="M872.0 281.1L895.8 283.4L894.9 316.8L886.9 309.2L871.9 312.3L872.0 281.1Z" fill="#F1F5F9"><title>Titus County — 0 leads</title></path>
+       <path d="M869.9 353.1L870.0 323.9L902.4 323.7L902.4 324.1L903.6 324.8L903.5 325.9L903.8 333.5L903.8 345.9L882.4 355.9L869.9 353.1Z" fill="#CFE3F7" data-leads="4"><title>Upshur County — 4 leads</title></path>
+       <path d="M497.4 611.8L504.8 611.8L535.6 611.4L550.0 611.4L549.9 658.5L497.5 658.9L497.4 611.8Z" fill="#F1F5F9"><title>Uvalde County — 0 leads</title></path>
+       <path d="M295.6 433.7L298.0 433.7L297.9 434.7L298.0 465.1L293.5 467.4L279.7 458.3L246.0 453.3L240.6 434.5L237.3 435.4L234.6 433.7L255.9 433.7L295.4 433.7L295.6 433.7Z" fill="#F1F5F9"><title>Ward County — 0 leads</title></path>
+       <path d="M703.4 541.9L687.9 534.6L673.0 540.9L659.3 523.5L652.3 523.9L658.9 509.7L668.9 499.1L684.2 502.3L707.5 512.6L710.8 514.1L719.5 538.5L706.1 543.3L703.4 541.9Z" fill="#8FC0EA" data-leads="5"><title>Williamson County — 5 leads</title></path>
+       <path d="M694.6 277.2L702.4 277.3L702.4 277.5L701.2 316.1L700.0 316.0L690.3 315.8L690.2 315.8L662.0 315.2L662.2 277.2L693.6 277.2L694.6 277.2Z" fill="#CFE3F7" data-leads="4"><title>Wise County — 4 leads</title></path>
+       <path d="M549.9 658.5L550.2 698.1L497.3 697.4L497.5 658.9L549.9 658.5Z" fill="#F1F5F9"><title>Zavala County — 0 leads</title></path>
+       <path d="M584.5 242.1L600.3 242.0L624.2 241.9L624.3 261.7L624.4 274.3L624.5 280.5L584.4 280.4L584.5 242.1Z" fill="#CFE3F7" data-leads="1"><title>Archer County — 1 lead</title></path>
+       <path d="M395.3 161.9L383.5 161.9L383.4 161.7L383.9 123.7L424.2 123.7L423.9 161.8L395.3 161.9Z" fill="#F1F5F9"><title>Armstrong County — 0 leads</title></path>
+       <path d="M727.6 566.6L729.3 574.2L707.5 597.4L682.5 572.8L682.4 572.7L694.2 560.3L694.6 559.3L700.4 547.9L702.8 543.0L703.4 541.9L706.1 543.3L725.0 555.9L727.6 566.6Z" fill="#F1F5F9"><title>Bastrop County — 0 leads</title></path>
+       <path d="M611.6 534.8L625.2 534.6L629.7 536.0L646.6 541.3L643.1 547.4L633.7 575.4L625.0 584.2L611.9 566.5L611.6 534.8Z" fill="#F1F5F9"><title>Blanco County — 0 leads</title></path>
+       <path d="M638.6 819.0L651.7 819.2L657.1 823.7L657.2 861.3L632.0 861.1L624.3 861.1L624.7 837.2L621.0 837.3L619.0 821.5L616.7 818.8L638.6 819.0Z" fill="#F1F5F9"><title>Brooks County — 0 leads</title></path>
+       <path d="M662.7 487.8L668.1 497.1L668.9 499.1L658.9 509.7L652.3 523.9L646.8 536.1L646.6 541.3L629.7 536.0L623.1 519.6L628.1 513.7L623.6 509.7L627.8 505.4L622.6 497.8L623.0 488.3L662.7 487.8Z" fill="#F1F5F9"><title>Burnet County — 0 leads</title></path>
+       <path d="M870.0 323.9L870.0 314.1L870.3 313.5L871.0 313.0L871.1 312.6L871.5 312.7L871.9 312.3L886.9 309.2L894.9 316.8L902.4 323.7L870.0 323.9Z" fill="#CFE3F7" data-leads="3"><title>Camp County — 3 leads</title></path>
+       <path d="M342.9 161.9L355.7 161.8L355.8 200.0L348.8 200.0L316.1 200.0L316.2 161.9L342.9 161.9Z" fill="#F1F5F9"><title>Castro County — 0 leads</title></path>
+       <path d="M276.9 242.9L309.4 242.9L310.9 281.2L276.2 281.2L276.2 281.2L276.5 265.2L276.6 260.1L276.6 259.0L276.6 258.2L276.7 257.5L276.7 256.3L276.7 253.7L276.8 249.8L276.9 242.9Z" fill="#F1F5F9"><title>Cochran County — 0 leads</title></path>
+       <path d="M497.5 440.0L526.7 440.3L535.7 447.7L535.6 483.2L497.2 483.2L497.5 440.0Z" fill="#F1F5F9"><title>Concho County — 0 leads</title></path>
+       <path d="M673.6 431.9L679.4 428.5L685.7 439.3L699.7 462.8L663.0 484.8L642.5 450.2L673.6 431.9Z" fill="#CFE3F7" data-leads="1"><title>Coryell County — 1 lead</title></path>
+       <path d="M298.0 433.7L331.7 433.7L333.0 483.3L326.4 483.3L323.3 473.9L304.8 462.2L298.0 465.1L297.9 434.7L298.0 433.7Z" fill="#F1F5F9"><title>Crane County — 0 leads</title></path>
+       <path d="M339.9 318.9L349.9 318.9L378.8 318.7L379.0 357.0L340.4 357.2L339.9 318.9Z" fill="#F1F5F9"><title>Dawson County — 0 leads</title></path>
+       <path d="M688.0 682.9L674.5 665.9L685.1 656.9L713.1 632.7L733.0 657.4L708.2 678.4L699.8 673.1L688.0 682.9Z" fill="#F1F5F9"><title>DeWitt County — 0 leads</title></path>
+       <path d="M497.3 697.4L550.2 698.1L551.2 698.0L551.3 736.3L497.3 736.9L497.3 697.4Z" fill="#F1F5F9"><title>Dimmit County — 0 leads</title></path>
+       <path d="M477.2 553.3L497.1 553.2L524.3 553.2L524.0 572.2L508.3 571.5L503.5 592.0L504.8 611.8L497.4 611.8L453.3 611.7L453.2 553.4L477.2 553.3Z" fill="#F1F5F9"><title>Edwards County — 0 leads</title></path>
+       <path d="M707.3 597.6L707.5 597.4L729.3 574.2L729.7 575.9L746.6 564.6L757.7 566.0L759.6 574.8L763.5 582.1L749.6 600.2L740.6 610.9L720.5 611.4L721.4 610.0L707.3 597.6Z" fill="#F1F5F9"><title>Fayette County — 0 leads</title></path>
+       <path d="M872.0 281.1L871.9 312.3L871.5 312.7L871.1 312.6L871.0 313.0L870.3 313.5L870.0 314.1L868.4 318.7L858.2 318.6L858.2 282.2L858.3 282.2L858.4 282.1L872.0 281.1Z" fill="#F1F5F9"><title>Franklin County — 0 leads</title></path>
+       <path d="M427.8 317.9L417.7 318.5L388.9 318.7L388.9 280.7L427.8 280.4L427.8 317.9Z" fill="#F1F5F9"><title>Garza County — 0 leads</title></path>
+       <path d="M713.1 632.7L685.1 656.9L676.5 647.0L666.7 635.5L668.1 633.4L683.6 609.4L686.3 611.1L707.3 597.6L721.4 610.0L720.5 611.4L715.8 615.5L713.1 632.7Z" fill="#CFE3F7" data-leads="1"><title>Gonzales County — 1 lead</title></path>
+       <path d="M424.3 85.4L465.3 85.4L465.4 123.6L424.2 123.7L424.3 85.4Z" fill="#F1F5F9"><title>Gray County — 0 leads</title></path>
+       <path d="M821.0 557.1L820.9 557.1L818.2 557.3L815.9 557.5L815.9 557.5L799.3 558.9L799.8 553.3L794.7 549.7L795.2 545.1L800.3 540.9L797.1 539.8L792.2 526.1L793.6 506.4L816.6 502.8L819.0 523.4L821.0 549.0L821.0 557.1Z" fill="#F1F5F9"><title>Grimes County — 0 leads</title></path>
+       <path d="M474.6 161.9L474.5 200.0L468.4 200.0L468.3 199.9L467.0 199.9L434.8 200.1L434.9 161.8L465.2 161.9L474.6 161.9Z" fill="#F1F5F9"><title>Hall County — 0 leads</title></path>
+       <path d="M424.3 8.1L424.3 46.9L424.3 47.1L383.9 47.1L383.9 8.1L424.3 8.1Z" fill="#F1F5F9"><title>Hansford County — 0 leads</title></path>
+       <path d="M752.3 419.4L751.0 420.1L736.3 428.7L728.4 415.1L710.4 425.5L706.7 421.7L710.0 416.9L702.4 414.5L698.2 408.9L702.6 405.5L694.7 401.6L695.4 387.9L724.7 379.8L735.6 398.5L739.0 396.6L752.3 419.4Z" fill="#CFE3F7" data-leads="2"><title>Hill County — 2 leads</title></path>
+       <path d="M379.0 357.0L417.6 357.1L416.9 395.5L410.9 395.5L378.5 395.4L379.0 357.0Z" fill="#F1F5F9"><title>Howard County — 0 leads</title></path>
+       <path d="M424.3 84.8L383.9 84.9L383.9 47.1L424.3 47.1L424.3 84.8Z" fill="#F1F5F9"><title>Hutchinson County — 0 leads</title></path>
+       <path d="M584.4 860.9L584.4 818.4L596.1 818.6L596.1 811.0L616.8 811.9L616.7 818.8L619.0 821.5L621.0 837.3L624.7 837.2L624.3 861.1L584.4 860.9Z" fill="#F1F5F9"><title>Jim Hogg County — 0 leads</title></path>
+       <path d="M695.4 387.9L692.4 391.4L685.0 385.2L685.0 375.1L684.8 354.3L689.8 354.4L724.7 354.9L724.7 379.8L695.4 387.9Z" fill="#F1F5F9"><title>Johnson County — 0 leads</title></path>
+       <path d="M456.6 318.5L427.8 317.9L427.8 280.4L467.0 280.4L466.8 318.6L456.6 318.5Z" fill="#F1F5F9"><title>Kent County — 0 leads</title></path>
+       <path d="M524.0 572.2L524.3 553.2L558.3 553.5L558.3 566.9L586.9 566.6L587.1 597.9L567.7 587.9L535.8 586.8L529.0 586.7L529.1 572.2L524.0 572.2Z" fill="#F1F5F9"><title>Kerr County — 0 leads</title></path>
+       <path d="M545.3 250.9L545.5 280.3L506.5 280.4L506.1 241.9L518.2 241.9L535.9 246.2L545.3 250.9Z" fill="#F1F5F9"><title>Knox County — 0 leads</title></path>
+       <path d="M595.7 749.2L551.7 751.6L551.3 736.3L551.2 698.0L595.9 697.4L595.9 697.5L595.7 749.2Z" fill="#F1F5F9"><title>La Salle County — 0 leads</title></path>
+       <path d="M664.8 749.3L638.4 749.2L631.0 749.2L630.9 700.5L648.7 685.2L655.7 693.7L649.3 696.1L670.4 738.2L669.8 738.8L663.3 744.3L664.8 749.3Z" fill="#F1F5F9"><title>Live Oak County — 0 leads</title></path>
+       <path d="M388.4 242.4L388.9 280.7L349.9 281.1L349.2 242.9L388.4 242.4Z" fill="#8FC0EA" data-leads="13"><title>Lubbock County — 13 leads</title></path>
+       <path d="M746.1 445.1L710.3 466.3L705.4 469.5L699.7 462.8L685.7 439.3L687.6 438.3L710.4 425.5L728.4 415.1L736.3 428.7L746.1 445.1Z" fill="#8FC0EA" data-leads="6"><title>McLennan County — 6 leads</title></path>
+       <path d="M583.6 497.8L583.6 534.7L583.6 534.9L558.1 534.8L544.6 534.8L544.6 516.3L544.5 496.1L574.0 496.1L574.0 497.8L583.6 497.8Z" fill="#F1F5F9"><title>Mason County — 0 leads</title></path>
+       <path d="M372.5 433.7L334.0 433.7L334.0 395.5L339.7 395.5L372.4 395.5L372.5 433.7Z" fill="#F1F5F9"><title>Midland County — 0 leads</title></path>
+       <path d="M874.1 564.0L861.6 575.9L843.5 566.0L840.0 563.7L832.2 569.1L821.1 570.8L821.0 557.1L821.0 549.0L819.0 523.4L836.4 534.0L854.4 534.4L858.2 543.1L868.9 548.4L874.1 564.0Z" fill="#8FC0EA" data-leads="11"><title>Montgomery County — 11 leads</title></path>
+       <path d="M739.0 396.6L777.5 374.2L797.6 389.0L802.2 402.0L769.0 421.0L752.3 419.4L739.0 396.6Z" fill="#F1F5F9"><title>Navarro County — 0 leads</title></path>
+       <path d="M455.9 395.6L456.1 369.7L456.2 357.0L477.4 357.1L494.8 357.2L494.4 395.9L488.2 395.9L455.9 395.6Z" fill="#F1F5F9"><title>Nolan County — 0 leads</title></path>
+       <path d="M427.6 200.1L395.3 200.1L395.3 161.9L423.9 161.8L434.9 161.8L434.8 200.1L433.2 200.1L433.2 200.1L427.6 200.1Z" fill="#F1F5F9"><title>Briscoe County — 0 leads</title></path>
+       <path d="M572.0 396.1L586.6 396.3L605.9 429.4L599.0 430.5L597.5 437.3L581.6 448.4L574.1 450.4L565.7 449.9L566.2 396.2L569.8 396.2L571.5 396.2L572.0 396.1Z" fill="#CFE3F7" data-leads="1"><title>Brown County — 1 lead</title></path>
+       <path d="M707.5 597.4L707.3 597.6L686.3 611.1L683.6 609.4L677.0 606.6L665.4 591.1L664.0 588.9L677.8 576.5L682.0 572.3L682.4 572.7L682.5 572.8L707.5 597.4Z" fill="#F1F5F9"><title>Caldwell County — 0 leads</title></path>
+       <path d="M671.8 900.3L691.6 903.6L697.6 901.4L702.4 893.8L702.8 894.0L703.4 895.2L703.1 896.4L702.0 897.8L701.7 900.1L701.8 900.7L702.0 900.9L702.9 900.4L703.2 900.0L703.4 899.3L704.3 898.6L705.4 898.3L706.0 898.7L706.4 899.1L705.9 900.8L704.7 901.9L704.6 902.3L705.1 902.5L705.1 904.2L705.3 906.4L705.6 906.6L706.2 906.6L706.9 906.0L707.8 905.8L708.1 907.7L708.0 908.0L707.0 909.2L707.0 909.8L708.3 912.1L708.9 912.3L709.0 913.0L708.9 913.9L708.1 915.9L708.9 917.4L709.7 918.6L710.0 919.3L709.9 919.5L709.1 919.9L709.0 920.4L710.2 921.8L710.8 922.3L712.6 922.8L715.6 922.9L716.2 923.1L716.5 926.2L715.8 927.2L715.0 927.2L714.3 927.5L714.2 927.7L714.7 930.2L714.9 930.4L715.5 930.6L716.5 930.5L718.1 929.9L718.6 929.3L719.0 928.6L719.0 927.8L718.3 926.0L717.8 925.9L717.5 925.2L718.8 924.3L719.8 924.4L719.7 926.5L719.8 928.3L720.2 932.4L718.2 933.1L714.1 933.5L710.8 934.1L705.0 935.9L704.0 937.3L703.6 938.4L703.6 940.0L700.5 942.5L693.9 940.4L692.8 939.8L687.4 935.3L681.0 927.9L680.7 926.9L666.4 924.5L666.4 923.7L666.4 915.9L666.4 899.3L671.0 900.1L671.2 900.1L671.2 900.2L671.7 900.2L671.8 900.3Z" fill="#F1F5F9"><title>Cameron County — 0 leads</title></path>
+       <path d="M424.3 85.4L424.2 123.7L383.9 123.7L383.9 123.5L383.9 85.3L383.9 84.9L424.3 84.8L424.3 85.4Z" fill="#F1F5F9"><title>Carson County — 0 leads</title></path>
+       <path d="M953.3 291.5L953.3 291.5L953.3 292.4L953.3 293.4L953.3 294.1L953.3 296.4L953.3 297.5L953.3 297.8L953.3 302.7L953.3 303.2L953.3 303.6L953.3 307.2L953.3 308.3L953.3 313.6L953.3 319.2L953.3 320.8L953.3 323.2L953.3 324.2L953.3 324.7L953.3 325.8L953.1 325.8L935.7 325.8L907.4 325.9L907.5 291.7L913.5 293.4L917.6 290.5L925.3 290.4L928.0 292.9L939.1 294.2L940.1 289.2L952.3 289.2L953.3 291.5Z" fill="#F1F5F9"><title>Cass County — 0 leads</title></path>
+       <path d="M891.5 444.6L881.4 453.3L881.2 453.5L873.8 449.7L868.2 439.6L860.9 438.9L862.0 437.4L850.4 417.6L847.8 416.9L849.2 395.7L847.8 393.7L847.1 393.3L846.9 391.2L882.5 391.0L882.5 416.6L886.1 416.7L883.9 424.7L885.0 434.6L891.5 444.6Z" fill="#F1F5F9"><title>Cherokee County — 0 leads</title></path>
+       <path d="M624.4 274.3L624.3 261.7L624.2 241.9L623.5 219.1L626.0 216.8L626.1 216.2L627.3 214.5L628.7 213.7L631.6 214.3L633.5 215.7L634.0 215.8L641.0 217.3L643.4 217.5L648.1 224.6L649.4 227.0L649.7 227.2L653.0 228.1L654.6 228.1L657.3 227.4L660.1 228.4L659.6 233.1L657.7 237.2L657.7 237.2L657.6 274.3L624.4 274.3Z" fill="#F1F5F9"><title>Clay County — 0 leads</title></path>
+       <path d="M488.1 430.1L443.8 429.8L444.1 395.5L455.9 395.6L488.2 395.9L488.1 430.1Z" fill="#F1F5F9"><title>Coke County — 0 leads</title></path>
+       <path d="M755.0 316.6L754.6 316.6L743.3 316.4L743.2 316.4L742.9 316.4L743.1 307.7L743.2 301.9L743.6 279.7L777.3 280.4L777.4 280.4L777.4 285.4L784.1 284.4L784.0 316.9L767.5 316.9L760.2 316.7L756.7 316.6L755.0 316.6Z" fill="#CFE3F7" data-leads="3"><title>Collin County — 3 leads</title></path>
+       <path d="M505.8 137.1L505.8 162.0L505.8 162.0L474.6 161.9L465.2 161.9L465.2 161.7L465.4 123.6L505.8 123.7L505.8 137.1Z" fill="#F1F5F9"><title>Collingsworth County — 0 leads</title></path>
+       <path d="M622.7 603.3L614.7 599.7L607.5 601.1L607.6 601.0L625.0 584.2L633.7 575.4L653.8 592.0L656.1 600.4L649.3 606.5L632.7 614.3L627.7 608.3L630.6 603.1L622.7 603.3Z" fill="#CFE3F7" data-leads="1"><title>Comal County — 1 lead</title></path>
+       <path d="M963.9 557.4L977.8 557.3L978.2 561.6L979.4 565.7L979.4 566.8L978.1 572.8L977.4 574.1L977.4 574.2L975.1 577.3L974.8 577.5L972.3 579.8L968.5 586.2L967.0 580.7L954.1 576.2L947.8 564.6L947.7 557.5L963.9 557.4Z" fill="#CFE3F7" data-leads="2"><title>Orange County — 2 leads</title></path>
+       <path d="M316.2 161.9L316.1 200.0L309.4 200.1L277.2 200.1L277.2 200.1L277.2 194.2L277.2 194.2L277.2 194.1L277.2 193.8L277.2 193.7L277.2 193.7L277.2 193.4L277.2 193.2L277.2 193.0L277.2 192.7L277.2 192.3L277.2 191.9L277.2 187.5L277.2 187.2L277.2 187.2L277.2 186.9L277.3 173.1L277.3 168.6L277.3 161.9L316.2 161.9Z" fill="#F1F5F9"><title>Parmer County — 0 leads</title></path>
+       <path d="M410.6 442.1L410.6 444.5L410.1 483.9L372.4 483.9L372.5 433.7L410.7 433.8L410.6 442.1Z" fill="#F1F5F9"><title>Reagan County — 0 leads</title></path>
+       <path d="M524.0 572.2L529.1 572.2L529.0 586.7L535.8 586.8L535.7 587.5L535.6 611.4L504.8 611.8L503.5 592.0L508.3 571.5L524.0 572.2Z" fill="#F1F5F9"><title>Real County — 0 leads</title></path>
+       <path d="M900.5 253.6L900.4 286.4L895.8 283.4L872.0 281.1L858.4 282.1L858.3 281.9L858.2 281.9L858.1 238.8L859.8 238.6L861.8 237.4L862.2 237.0L862.6 236.1L862.8 235.2L862.6 234.3L862.4 233.7L862.4 233.3L864.0 231.0L864.4 230.9L864.9 230.9L869.7 232.4L871.7 233.1L876.4 234.8L876.6 235.1L876.7 236.0L878.4 239.8L891.2 249.8L894.7 251.0L899.4 251.5L900.5 253.6Z" fill="#CFE3F7" data-leads="1"><title>Red River County — 1 lead</title></path>
+       <path d="M780.1 498.7L771.9 513.3L763.7 517.6L763.6 517.1L761.5 515.9L761.3 514.7L759.6 514.5L756.6 505.9L754.8 499.1L749.5 497.3L744.0 481.6L761.5 471.5L782.3 459.6L781.4 468.8L788.2 493.2L786.5 494.1L781.0 497.8L780.1 498.7Z" fill="#F1F5F9"><title>Robertson County — 0 leads</title></path>
+       <path d="M488.1 430.1L488.2 395.9L494.4 395.9L527.3 395.9L526.7 440.3L497.5 440.0L488.2 439.4L488.1 430.1Z" fill="#F1F5F9"><title>Runnels County — 0 leads</title></path>
+       <path d="M953.6 479.1L953.2 454.9L957.8 450.0L957.7 440.9L968.9 439.4L970.1 442.2L971.7 444.0L976.8 448.1L979.4 455.0L981.3 456.9L983.5 458.2L981.2 464.6L983.2 466.6L985.0 467.1L985.5 468.0L986.0 470.9L986.0 472.9L986.4 474.9L986.6 475.4L986.5 475.4L963.2 477.0L953.6 479.1Z" fill="#F1F5F9"><title>Sabine County — 0 leads</title></path>
+       <path d="M427.8 317.9L456.6 318.5L456.2 357.0L417.6 356.8L417.7 318.5L427.8 317.9Z" fill="#F1F5F9"><title>Scurry County — 0 leads</title></path>
+       <path d="M573.7 357.9L572.4 357.9L535.0 357.9L535.0 319.1L545.6 319.1L573.7 319.1L573.7 357.9Z" fill="#F1F5F9"><title>Shackelford County — 0 leads</title></path>
+       <path d="M918.1 405.4L955.3 404.9L958.4 409.8L961.6 412.4L962.5 412.9L964.8 415.7L965.7 416.8L968.5 420.6L970.6 428.1L970.3 431.9L969.6 436.9L968.9 439.4L968.9 439.4L957.7 440.9L949.7 436.4L926.5 433.5L922.5 416.8L918.1 405.4Z" fill="#F1F5F9"><title>Shelby County — 0 leads</title></path>
+       <path d="M882.5 391.0L846.9 391.2L844.7 382.7L847.7 371.9L836.8 361.0L836.7 342.8L845.9 349.9L856.5 350.1L868.8 355.4L869.9 353.1L882.4 355.9L882.4 370.5L882.5 370.6L882.5 391.0Z" fill="#8FC0EA" data-leads="14"><title>Smith County — 14 leads</title></path>
+       <path d="M632.0 861.1L620.1 888.6L619.1 890.8L619.0 891.1L612.0 907.3L609.2 907.1L608.5 907.9L603.1 905.5L599.6 900.8L595.4 897.4L594.3 897.3L591.4 897.7L577.4 894.2L573.0 891.4L568.3 880.9L568.0 879.8L580.1 870.6L584.4 860.9L624.3 861.1L632.0 861.1Z" fill="#F1F5F9"><title>Starr County — 0 leads</title></path>
+       <path d="M444.1 395.5L443.8 429.8L441.2 429.0L440.8 441.5L410.6 442.1L410.7 433.8L410.9 395.5L416.9 395.5L444.1 395.5Z" fill="#F1F5F9"><title>Sterling County — 0 leads</title></path>
+       <path d="M433.7 516.7L442.0 516.7L497.1 516.3L497.1 553.2L477.2 553.3L453.2 553.4L433.7 553.4L433.7 516.7Z" fill="#F1F5F9"><title>Sutton County — 0 leads</title></path>
+       <path d="M395.3 200.1L388.3 200.1L355.8 200.0L355.7 161.8L383.5 161.9L395.3 161.9L395.3 200.1Z" fill="#F1F5F9"><title>Swisher County — 0 leads</title></path>
+       <path d="M533.5 396.0L527.3 395.9L494.4 395.9L494.8 357.2L533.7 357.4L533.7 357.9L533.5 396.0Z" fill="#F1F5F9"><title>Taylor County — 0 leads</title></path>
+       <path d="M545.5 280.3L584.4 280.4L584.6 319.1L573.7 319.1L545.6 319.1L545.5 280.3Z" fill="#F1F5F9"><title>Throckmorton County — 0 leads</title></path>
+       <path d="M454.1 483.3L453.8 444.9L414.0 444.5L413.9 444.4L410.6 444.5L410.6 442.1L440.8 441.5L441.2 429.0L443.8 429.8L488.1 430.1L488.2 439.4L497.5 440.0L497.2 483.2L454.1 483.3Z" fill="#F1F5F9"><title>Tom Green County — 0 leads</title></path>
+       <path d="M700.4 547.9L694.6 559.3L694.2 560.3L682.4 572.7L682.0 572.3L677.8 576.5L655.2 557.4L643.1 547.4L646.6 541.3L646.8 536.1L652.3 523.9L659.3 523.5L673.0 540.9L687.9 534.6L703.4 541.9L702.8 543.0L700.4 547.9Z" fill="#2D90EE" data-leads="20"><title>Travis County — 20 leads</title></path>
+       <path d="M915.5 532.4L907.1 489.9L914.3 485.7L922.1 488.0L922.6 490.6L929.9 487.4L938.6 489.7L938.2 492.3L943.0 508.9L945.2 509.3L947.1 518.6L952.7 522.6L949.4 528.2L951.1 532.5L915.5 532.4Z" fill="#F1F5F9"><title>Tyler County — 0 leads</title></path>
+       <path d="M800.6 371.7L800.5 329.6L800.5 329.5L811.2 329.6L819.1 335.8L833.7 339.9L834.4 340.9L835.2 340.9L835.9 341.4L836.0 342.0L836.8 342.3L836.7 342.8L836.8 361.0L847.7 371.9L800.6 371.7Z" fill="#CFE3F7" data-leads="2"><title>Van Zandt County — 2 leads</title></path>
+       <path d="M757.8 691.9L757.6 692.0L757.1 692.5L742.2 698.5L736.4 702.8L739.4 709.8L732.5 710.4L727.5 706.0L719.1 705.7L717.5 700.7L719.2 686.1L713.8 678.3L708.2 678.4L733.0 657.4L735.1 660.1L735.1 660.1L735.2 660.2L735.8 660.9L743.8 664.6L746.8 673.6L752.8 679.5L757.8 691.9Z" fill="#CFE3F7" data-leads="4"><title>Victoria County — 4 leads</title></path>
+       <path d="M758.2 552.6L778.6 546.6L779.3 546.0L780.7 546.4L782.8 545.0L783.8 545.4L791.3 545.1L794.7 549.7L799.8 553.3L799.3 558.9L794.3 560.6L791.9 566.9L795.3 572.5L784.3 570.3L759.6 574.8L757.7 566.0L746.6 564.6L751.3 557.3L758.2 552.6Z" fill="#F1F5F9"><title>Washington County — 0 leads</title></path>
+       <path d="M505.8 123.7L465.4 123.6L465.3 85.4L505.8 85.4L505.8 102.6L505.8 123.7Z" fill="#F1F5F9"><title>Wheeler County — 0 leads</title></path>
+       <path d="M624.2 241.9L600.3 242.0L584.5 242.1L584.5 210.3L587.0 211.5L591.6 214.1L598.6 215.5L603.5 215.6L606.1 214.2L607.1 213.4L608.2 213.3L610.2 213.4L611.0 213.4L612.7 214.4L614.5 215.8L618.2 221.2L620.4 221.9L623.5 219.1L624.2 241.9Z" fill="#CFE3F7" data-leads="4"><title>Wichita County — 4 leads</title></path>
+       <path d="M671.8 900.3L671.7 900.2L671.2 900.2L671.2 900.1L671.0 900.1L666.4 899.3L666.4 891.8L655.8 890.5L659.3 876.2L666.5 877.4L698.0 877.2L699.0 879.6L699.9 881.3L699.5 884.2L699.2 884.5L698.8 885.4L698.8 886.5L699.2 887.3L698.9 887.9L698.5 888.6L698.0 888.9L698.0 889.9L698.3 890.4L699.2 890.7L699.6 890.7L699.8 890.4L700.3 890.6L700.2 891.9L699.5 893.2L699.7 893.6L700.7 894.0L701.3 893.8L701.6 893.5L701.5 893.2L702.4 893.8L697.6 901.4L691.6 903.6L671.8 900.3Z" fill="#F1F5F9"><title>Willacy County — 0 leads</title></path>
+       <path d="M869.9 353.1L868.8 355.4L856.5 350.1L845.9 349.9L836.7 342.8L836.8 342.3L836.0 342.0L835.9 341.4L835.2 340.9L834.4 340.9L833.7 339.9L831.4 318.8L858.2 318.6L868.4 318.7L870.0 314.1L870.0 323.9L869.9 353.1Z" fill="#CFE3F7" data-leads="2"><title>Wood County — 2 leads</title></path>
+       <path d="M849.2 395.7L847.8 416.9L850.4 417.6L862.0 437.4L860.9 438.9L832.4 443.3L825.9 446.7L828.1 436.9L822.3 436.6L821.8 432.9L816.7 430.6L815.6 424.6L807.8 422.0L806.7 414.9L804.2 413.8L804.6 406.8L801.6 406.9L802.3 402.6L849.2 395.7Z" fill="#CFE3F7" data-leads="3"><title>Anderson County — 3 leads</title></path>
+       <path d="M595.9 697.4L595.6 658.6L595.6 644.5L625.5 656.4L641.7 676.8L648.7 685.2L630.9 700.5L630.9 697.4L595.9 697.5L595.9 697.4Z" fill="#F1F5F9"><title>Atascosa County — 0 leads</title></path>
+       <path d="M759.6 574.8L784.3 570.3L795.3 572.5L799.9 578.2L797.1 581.5L797.2 592.6L802.6 596.0L803.8 602.6L804.4 613.6L799.6 613.7L793.1 610.9L786.8 607.8L780.4 593.6L775.2 594.1L763.5 582.1L759.6 574.8Z" fill="#F1F5F9"><title>Austin County — 0 leads</title></path>
+       <path d="M277.2 200.1L309.4 200.1L309.4 242.9L276.9 242.9L277.0 240.7L277.1 236.2L277.1 235.7L277.1 232.3L277.2 229.7L277.2 227.2L277.2 225.9L277.2 224.6L277.2 224.2L277.2 223.9L277.2 223.8L277.2 223.7L277.2 223.1L277.2 222.0L277.2 220.6L277.2 219.8L277.2 205.0L277.2 202.1L277.2 201.0L277.2 200.1Z" fill="#F1F5F9"><title>Bailey County — 0 leads</title></path>
+       <path d="M545.2 242.1L584.5 242.1L584.4 280.4L545.5 280.3L545.3 250.9L545.2 242.1Z" fill="#CFE3F7" data-leads="1"><title>Baylor County — 1 lead</title></path>
+       <path d="M703.0 720.2L690.5 739.8L688.5 742.9L669.8 738.8L670.4 738.2L649.3 696.1L655.7 693.7L662.4 691.1L672.7 695.6L678.8 706.7L689.2 709.2L689.8 714.7L703.0 720.2Z" fill="#F1F5F9"><title>Bee County — 0 leads</title></path>
+       <path d="M634.5 643.9L625.5 656.4L595.6 644.5L595.5 605.9L597.6 603.3L607.5 601.1L614.7 599.7L622.7 603.3L630.6 603.1L627.7 608.3L632.7 614.3L633.6 617.2L635.6 618.1L646.5 624.2L646.0 627.7L645.8 627.8L634.5 643.9Z" fill="#2D90EE" data-leads="37"><title>Bexar County — 37 leads</title></path>
+       <path d="M417.7 318.5L417.6 356.8L417.6 357.1L379.0 357.0L378.8 318.7L388.9 318.7L417.7 318.5Z" fill="#F1F5F9"><title>Borden County — 0 leads</title></path>
+       <path d="M666.2 395.4L685.0 385.2L692.4 391.4L695.4 387.9L694.7 401.6L702.6 405.5L698.2 408.9L702.4 414.5L710.0 416.9L706.7 421.7L710.4 425.5L687.6 438.3L685.7 439.3L679.4 428.5L673.6 431.9L655.7 401.5L666.2 395.4Z" fill="#F1F5F9"><title>Bosque County — 0 leads</title></path>
+       <path d="M849.5 615.6L859.1 614.1L865.1 617.7L865.1 617.8L865.1 618.3L865.0 618.3L864.9 619.0L864.9 619.2L864.9 619.4L864.8 619.7L864.8 620.0L864.7 620.3L864.6 621.3L864.5 622.2L864.2 624.3L864.0 625.0L863.9 625.6L877.2 648.9L872.4 659.7L872.2 660.0L872.0 660.6L867.0 664.5L863.5 667.5L861.0 669.9L859.1 672.3L858.1 672.8L854.9 675.4L853.1 677.4L852.7 678.2L850.1 678.8L848.4 678.9L844.8 680.9L843.3 681.9L838.8 681.4L830.4 669.5L823.9 669.4L823.5 660.7L817.8 657.0L815.8 646.3L818.2 643.8L817.7 643.4L824.9 638.0L832.3 641.0L837.9 636.6L840.1 628.0L846.7 627.9L848.1 621.7L849.5 615.6Z" fill="#CFE3F7" data-leads="2"><title>Brazoria County — 2 leads</title></path>
+       <path d="M524.3 553.2L497.1 553.2L497.1 516.3L544.6 516.3L544.6 534.8L558.1 534.8L558.3 553.5L524.3 553.2Z" fill="#F1F5F9"><title>Kimble County — 0 leads</title></path>
+       <path d="M455.6 659.1L455.2 657.7L446.2 645.2L449.8 644.1L453.3 629.6L453.3 611.7L497.4 611.8L497.5 658.9L455.7 659.1L455.6 659.1Z" fill="#F1F5F9"><title>Kinney County — 0 leads</title></path>
+       <path d="M817.0 274.8L817.8 241.5L819.5 241.8L824.0 240.9L824.5 239.2L836.4 233.3L838.8 233.4L839.4 233.7L840.2 235.6L840.1 236.2L839.9 236.8L839.9 237.3L840.2 237.8L840.5 238.0L847.9 239.0L850.8 239.3L855.9 239.0L858.1 238.8L858.2 281.9L834.8 272.6L824.4 271.8L819.3 275.0L817.0 274.8Z" fill="#F1F5F9"><title>Lamar County — 0 leads</title></path>
+       <path d="M613.8 470.7L636.0 454.9L635.7 454.3L642.5 450.2L663.0 484.8L662.5 485.1L662.7 487.8L623.0 488.3L616.7 483.1L617.7 477.2L613.8 470.7Z" fill="#F1F5F9"><title>Lampasas County — 0 leads</title></path>
+       <path d="M735.8 660.9L735.2 660.2L735.1 660.1L735.1 660.1L733.0 657.4L713.1 632.7L715.8 615.5L720.5 611.4L740.6 610.9L746.7 615.8L764.2 637.0L756.8 643.3L735.8 660.9Z" fill="#CFE3F7" data-leads="1"><title>Lavaca County — 1 lead</title></path>
+       <path d="M729.3 574.2L727.6 566.6L725.0 555.9L706.1 543.3L719.5 538.5L733.9 529.8L750.7 550.7L758.2 552.6L751.3 557.3L746.6 564.6L729.7 575.9L729.3 574.2Z" fill="#F1F5F9"><title>Lee County — 0 leads</title></path>
+       <path d="M868.9 548.4L879.0 543.2L879.6 543.0L892.7 535.4L898.1 535.8L901.5 535.7L911.2 567.2L923.1 568.8L923.1 569.0L923.3 588.4L882.8 588.9L882.5 581.1L879.1 579.3L874.1 564.0L868.9 548.4Z" fill="#CFE3F7" data-leads="4"><title>Liberty County — 4 leads</title></path>
+       <path d="M788.5 454.6L783.4 457.4L782.0 458.1L782.3 459.6L761.5 471.5L746.1 445.1L736.3 428.7L751.0 420.1L752.3 419.4L769.0 421.0L788.5 454.6Z" fill="#F1F5F9"><title>Limestone County — 0 leads</title></path>
+       <path d="M464.8 47.0L464.8 8.1L465.9 8.1L465.9 8.1L466.0 8.1L466.0 8.1L466.6 8.1L472.7 8.1L472.7 8.1L473.2 8.1L474.2 8.1L474.2 8.1L474.8 8.1L474.8 8.1L477.4 8.1L477.4 8.1L479.4 8.1L479.4 8.1L480.7 8.1L480.7 8.1L481.5 8.1L482.5 8.1L482.5 8.1L482.5 8.1L492.2 8.1L499.1 8.1L505.6 8.1L505.8 8.1L505.8 47.0L465.3 47.0L464.8 47.0Z" fill="#F1F5F9"><title>Lipscomb County — 0 leads</title></path>
+       <path d="M256.0 403.1L255.9 433.7L234.6 433.7L233.5 429.0L220.6 423.3L218.2 412.9L214.0 414.5L206.9 403.1L226.2 403.1L256.0 403.1Z" fill="#F1F5F9"><title>Loving County — 0 leads</title></path>
+       <path d="M388.9 318.7L378.8 318.7L349.9 318.9L349.9 281.1L388.9 280.7L388.9 318.7Z" fill="#F1F5F9"><title>Lynn County — 0 leads</title></path>
+       <path d="M535.7 447.7L542.4 453.5L550.7 451.7L557.3 454.9L565.7 449.9L574.1 450.4L574.0 496.1L544.5 496.1L535.6 496.1L535.6 483.2L535.7 447.7Z" fill="#F1F5F9"><title>McCulloch County — 0 leads</title></path>
+       <path d="M339.8 357.2L340.4 357.2L379.0 357.0L378.5 395.4L372.4 395.5L339.7 395.5L339.8 357.2Z" fill="#F1F5F9"><title>Martin County — 0 leads</title></path>
+       <path d="M497.3 736.9L490.1 737.0L486.5 733.2L484.0 730.1L479.8 718.5L480.8 710.5L480.4 710.2L476.8 709.2L475.4 707.3L473.6 701.9L472.3 700.9L468.3 696.2L467.5 693.6L467.4 692.4L467.8 691.4L467.7 689.3L465.6 683.6L464.8 681.8L461.5 678.6L457.8 673.9L456.9 671.5L457.2 667.9L457.3 667.7L456.0 660.1L455.6 659.1L455.7 659.1L497.5 658.9L497.3 697.4L497.3 736.9Z" fill="#F1F5F9"><title>Maverick County — 0 leads</title></path>
+       <path d="M497.2 483.2L535.6 483.2L535.6 496.1L544.5 496.1L544.6 516.3L497.1 516.3L497.2 483.2Z" fill="#F1F5F9"><title>Menard County — 0 leads</title></path>
+       <path d="M744.0 481.6L749.5 497.3L754.8 499.1L756.6 505.9L759.6 514.5L733.9 529.8L719.5 538.5L710.8 514.1L707.5 512.6L711.7 500.6L725.9 492.1L744.0 481.6Z" fill="#F1F5F9"><title>Milam County — 0 leads</title></path>
+       <path d="M635.7 454.3L636.0 454.9L613.8 470.7L601.5 453.3L598.8 458.0L598.0 454.8L591.9 454.6L590.5 451.9L583.4 452.6L581.6 448.4L597.5 437.3L599.0 430.5L605.9 429.4L619.0 427.4L621.2 430.9L635.7 454.3Z" fill="#F1F5F9"><title>Mills County — 0 leads</title></path>
+       <path d="M383.9 84.9L383.9 85.3L343.4 85.3L343.4 84.9L343.4 84.6L343.4 47.1L383.9 47.1L383.9 84.9Z" fill="#F1F5F9"><title>Moore County — 0 leads</title></path>
+       <path d="M702.8 765.2L704.0 767.5L702.7 768.5L701.8 770.6L701.6 773.3L702.2 774.8L703.5 777.0L705.1 778.4L707.4 779.5L712.1 780.9L711.7 782.4L711.2 782.5L708.9 788.2L708.7 789.0L708.8 789.5L709.1 789.9L708.5 790.6L707.0 791.9L706.8 792.8L668.0 793.1L660.4 786.3L661.0 764.4L671.2 754.7L670.7 760.1L679.3 761.5L686.9 766.9L702.8 765.2Z" fill="#F1F5F9"><title>Nueces County — 0 leads</title></path>
+       <path d="M612.8 357.9L612.8 319.3L624.0 319.5L624.0 314.6L651.9 315.0L651.0 354.0L650.9 358.2L620.4 358.1L618.8 358.1L613.0 357.9L612.8 357.9Z" fill="#F1F5F9"><title>Palo Pinto County — 0 leads</title></path>
+       <path d="M876.8 496.1L886.0 487.2L893.2 478.0L914.3 485.7L907.1 489.9L915.5 532.4L916.1 535.6L901.5 535.7L898.1 535.8L892.7 535.4L894.1 531.1L879.3 527.9L877.3 519.0L871.2 517.8L871.6 510.1L866.4 506.3L876.8 496.1Z" fill="#CFE3F7" data-leads="1"><title>Polk County — 1 lead</title></path>
+       <path d="M206.9 403.1L214.0 414.5L218.2 412.9L220.6 423.3L233.5 429.0L234.6 433.7L237.3 435.4L240.6 434.5L246.0 453.3L279.7 458.3L236.5 511.4L197.7 481.7L203.5 403.1L206.9 403.1Z" fill="#F1F5F9"><title>Reeves County — 0 leads</title></path>
+       <path d="M932.0 471.2L931.0 469.8L933.2 439.2L926.8 434.8L926.5 433.5L949.7 436.4L957.7 440.9L957.8 450.0L953.2 454.9L953.6 479.1L946.8 482.2L932.0 471.2Z" fill="#F1F5F9"><title>San Augustine County — 0 leads</title></path>
+       <path d="M497.1 516.3L442.0 516.7L433.7 516.7L433.6 483.7L454.1 483.3L497.2 483.2L497.1 516.3Z" fill="#F1F5F9"><title>Schleicher County — 0 leads</title></path>
+       <path d="M343.4 8.0L353.2 8.0L368.6 8.1L368.6 8.1L371.5 8.1L371.9 8.1L372.0 8.1L372.1 8.1L372.2 8.1L377.4 8.1L378.2 8.1L381.6 8.1L381.9 8.1L383.9 8.1L383.9 47.1L343.4 47.1L343.4 8.2L343.4 8.0Z" fill="#F1F5F9"><title>Sherman County — 0 leads</title></path>
+       <path d="M689.8 354.4L689.8 352.2L690.3 315.8L700.0 316.0L701.2 316.1L701.3 316.1L702.6 316.2L709.1 316.2L718.6 316.2L728.8 316.3L728.7 322.3L728.3 354.9L727.2 354.9L724.7 354.9L689.8 354.4Z" fill="#0C6EC5" data-leads="41"><title>Tarrant County — 41 leads</title></path>
+       <path d="M893.2 478.0L886.0 487.2L876.8 496.1L866.4 506.3L862.4 499.1L856.8 503.2L848.8 496.4L848.8 486.8L848.7 485.8L884.6 456.9L888.2 461.3L893.2 478.0Z" fill="#CFE3F7" data-leads="2"><title>Trinity County — 2 leads</title></path>
+       <path d="M848.8 486.8L848.8 496.4L856.8 503.2L854.4 534.4L836.4 534.0L819.0 523.4L816.6 502.8L835.0 497.0L848.7 485.8L848.8 486.8Z" fill="#CFE3F7" data-leads="3"><title>Walker County — 3 leads</title></path>
+       <path d="M799.6 613.7L802.9 617.1L801.7 624.7L808.3 630.4L811.0 635.1L810.3 637.2L814.2 638.8L815.3 643.1L817.7 643.4L818.2 643.8L815.8 646.3L808.9 653.6L783.1 669.7L758.2 644.7L780.1 630.8L783.2 621.3L793.1 610.9L799.6 613.7Z" fill="#CFE3F7" data-leads="1"><title>Wharton County — 1 lead</title></path>
+       <path d="M634.5 643.9L645.8 627.8L646.0 627.7L649.7 633.2L668.1 633.4L666.7 635.5L676.5 647.0L641.7 676.8L625.5 656.4L634.5 643.9Z" fill="#F1F5F9"><title>Wilson County — 0 leads</title></path>
+       <path d="M584.6 319.1L584.4 280.4L624.5 280.5L624.0 314.6L624.0 319.5L612.8 319.3L584.6 319.1Z" fill="#F1F5F9"><title>Young County — 0 leads</title></path>
+       <path d="M334.0 395.5L295.6 395.6L275.7 395.5L275.7 392.3L275.7 390.4L275.6 357.3L339.8 357.2L339.7 395.5L334.0 395.5Z" fill="#F1F5F9"><title>Andrews County — 0 leads</title></path>
+       <path d="M535.6 611.4L535.7 587.5L535.8 586.8L567.7 587.9L587.1 597.9L597.4 603.2L597.6 603.3L595.5 605.9L586.4 617.1L582.2 611.8L550.0 611.4L535.6 611.4Z" fill="#F1F5F9"><title>Bandera County — 0 leads</title></path>
+       <path d="M725.9 492.1L711.7 500.6L707.5 512.6L684.2 502.3L668.9 499.1L668.1 497.1L662.7 487.8L662.5 485.1L663.0 484.8L699.7 462.8L705.4 469.5L710.3 466.3L725.9 492.1Z" fill="#8FC0EA" data-leads="8"><title>Bell County — 8 leads</title></path>
+       <path d="M763.7 517.6L771.9 513.3L780.1 498.7L781.0 497.8L786.5 494.1L788.2 493.2L793.6 506.4L792.2 526.1L797.1 539.8L800.3 540.9L795.2 545.1L794.7 549.7L791.3 545.1L783.8 545.4L784.2 545.3L784.1 544.8L783.3 544.3L783.6 543.6L783.9 543.5L783.8 542.7L784.8 542.6L785.3 542.9L785.8 542.8L785.9 542.2L785.2 542.3L784.7 541.7L785.1 541.2L784.8 540.6L784.8 539.3L784.4 539.7L779.3 531.1L767.9 523.6L761.1 522.5L761.7 521.4L762.4 520.8L762.5 520.4L762.4 518.7L762.6 518.2L763.3 518.2L763.7 517.6Z" fill="#CFE3F7" data-leads="3"><title>Brazos County — 3 leads</title></path>
+       <path d="M566.2 396.2L533.5 396.0L533.7 357.9L535.0 357.9L572.4 357.9L572.0 396.1L571.5 396.2L569.8 396.2L566.2 396.2Z" fill="#F1F5F9"><title>Callahan County — 0 leads</title></path>
+       <path d="M506.0 200.1L474.5 200.0L474.6 161.9L505.8 162.0L505.8 178.3L506.0 178.2L506.0 178.5L506.0 200.1Z" fill="#F1F5F9"><title>Childress County — 0 leads</title></path>
+       <path d="M526.7 440.3L527.3 395.9L533.5 396.0L566.2 396.2L565.7 449.9L557.3 454.9L550.7 451.7L542.4 453.5L535.7 447.7L526.7 440.3Z" fill="#F1F5F9"><title>Coleman County — 0 leads</title></path>
+       <path d="M758.2 644.7L758.0 644.6L758.0 644.5L756.8 643.3L764.2 637.0L746.7 615.8L740.6 610.9L749.6 600.2L763.5 582.1L775.2 594.1L780.4 593.6L786.8 607.8L793.1 610.9L783.2 621.3L780.1 630.8L758.2 644.7Z" fill="#F1F5F9"><title>Colorado County — 0 leads</title></path>
+       <path d="M388.4 242.4L427.6 242.1L427.8 280.4L388.9 280.7L388.4 242.4Z" fill="#F1F5F9"><title>Crosby County — 0 leads</title></path>
+       <path d="M816.7 296.1L816.9 279.4L817.0 274.8L819.3 275.0L824.4 271.8L834.8 272.6L858.2 281.9L858.3 281.9L858.4 282.1L858.3 282.2L858.2 282.2L857.8 283.1L837.5 283.8L826.5 288.5L816.7 296.1Z" fill="#F1F5F9"><title>Delta County — 0 leads</title></path>
+       <path d="M596.1 811.0L595.7 749.2L631.0 749.2L638.4 749.2L638.6 819.0L616.7 818.8L616.8 811.9L596.1 811.0Z" fill="#F1F5F9"><title>Duval County — 0 leads</title></path>
+       <path d="M660.1 382.6L660.5 383.6L666.2 395.4L655.7 401.5L640.4 410.4L637.2 404.9L631.5 408.3L614.7 380.2L620.4 376.9L620.4 358.1L650.9 358.2L660.1 382.6Z" fill="#F1F5F9"><title>Erath County — 0 leads</title></path>
+       <path d="M395.3 200.1L427.6 200.1L427.6 242.1L388.4 242.4L388.3 200.1L395.3 200.1Z" fill="#F1F5F9"><title>Floyd County — 0 leads</title></path>
+       <path d="M595.6 658.6L595.9 697.4L551.2 698.0L550.2 698.1L549.9 658.5L595.6 658.6Z" fill="#F1F5F9"><title>Frio County — 0 leads</title></path>
+       <path d="M586.9 566.6L558.3 566.9L558.3 553.5L558.1 534.8L583.6 534.9L611.6 534.8L611.9 566.5L586.9 566.6Z" fill="#F1F5F9"><title>Gillespie County — 0 leads</title></path>
+       <path d="M410.7 433.8L372.5 433.7L372.4 395.5L378.5 395.4L410.9 395.5L410.7 433.8Z" fill="#F1F5F9"><title>Glasscock County — 0 leads</title></path>
+       <path d="M688.0 682.9L699.8 673.1L708.2 678.4L713.8 678.3L719.2 686.1L717.5 700.7L719.1 705.7L703.0 720.1L703.0 720.2L689.8 714.7L689.2 709.2L678.8 706.7L672.7 695.6L688.0 682.9Z" fill="#F1F5F9"><title>Goliad County — 0 leads</title></path>
+       <path d="M882.4 355.9L903.8 345.9L903.8 366.1L913.0 368.4L911.4 371.5L908.6 370.6L882.5 370.6L882.4 370.5L882.4 355.9Z" fill="#8FC0EA" data-leads="5"><title>Gregg County — 5 leads</title></path>
+       <path d="M646.0 627.7L646.5 624.2L635.6 618.1L633.6 617.2L632.7 614.3L649.3 606.5L656.1 600.4L665.4 591.1L677.0 606.6L683.6 609.4L668.1 633.4L649.7 633.2L646.0 627.7Z" fill="#CFE3F7" data-leads="2"><title>Guadalupe County — 2 leads</title></path>
+       <path d="M343.4 47.1L343.4 84.6L277.4 85.1L277.4 74.8L277.4 47.1L343.4 47.1Z" fill="#F1F5F9"><title>Hartley County — 0 leads</title></path>
+       <path d="M643.1 547.4L655.2 557.4L677.8 576.5L664.0 588.9L665.4 591.1L656.1 600.4L653.8 592.0L633.7 575.4L643.1 547.4Z" fill="#8FC0EA" data-leads="8"><title>Hays County — 8 leads</title></path>
+       <path d="M349.9 281.1L310.9 281.2L309.4 242.9L349.2 242.9L349.9 281.1Z" fill="#F1F5F9"><title>Hockley County — 0 leads</title></path>
+       <path d="M784.0 329.2L784.0 316.9L784.1 284.4L816.9 279.4L816.7 296.1L816.6 315.3L816.6 317.1L810.4 317.1L807.2 326.2L811.2 329.6L800.5 329.5L784.0 329.2Z" fill="#CFE3F7" data-leads="1"><title>Hunt County — 1 lead</title></path>
+       <path d="M946.8 482.2L953.6 479.1L963.2 477.0L966.6 495.5L963.9 557.4L947.7 557.5L950.3 548.7L947.8 540.6L951.1 532.5L949.4 528.2L952.7 522.6L947.1 518.6L945.2 509.3L943.0 508.9L938.2 492.3L938.6 489.7L929.9 487.4L922.6 490.6L922.1 488.0L946.8 482.2Z" fill="#CFE3F7" data-leads="1"><title>Jasper County — 1 lead</title></path>
+       <path d="M648.7 685.2L641.7 676.8L676.5 647.0L685.1 656.9L674.5 665.9L688.0 682.9L672.7 695.6L662.4 691.1L655.7 693.7L648.7 685.2Z" fill="#F1F5F9"><title>Karnes County — 0 leads</title></path>
+       <path d="M466.9 242.0L502.2 241.9L506.1 241.9L506.5 280.4L467.0 280.4L466.9 242.0Z" fill="#F1F5F9"><title>King County — 0 leads</title></path>
+       <path d="M316.1 200.0L348.8 200.0L349.2 242.9L309.4 242.9L309.4 200.1L316.1 200.0Z" fill="#F1F5F9"><title>Lamb County — 0 leads</title></path>
+       <path d="M782.3 459.6L782.0 458.1L783.4 457.4L788.5 454.6L822.3 436.6L828.1 436.9L825.9 446.7L832.0 463.0L826.9 467.1L824.0 482.6L808.3 482.8L788.2 493.2L781.4 468.8L782.3 459.6Z" fill="#CFE3F7" data-leads="2"><title>Leon County — 2 leads</title></path>
+       <path d="M583.6 534.9L583.6 534.7L583.6 497.8L622.6 497.8L627.8 505.4L623.6 509.7L628.1 513.7L623.1 519.6L629.7 536.0L625.2 534.6L611.6 534.8L583.6 534.9Z" fill="#CFE3F7" data-leads="2"><title>Llano County — 2 leads</title></path>
+       <path d="M835.0 497.0L816.6 502.8L793.6 506.4L788.2 493.2L808.3 482.8L824.0 482.6L831.6 483.5L830.2 492.1L835.0 497.0Z" fill="#F1F5F9"><title>Madison County — 0 leads</title></path>
+       <path d="M595.6 658.6L549.9 658.5L550.0 611.4L582.2 611.8L586.4 617.1L595.5 605.9L595.6 644.5L595.6 658.6Z" fill="#CFE3F7" data-leads="2"><title>Medina County — 2 leads</title></path>
+       <path d="M456.2 357.0L456.1 369.7L455.9 395.6L444.1 395.5L416.9 395.5L417.6 357.1L417.6 356.8L456.2 357.0Z" fill="#F1F5F9"><title>Mitchell County — 0 leads</title></path>
+       <path d="M900.4 286.4L907.5 291.7L907.4 325.9L903.5 325.9L903.6 324.8L902.4 324.1L902.4 323.7L894.9 316.8L895.8 283.4L900.4 286.4Z" fill="#CFE3F7" data-leads="1"><title>Morris County — 1 lead</title></path>
+       <path d="M506.0 200.1L506.0 202.5L506.0 202.7L506.0 207.8L502.3 207.3L502.2 241.9L466.9 242.0L467.0 199.9L468.3 199.9L468.4 200.0L474.5 200.0L506.0 200.1Z" fill="#F1F5F9"><title>Cottle County — 0 leads</title></path>
+       <path d="M373.8 553.4L381.3 547.3L375.1 541.7L382.2 529.5L381.7 524.3L373.0 521.4L364.4 497.4L356.8 492.0L341.2 490.6L326.4 483.3L333.0 483.3L372.4 483.9L410.1 483.9L433.6 483.7L433.7 516.7L433.7 553.4L373.8 553.4Z" fill="#F1F5F9"><title>Crockett County — 0 leads</title></path>
+       <path d="M203.5 403.1L197.7 481.7L136.5 520.4L136.6 505.3L137.2 505.3L136.4 403.8L136.4 403.1L141.7 403.1L157.0 403.1L157.2 403.1L165.4 403.1L165.4 403.1L203.5 403.1Z" fill="#F1F5F9"><title>Culberson County — 0 leads</title></path>
+       <path d="M343.4 8.0L343.4 8.2L343.4 47.1L277.4 47.1L277.4 24.1L277.4 24.0L277.4 9.9L280.3 8.0L343.4 8.0Z" fill="#F1F5F9"><title>Dallam County — 0 leads</title></path>
+       <path d="M743.3 316.4L754.6 316.6L755.0 316.6L756.7 316.6L760.2 316.7L767.5 316.9L767.4 324.8L767.4 326.1L767.3 326.4L767.3 331.7L767.0 355.2L766.5 355.2L738.1 355.0L728.3 354.9L728.7 322.3L728.8 316.3L729.9 316.3L730.0 316.3L742.9 316.4L743.2 316.4L743.3 316.4Z" fill="#0C6EC5" data-leads="68"><title>Dallas County — 68 leads</title></path>
+       <path d="M743.6 279.7L743.2 301.9L743.1 307.7L742.9 316.4L730.0 316.3L729.9 316.3L728.8 316.3L718.6 316.2L709.1 316.2L702.6 316.2L701.3 316.1L701.2 316.1L702.4 277.5L727.3 278.4L735.4 278.8L743.6 279.7Z" fill="#F1F5F9"><title>Denton County — 0 leads</title></path>
+       <path d="M427.6 242.1L466.9 242.0L467.0 280.4L427.8 280.4L427.6 242.1Z" fill="#F1F5F9"><title>Dickens County — 0 leads</title></path>
+       <path d="M586.6 396.3L572.0 396.1L572.4 357.9L573.7 357.9L612.8 357.9L613.0 357.9L618.8 358.1L620.4 358.1L620.4 376.9L614.7 380.2L606.5 385.2L586.6 396.3Z" fill="#F1F5F9"><title>Eastland County — 0 leads</title></path>
+       <path d="M724.7 354.9L727.2 354.9L728.3 354.9L738.1 355.0L766.5 355.2L772.3 371.6L777.5 374.2L739.0 396.6L735.6 398.5L724.7 379.8L724.7 354.9Z" fill="#CFE3F7" data-leads="4"><title>Ellis County — 4 leads</title></path>
+       <path d="M725.9 492.1L710.3 466.3L746.1 445.1L761.5 471.5L744.0 481.6L725.9 492.1Z" fill="#F1F5F9"><title>Falls County — 0 leads</title></path>
+       <path d="M777.9 251.5L778.5 252.4L783.4 249.8L789.0 249.6L789.7 249.7L791.3 249.3L792.6 248.7L793.5 247.8L794.0 246.5L794.5 243.9L795.2 241.8L799.0 240.9L810.1 240.0L817.8 241.5L817.0 274.8L816.9 279.4L784.1 284.4L777.4 285.4L777.4 280.4L777.8 251.7L777.9 251.5Z" fill="#CFE3F7" data-leads="2"><title>Fannin County — 2 leads</title></path>
+       <path d="M494.8 357.2L477.4 357.1L456.2 357.0L456.6 318.5L466.8 318.6L495.0 318.8L494.8 357.2Z" fill="#F1F5F9"><title>Fisher County — 0 leads</title></path>
+       <path d="M829.7 604.1L829.7 604.1L829.8 604.2L835.6 607.9L841.0 610.9L847.8 614.6L848.3 614.9L848.7 615.1L849.5 615.6L848.1 621.7L846.7 627.9L840.1 628.0L837.9 636.6L832.3 641.0L824.9 638.0L817.7 643.4L815.3 643.1L814.2 638.8L810.3 637.2L811.0 635.1L808.3 630.4L801.7 624.7L802.9 617.1L799.6 613.7L804.4 613.6L803.8 602.6L819.3 597.3L829.7 604.1Z" fill="#2D90EE" data-leads="31"><title>Fort Bend County — 31 leads</title></path>
+       <path d="M737.0 231.1L737.5 231.2L738.1 231.9L738.7 233.3L739.0 236.6L740.0 239.1L741.2 240.4L742.0 240.9L749.1 242.9L752.8 242.3L753.2 242.0L753.6 241.5L754.1 240.7L754.5 239.7L754.8 238.7L755.0 237.8L755.3 236.9L755.8 236.3L756.8 236.3L757.7 236.7L758.7 237.2L759.6 237.5L760.1 238.0L760.2 238.2L760.4 238.5L760.3 239.1L760.0 240.4L760.1 241.5L760.3 242.1L768.7 247.5L772.6 246.7L773.5 246.8L774.5 247.2L777.9 251.5L777.8 251.7L777.4 280.4L777.3 280.4L743.6 279.7L735.4 278.8L735.3 232.0L736.1 231.6L737.0 231.1Z" fill="#CFE3F7" data-leads="1"><title>Grayson County — 1 lead</title></path>
+       <path d="M355.8 200.0L388.3 200.1L388.4 242.4L349.2 242.9L348.8 200.0L355.8 200.0Z" fill="#F1F5F9"><title>Hale County — 0 leads</title></path>
+       <path d="M642.5 450.2L635.7 454.3L621.2 430.9L644.3 417.0L640.4 410.4L655.7 401.5L673.6 431.9L642.5 450.2Z" fill="#CFE3F7" data-leads="2"><title>Hamilton County — 2 leads</title></path>
+       <path d="M427.6 242.1L427.6 200.1L433.2 200.1L433.2 200.1L434.8 200.1L467.0 199.9L466.9 242.0L427.6 242.1Z" fill="#F1F5F9"><title>Motley County — 0 leads</title></path>
+       <path d="M932.0 471.2L919.3 455.3L916.7 455.9L915.6 453.0L901.8 450.8L891.5 444.6L885.0 434.6L883.9 424.7L886.1 416.7L922.5 416.8L926.5 433.5L926.8 434.8L933.2 439.2L931.0 469.8L932.0 471.2Z" fill="#F1F5F9"><title>Nacogdoches County — 0 leads</title></path>
+       <path d="M963.9 557.4L966.6 495.5L963.2 477.0L986.5 475.4L986.6 475.4L986.7 475.6L987.4 476.4L988.1 476.2L990.1 474.6L990.1 474.6L990.4 474.5L991.4 474.6L991.7 475.0L992.0 484.4L991.0 490.2L991.8 497.5L990.0 501.7L989.9 501.7L989.7 502.4L989.7 502.4L989.3 506.8L988.2 508.3L977.0 528.3L976.0 531.4L978.3 534.2L979.2 539.7L979.2 540.2L978.9 541.0L975.9 543.3L975.2 543.9L974.7 544.4L974.1 549.4L976.4 552.4L977.3 552.8L977.5 552.7L977.8 557.3L963.9 557.4Z" fill="#CFE3F7" data-leads="2"><title>Newton County — 2 leads</title></path>
+       <path d="M506.0 200.1L506.0 178.5L506.0 178.2L509.3 176.8L509.9 176.7L511.6 177.1L514.5 179.5L515.3 180.4L515.4 180.8L516.0 181.6L517.4 183.2L521.3 187.7L523.3 189.7L528.8 194.3L531.1 194.7L534.6 194.6L537.4 190.9L537.8 190.8L542.2 191.1L543.4 191.6L545.3 192.6L545.3 192.8L545.3 220.0L539.8 222.6L531.9 218.8L523.0 219.3L506.0 207.8L506.0 202.7L506.0 202.5L506.0 200.1Z" fill="#CFE3F7" data-leads="1"><title>Hardeman County — 1 lead</title></path>
+       <path d="M915.5 532.4L951.1 532.5L947.8 540.6L950.3 548.7L947.7 557.5L947.8 564.6L940.8 562.2L934.5 568.4L923.1 568.8L911.2 567.2L901.5 535.7L916.1 535.6L915.5 532.4Z" fill="#CFE3F7" data-leads="2"><title>Hardin County — 2 leads</title></path>
+       <path d="M829.7 604.1L819.3 597.3L809.2 564.4L821.1 570.8L832.2 569.1L840.0 563.7L843.5 566.0L861.6 575.9L874.1 564.0L879.1 579.3L882.5 581.1L882.8 588.9L888.3 594.0L886.6 607.3L886.4 606.9L886.2 605.7L885.7 605.2L884.0 605.0L883.5 606.4L882.2 607.5L881.0 608.6L881.0 608.6L880.9 608.7L880.8 608.9L880.6 609.4L880.5 609.4L880.5 609.7L880.4 609.9L880.2 610.4L880.2 610.4L880.4 611.2L880.4 611.3L880.5 611.4L881.3 612.1L881.4 612.1L881.4 612.2L881.5 612.2L882.2 612.9L882.5 613.4L882.7 613.7L882.7 613.7L882.7 613.7L882.7 613.7L882.2 614.6L880.8 616.1L880.2 617.4L880.2 617.4L880.2 617.5L880.2 617.5L880.0 617.8L880.0 617.8L880.0 617.8L869.1 622.8L865.1 617.7L859.1 614.1L849.5 615.6L848.7 615.1L848.3 614.9L847.8 614.6L841.0 610.9L835.6 607.9L829.8 604.2L829.7 604.1L829.7 604.1Z" fill="#06437D" data-leads="157"><title>Harris County — 157 leads</title></path>
+       <path d="M919.6 368.5L913.0 368.4L903.8 366.1L903.8 345.9L903.8 333.5L918.4 342.2L927.2 342.1L938.3 337.2L953.3 342.3L953.3 345.6L953.3 346.6L953.3 346.9L953.3 348.5L953.3 348.8L953.3 349.5L953.3 353.6L953.3 354.0L953.3 358.0L953.3 358.8L953.3 359.8L953.3 360.4L953.3 360.6L953.3 360.9L953.3 361.1L953.3 361.6L953.3 361.7L953.3 361.8L953.3 364.5L953.3 364.9L953.3 367.9L953.3 368.0L953.3 368.7L930.4 374.1L919.6 368.5Z" fill="#CFE3F7" data-leads="1"><title>Harrison County — 1 lead</title></path>
+       <path d="M465.3 47.0L505.8 47.0L505.8 62.4L505.8 85.4L465.3 85.4L465.3 47.0Z" fill="#F1F5F9"><title>Hemphill County — 0 leads</title></path>
+       <path d="M847.7 371.9L844.7 382.7L846.9 391.2L847.1 393.3L847.8 393.7L849.2 395.7L802.3 402.6L802.3 402.4L802.2 402.0L797.6 389.0L777.5 374.2L772.3 371.6L800.6 371.7L847.7 371.9Z" fill="#CFE3F7" data-leads="2"><title>Henderson County — 2 leads</title></path>
+       <path d="M666.4 899.3L666.4 915.9L666.4 923.7L666.4 924.5L664.4 924.2L655.4 924.5L655.2 924.9L652.7 926.0L646.1 924.8L637.9 923.3L636.2 922.4L627.0 916.0L623.1 911.3L621.0 910.3L612.1 907.3L612.0 907.3L619.0 891.1L619.1 890.8L620.1 888.6L632.0 861.1L657.2 861.3L657.2 875.8L659.3 876.2L655.8 890.5L666.4 891.8L666.4 899.3Z" fill="#8FC0EA" data-leads="12"><title>Hidalgo County — 12 leads</title></path>
+       <path d="M816.6 317.1L816.6 315.3L816.7 296.1L826.5 288.5L837.5 283.8L857.8 283.1L858.2 282.2L858.2 318.6L831.4 318.8L816.6 317.1Z" fill="#CFE3F7" data-leads="1"><title>Hopkins County — 1 lead</title></path>
+       <path d="M454.1 483.3L433.6 483.7L410.1 483.9L410.6 444.5L413.9 444.4L414.0 444.5L453.8 444.9L454.1 483.3Z" fill="#F1F5F9"><title>Irion County — 0 leads</title></path>
+       <path d="M657.6 274.3L657.6 277.2L662.2 277.2L662.0 315.2L651.9 315.0L624.0 314.6L624.5 280.5L624.4 274.3L657.6 274.3Z" fill="#F1F5F9"><title>Jack County — 0 leads</title></path>
+       <path d="M783.1 669.7L782.0 695.0L774.1 692.5L763.1 692.6L762.9 692.5L762.9 692.4L762.8 691.8L762.8 691.7L762.7 691.4L762.4 690.8L762.4 690.8L762.4 690.8L761.9 690.7L761.7 690.6L760.9 690.9L758.6 691.6L758.6 691.6L757.8 691.9L752.8 679.5L746.8 673.6L743.8 664.6L735.8 660.9L756.8 643.3L758.0 644.5L758.0 644.6L758.2 644.7L783.1 669.7Z" fill="#F1F5F9"><title>Jackson County — 0 leads</title></path>
+       <path d="M247.4 520.2L220.4 542.5L212.8 542.5L132.0 523.5L131.8 523.5L131.4 523.9L131.8 523.4L136.5 520.4L197.7 481.7L236.5 511.4L247.4 520.2Z" fill="#F1F5F9"><title>Jeff Davis County — 0 leads</title></path>
+       <path d="M638.6 819.0L638.4 749.2L664.8 749.3L671.2 754.7L661.0 764.4L660.4 786.3L651.6 786.3L651.7 819.2L638.6 819.0Z" fill="#F1F5F9"><title>Jim Wells County — 0 leads</title></path>
+       <path d="M506.7 318.8L535.0 319.1L535.0 357.9L533.7 357.9L533.7 357.4L494.8 357.2L495.0 318.8L506.7 318.8Z" fill="#CFE3F7" data-leads="1"><title>Jones County — 1 lead</title></path>
+       <path d="M587.1 597.9L586.9 566.6L611.9 566.5L625.0 584.2L607.6 601.0L607.5 601.1L597.6 603.3L597.4 603.2L587.1 597.9Z" fill="#F1F5F9"><title>Kendall County — 0 leads</title></path>
+       <path d="M279.7 458.3L293.5 467.4L298.0 465.1L304.8 462.2L323.3 473.9L326.4 483.3L341.2 490.6L356.8 492.0L364.4 497.4L373.0 521.4L373.0 521.4L373.0 521.4L373.0 521.3L372.9 521.3L355.8 521.3L355.6 521.2L353.8 521.2L353.2 521.2L353.2 521.2L353.1 521.2L353.1 521.2L353.1 521.2L353.0 521.2L345.3 521.1L345.2 526.2L329.8 526.1L329.8 553.8L313.0 553.8L313.0 574.1L265.8 535.2L247.4 520.2L236.5 511.4L279.7 458.3Z" fill="#F1F5F9"><title>Pecos County — 0 leads</title></path>
+       <path d="M220.4 542.5L220.5 578.7L221.0 643.4L217.5 642.1L211.0 640.7L208.2 640.3L203.5 638.9L194.6 632.8L192.8 631.1L189.4 625.9L187.7 622.9L185.5 621.4L183.5 620.9L181.2 620.1L175.8 617.3L166.7 610.2L164.9 607.0L164.1 603.6L164.1 602.5L162.9 598.8L157.8 590.1L155.3 586.6L154.7 586.5L154.3 585.6L153.3 577.0L153.9 570.6L153.8 562.9L152.1 558.0L148.2 552.3L146.7 551.1L140.8 544.4L139.8 534.8L135.5 526.1L132.4 525.1L131.4 523.9L131.8 523.5L132.0 523.5L212.8 542.5L220.4 542.5Z" fill="#F1F5F9"><title>Presidio County — 0 leads</title></path>
+       <path d="M711.6 747.6L704.8 743.4L699.1 744.0L690.5 739.8L703.0 720.2L703.0 720.1L719.1 705.7L727.5 706.0L732.5 710.4L739.4 709.8L748.7 718.2L748.6 718.3L748.3 718.5L748.0 718.7L747.6 719.3L746.9 720.6L746.6 722.2L746.6 722.3L746.6 722.3L746.6 722.3L746.6 722.3L746.6 723.5L746.6 723.6L746.7 723.8L746.7 723.9L746.7 723.9L746.7 724.0L746.8 724.7L746.9 725.9L746.9 726.3L721.9 730.3L729.4 737.8L720.3 745.3L711.6 747.6Z" fill="#F1F5F9"><title>Refugio County — 0 leads</title></path>
+       <path d="M922.5 416.8L886.1 416.7L882.5 416.6L882.5 391.0L882.5 370.6L908.6 370.6L911.4 371.5L913.0 368.4L919.6 368.5L912.9 385.4L911.5 405.5L918.1 405.4L922.5 416.8Z" fill="#CFE3F7" data-leads="2"><title>Rusk County — 2 leads</title></path>
+       <path d="M892.7 535.4L879.6 543.0L879.0 543.2L868.9 548.4L858.2 543.1L854.4 534.4L856.8 503.2L862.4 499.1L866.4 506.3L871.6 510.1L871.2 517.8L877.3 519.0L879.3 527.9L894.1 531.1L892.7 535.4Z" fill="#F1F5F9"><title>San Jacinto County — 0 leads</title></path>
+       <path d="M690.5 739.8L699.1 744.0L704.8 743.4L711.6 747.6L711.7 747.9L721.1 762.9L721.0 763.1L720.9 763.2L720.3 763.6L719.5 764.8L717.4 768.9L717.3 769.1L717.2 769.6L717.1 769.7L717.1 769.7L717.0 769.8L716.7 769.8L716.6 769.9L716.4 769.9L715.5 769.9L715.4 769.9L715.3 769.9L714.7 769.7L714.6 769.7L714.5 769.7L714.4 769.7L714.3 769.6L714.2 769.6L714.2 769.5L714.2 769.5L714.1 769.3L714.1 769.1L714.1 769.1L714.1 769.0L714.1 769.0L714.2 768.5L714.0 768.0L713.6 767.5L713.1 766.8L713.0 766.7L713.0 766.2L712.9 766.1L712.3 765.2L711.9 765.0L711.8 765.0L711.4 764.8L710.7 764.7L710.6 764.7L710.4 764.7L709.7 764.9L709.0 765.0L708.5 765.2L707.3 765.7L706.8 765.9L706.6 766.0L704.5 767.5L704.1 767.4L704.1 767.4L704.0 767.5L702.8 765.2L686.9 766.9L679.3 761.5L670.7 760.1L671.2 754.7L664.8 749.3L663.3 744.3L669.8 738.8L688.5 742.9L690.5 739.8Z" fill="#F1F5F9"><title>San Patricio County — 0 leads</title></path>
+       <path d="M373.5 598.3L371.7 597.8L364.4 596.6L359.7 596.1L352.6 597.1L351.9 597.6L346.9 596.9L335.9 591.5L334.4 590.7L333.3 589.7L331.5 589.7L331.5 589.3L313.0 574.1L313.0 553.8L329.8 553.8L329.8 526.1L345.2 526.2L345.3 521.1L353.0 521.2L353.1 521.2L353.1 521.2L353.1 521.2L353.2 521.2L353.2 521.2L353.8 521.2L355.6 521.2L355.8 521.3L372.9 521.3L373.0 521.3L373.0 521.4L373.0 521.4L373.0 521.4L381.7 524.3L382.2 529.5L375.1 541.7L381.3 547.3L373.8 553.4L373.6 597.9L373.5 598.3Z" fill="#F1F5F9"><title>Terrell County — 0 leads</title></path>
+       <path d="M331.7 433.7L333.9 433.7L334.0 433.7L372.5 433.7L372.4 483.9L333.0 483.3L331.7 433.7Z" fill="#F1F5F9"><title>Upton County — 0 leads</title></path>
+       <path d="M453.3 611.7L453.3 629.6L449.8 644.1L446.2 645.2L445.9 644.8L434.2 636.0L431.1 634.6L427.9 630.1L427.5 628.8L426.2 626.2L424.2 625.3L420.4 624.9L413.1 620.4L412.1 612.2L411.9 611.7L407.1 608.6L404.9 608.4L400.4 600.0L396.5 598.9L383.7 598.8L383.0 599.9L382.2 600.3L373.5 598.3L373.6 597.9L373.8 553.4L433.7 553.4L453.2 553.4L453.3 611.7Z" fill="#F1F5F9"><title>Val Verde County — 0 leads</title></path>
+       <path d="M815.9 557.5L818.2 557.3L820.9 557.1L821.0 557.1L821.1 570.8L809.2 564.4L819.3 597.3L803.8 602.6L802.6 596.0L797.2 592.6L797.1 581.5L799.9 578.2L795.3 572.5L791.9 566.9L794.3 560.6L799.3 558.9L815.9 557.5L815.9 557.5Z" fill="#F1F5F9"><title>Waller County — 0 leads</title></path>
+       <path d="M584.4 818.4L555.9 818.1L553.1 814.1L546.9 818.8L546.2 818.5L545.6 818.8L543.8 817.7L541.2 815.2L540.7 814.6L540.6 814.3L542.9 810.8L543.9 807.8L544.3 806.1L544.9 799.4L541.9 791.7L540.3 788.9L535.8 785.8L534.1 785.5L533.9 785.7L533.8 786.0L530.9 786.0L517.6 774.1L515.1 771.3L513.2 766.2L513.0 765.2L513.7 762.7L511.7 761.1L506.5 754.8L501.6 745.9L499.8 742.2L499.6 741.6L499.2 741.3L495.0 739.5L493.0 738.8L490.6 737.6L490.1 737.0L497.3 736.9L551.3 736.3L551.7 751.6L595.7 749.2L596.1 811.0L596.1 818.6L584.4 818.4Z" fill="#F1F5F9"><title>Webb County — 0 leads</title></path>
+       <path d="M565.1 197.9L565.1 197.9L565.2 199.0L565.1 200.0L565.1 201.9L566.6 208.6L569.2 209.3L572.0 209.8L576.4 209.5L583.4 209.9L584.5 210.3L584.5 242.1L545.2 242.1L545.3 220.0L545.3 192.8L545.3 192.6L546.9 193.4L547.8 194.7L550.4 194.8L551.0 194.5L554.2 188.7L561.3 192.1L565.1 197.9Z" fill="#F1F5F9"><title>Wilbarger County — 0 leads</title></path>
+       <path d="M295.6 395.6L295.6 433.7L295.4 433.7L255.9 433.7L256.0 403.1L259.6 403.1L260.2 403.1L260.4 403.1L260.4 403.1L264.3 403.1L273.8 403.1L274.0 403.1L275.7 403.1L275.7 395.5L295.6 395.6Z" fill="#F1F5F9"><title>Winkler County — 0 leads</title></path>
+       <path d="M310.9 318.9L275.6 318.9L275.6 318.4L275.6 315.3L275.7 314.4L275.7 311.9L275.7 311.6L276.0 296.1L276.2 287.6L276.2 286.4L276.2 281.2L310.9 281.2L310.9 318.9Z" fill="#F1F5F9"><title>Yoakum County — 0 leads</title></path>
+       <path d="M584.4 860.9L580.1 870.6L568.0 879.8L565.3 869.3L562.7 860.7L560.8 855.8L556.8 850.3L552.5 847.8L547.4 840.1L547.0 836.6L547.1 836.2L547.4 835.9L548.7 833.8L548.9 826.6L547.8 820.1L547.0 818.9L546.9 818.8L553.1 814.1L555.9 818.1L584.4 818.4L584.4 860.9Z" fill="#F1F5F9"><title>Zapata County — 0 leads</title></path>
+       <path d="M932.0 471.2L946.8 482.2L922.1 488.0L914.3 485.7L893.2 478.0L888.2 461.3L884.6 456.9L884.5 456.8L883.9 456.6L884.1 456.2L883.8 456.0L883.7 456.1L883.4 455.8L883.1 455.8L883.2 455.6L883.2 455.3L883.0 455.3L883.2 455.1L882.7 454.8L882.6 454.6L882.3 454.5L882.2 454.6L881.9 454.5L881.8 454.2L881.6 454.3L881.5 454.0L881.3 454.2L881.0 453.9L881.2 453.5L881.4 453.3L891.5 444.6L901.8 450.8L915.6 453.0L916.7 455.9L919.3 455.3L932.0 471.2Z" fill="#F1F5F9"><title>Angelina County — 0 leads</title></path>
+       <path d="M742.2 748.9L736.5 755.1L733.7 758.6L731.1 762.1L728.8 765.7L728.0 767.2L727.8 768.6L727.1 768.1L727.0 768.0L727.9 766.7L730.2 762.5L729.8 762.1L729.9 761.6L732.2 758.3L732.8 756.4L732.8 756.2L732.6 756.2L732.2 756.4L732.2 756.0L732.8 754.1L733.6 752.5L733.7 752.5L733.8 753.1L734.0 753.2L734.7 752.8L735.2 752.0L736.3 751.2L736.7 750.5L736.5 749.8L736.7 749.3L738.2 747.6L739.4 747.5L739.7 746.9L739.6 746.7L739.5 745.6L739.7 744.0L740.2 742.8L740.6 742.6L740.9 742.8L741.3 743.2L741.9 744.1L742.8 744.7L743.9 744.5L743.9 744.8L743.4 745.6L743.4 746.0L742.9 746.9L742.7 748.1L742.2 748.7L742.2 748.9ZM746.9 726.3L746.8 726.9L745.8 728.2L745.5 728.8L745.8 729.5L746.3 730.3L747.2 731.8L747.2 732.3L746.2 734.6L745.4 735.2L743.0 737.3L740.7 738.8L738.8 740.9L737.9 741.4L736.1 743.4L734.0 743.5L731.1 742.2L730.6 742.3L729.1 743.4L729.0 744.0L729.5 744.8L729.4 745.2L728.8 746.1L728.5 746.9L728.5 747.8L728.8 749.6L729.2 750.6L728.9 751.4L728.1 751.8L727.5 752.4L726.5 754.6L725.5 755.4L722.1 761.0L721.5 761.3L721.1 762.9L711.7 747.9L711.6 747.6L720.3 745.3L729.4 737.8L721.9 730.3L746.9 726.3Z" fill="#F1F5F9"><title>Aransas County — 0 leads</title></path>
+       <path d="M900.5 253.6L901.3 254.6L906.9 257.3L916.8 261.2L917.2 261.3L919.7 260.4L919.9 260.1L920.0 259.3L920.6 260.8L921.1 262.1L921.6 262.7L925.8 265.4L929.8 267.6L937.2 264.2L937.5 263.9L942.9 263.2L950.1 264.8L951.5 265.4L953.3 266.8L953.3 266.9L953.3 267.7L953.3 272.0L953.3 272.2L953.3 274.0L953.3 277.1L953.3 277.5L953.3 278.4L953.3 282.2L953.3 282.7L953.3 283.8L953.3 284.4L953.3 284.8L953.3 286.3L953.3 291.5L952.3 289.2L940.1 289.2L939.1 294.2L928.0 292.9L925.3 290.4L917.6 290.5L913.5 293.4L907.5 291.7L900.4 286.4L900.5 253.6Z" fill="#CFE3F7" data-leads="2"><title>Bowie County — 2 leads</title></path>
+       <path d="M221.0 643.4L220.5 578.7L220.4 542.5L247.4 520.2L265.8 535.2L313.0 574.1L331.5 589.3L331.5 589.7L331.3 589.7L328.2 592.4L326.6 599.6L325.2 599.3L323.0 598.3L319.0 597.4L318.0 597.9L313.9 600.7L309.6 600.8L305.6 601.8L303.8 603.1L303.2 605.4L299.6 614.4L296.9 618.9L294.9 620.6L293.1 628.0L293.0 630.6L289.8 635.4L288.3 641.5L289.0 644.9L289.4 644.9L290.2 645.3L290.5 646.7L289.7 647.6L284.2 651.0L280.8 652.3L272.7 663.5L271.8 667.8L268.7 668.9L268.2 668.9L259.3 667.4L251.7 664.4L245.1 659.9L245.2 659.0L242.7 656.0L241.0 654.4L238.5 652.9L234.7 651.9L233.4 652.2L226.8 650.3L222.8 646.7L221.0 643.4L221.0 643.4Z" fill="#F1F5F9"><title>Brewster County — 0 leads</title></path>
+       <path d="M778.6 546.6L758.2 552.6L750.7 550.7L733.9 529.8L759.6 514.5L761.3 514.7L761.5 515.9L763.6 517.1L763.7 517.6L763.3 518.2L762.6 518.2L762.4 518.7L762.5 520.4L762.4 520.8L761.7 521.4L761.1 522.5L767.9 523.6L779.3 531.1L784.4 539.7L784.8 539.3L784.8 540.6L785.1 541.2L784.7 541.7L785.2 542.3L785.9 542.2L785.8 542.8L785.3 542.9L784.8 542.6L783.8 542.7L783.9 543.5L783.6 543.6L783.3 544.3L784.1 544.8L784.2 545.3L783.8 545.4L782.8 545.0L780.7 546.4L779.3 546.0L778.6 546.6Z" fill="#F1F5F9"><title>Burleson County — 0 leads</title></path>
+       <path d="M757.1 692.5L756.4 693.1L756.9 693.9L758.6 695.6L758.7 696.8L759.1 697.2L759.5 697.3L760.0 697.7L760.4 698.2L760.4 698.4L759.7 699.2L759.5 699.7L760.4 702.8L760.6 703.1L763.2 703.0L763.8 703.2L763.9 703.7L764.1 704.2L766.0 705.2L766.8 705.3L767.1 705.6L767.7 707.3L768.3 708.1L772.5 711.2L774.8 713.3L775.5 714.0L776.1 714.9L775.9 715.4L771.6 717.3L770.1 718.5L768.4 719.4L767.2 719.7L765.5 720.4L764.3 721.1L763.4 721.9L761.8 722.9L761.2 723.2L757.4 723.8L755.8 724.8L754.6 723.8L754.1 723.8L753.9 724.2L753.3 723.7L753.7 721.8L753.3 719.2L752.9 718.6L752.0 718.4L750.0 718.4L749.0 718.1L748.7 718.2L739.4 709.8L736.4 702.8L742.2 698.5L757.1 692.5ZM782.0 695.0L782.0 697.9L781.6 698.0L778.2 699.3L778.0 699.9L777.4 700.2L770.7 704.0L769.6 704.3L770.0 703.3L770.2 701.9L769.8 700.9L769.5 700.7L767.9 700.3L768.0 700.1L768.9 699.4L769.0 698.9L768.8 698.5L768.3 698.2L765.3 697.6L764.6 697.6L764.0 697.7L763.3 695.7L763.4 695.1L764.3 694.0L764.3 693.6L764.1 693.1L763.7 693.0L763.1 692.6L774.1 692.5L782.0 695.0ZM743.9 744.5L744.2 744.4L745.0 743.8L745.4 743.2L745.4 742.3L744.9 740.4L744.7 739.9L744.5 739.6L744.8 739.2L745.0 738.9L746.8 737.7L751.2 737.5L753.4 736.9L753.9 736.5L753.5 735.7L753.5 735.3L754.7 735.1L756.5 734.3L756.7 734.2L756.5 733.8L757.3 732.2L760.6 730.0L760.6 729.7L760.4 729.6L760.4 729.4L761.8 728.2L762.7 727.8L764.7 727.7L765.2 727.5L765.6 726.6L766.6 726.0L770.5 725.3L772.4 724.7L773.7 724.0L774.8 723.1L775.1 722.4L775.0 722.1L775.3 721.8L776.0 721.7L776.2 722.1L776.4 724.1L775.2 725.6L773.3 726.3L765.1 730.5L759.6 734.1L754.1 738.3L749.3 742.3L742.5 748.6L742.2 748.9L742.2 748.7L742.7 748.1L742.9 746.9L743.4 746.0L743.4 745.6L743.9 744.8L743.9 744.5Z" fill="#F1F5F9"><title>Calhoun County — 0 leads</title></path>
+       <path d="M928.7 617.8L928.6 614.1L925.8 614.0L925.5 616.2L918.1 618.8L917.3 618.6L917.2 618.6L917.0 618.0L916.6 617.5L915.9 616.7L915.8 616.5L915.5 616.3L914.9 616.1L913.7 616.3L913.7 616.3L913.6 616.3L913.1 616.7L911.9 617.2L910.7 617.6L910.1 617.8L909.8 617.9L909.8 617.9L909.5 618.0L905.2 619.1L904.7 619.2L904.6 619.3L902.6 619.7L900.9 620.3L899.8 620.4L899.6 620.4L899.6 620.4L899.6 620.4L898.9 620.4L898.8 620.3L898.7 620.3L898.7 620.3L898.6 620.3L898.3 620.1L898.3 620.1L898.0 619.9L898.0 619.9L897.9 619.9L897.9 619.9L897.7 619.5L897.6 619.4L897.4 619.0L897.4 619.0L897.2 618.5L897.1 618.3L898.0 618.3L898.6 618.3L899.8 617.1L901.3 615.2L903.3 611.6L904.5 605.5L904.5 604.7L904.3 603.0L902.1 598.5L901.3 597.5L900.9 597.4L898.6 598.6L897.0 599.1L895.2 600.1L892.6 603.2L891.5 605.4L891.4 606.9L891.0 607.6L889.4 608.4L887.8 608.8L887.3 608.7L886.6 607.3L888.3 594.0L882.8 588.9L923.3 588.4L929.6 588.6L929.9 617.2L928.7 617.8Z" fill="#F1F5F9"><title>Chambers County — 0 leads</title></path>
+       <path d="M621.2 430.9L619.0 427.4L605.9 429.4L586.6 396.3L606.5 385.2L614.7 380.2L631.5 408.3L637.2 404.9L640.4 410.4L644.3 417.0L621.2 430.9Z" fill="#F1F5F9"><title>Comanche County — 0 leads</title></path>
+       <path d="M727.3 278.4L702.4 277.5L702.4 277.3L694.6 277.2L694.8 234.9L696.8 236.2L697.3 237.1L697.3 238.9L696.8 240.2L696.5 240.7L696.4 241.4L696.7 242.0L697.1 242.6L697.8 243.0L699.1 243.4L703.2 243.4L707.8 238.7L714.2 235.0L715.3 234.9L717.2 236.2L717.6 236.7L718.7 240.9L718.6 241.5L718.3 242.0L717.6 242.3L716.6 242.3L716.2 242.7L715.8 243.4L715.8 245.1L718.2 250.6L718.9 251.3L719.0 251.3L719.8 251.9L720.8 252.2L722.1 252.4L723.1 252.0L723.9 251.4L724.2 250.9L727.6 243.5L730.7 239.6L732.3 237.5L733.2 233.2L735.3 232.0L735.4 278.8L727.3 278.4Z" fill="#CFE3F7" data-leads="2"><title>Cooke County — 2 leads</title></path>
+       <path d="M657.1 823.7L651.7 819.2L651.6 786.3L660.4 786.3L668.0 793.1L706.8 792.8L705.9 795.8L705.4 796.6L705.1 797.9L704.8 800.1L704.2 801.9L703.7 802.5L703.2 804.8L703.4 805.9L703.2 806.9L702.7 807.8L701.2 811.8L701.0 812.6L700.8 813.1L700.1 813.9L699.6 814.2L698.8 814.5L697.3 814.5L694.9 815.9L693.0 817.9L691.2 817.6L690.3 817.1L690.1 816.6L690.9 816.7L691.6 816.5L691.8 815.9L692.3 815.3L693.3 815.3L693.8 815.0L693.4 813.8L693.7 813.3L694.8 812.4L694.8 811.2L694.6 810.6L693.5 809.9L692.5 810.3L692.1 811.1L690.7 812.6L688.3 814.4L687.3 814.9L685.4 817.0L684.5 816.9L683.7 817.0L683.4 817.3L683.4 817.4L659.7 821.6L657.1 823.7ZM727.0 768.0L727.1 768.1L727.8 768.6L727.7 768.8L724.8 772.4L722.4 776.0L718.7 782.7L716.0 788.1L714.5 791.5L710.4 800.6L708.3 806.3L706.7 811.6L705.1 817.7L703.2 817.7L703.6 815.9L703.8 815.5L704.1 815.3L704.3 815.1L704.0 813.4L703.6 812.8L704.0 810.5L705.1 807.8L705.9 806.8L706.3 805.9L706.4 805.4L706.3 804.7L706.4 803.9L707.3 801.4L709.1 798.4L709.9 796.3L711.2 794.5L711.8 793.2L711.5 792.6L711.6 792.3L712.2 791.3L712.6 791.0L712.6 791.0L713.4 789.6L713.1 789.2L713.0 788.8L713.8 786.6L714.5 786.5L714.7 786.8L715.1 786.6L716.1 785.0L716.4 783.7L716.3 782.5L715.9 782.0L715.9 781.7L716.9 781.3L718.4 778.8L718.7 777.8L719.1 777.6L719.6 777.7L720.1 777.5L721.4 776.1L721.6 775.7L721.6 775.4L723.4 772.8L723.5 772.0L723.8 771.1L724.2 770.6L724.2 770.2L723.8 769.8L721.7 770.1L721.4 770.0L721.1 769.6L721.2 769.5L726.9 768.1L727.0 768.0Z" fill="#F1F5F9"><title>Kleberg County — 0 leads</title></path>
+       <path d="M631.0 749.2L595.7 749.2L595.9 697.5L630.9 697.4L630.9 700.5L631.0 749.2Z" fill="#F1F5F9"><title>McMullen County — 0 leads</title></path>
+       <path d="M935.7 325.8L953.1 325.8L953.3 325.8L953.3 325.8L953.3 325.8L953.3 326.6L953.3 333.1L953.3 334.0L953.3 334.2L953.3 334.6L953.3 334.9L953.3 335.7L953.3 342.3L953.3 342.3L938.3 337.2L927.2 342.1L918.4 342.2L903.8 333.5L903.5 325.9L907.4 325.9L935.7 325.8Z" fill="#F1F5F9"><title>Marion County — 0 leads</title></path>
+       <path d="M782.0 697.9L782.0 695.0L783.1 669.7L808.9 653.6L815.8 646.3L817.8 657.0L823.5 660.7L823.9 669.4L830.4 669.5L838.8 681.4L843.3 681.9L838.7 684.9L820.4 695.9L815.0 698.7L806.2 702.6L800.4 705.4L791.7 710.2L789.7 711.1L787.9 712.6L786.0 713.7L783.5 715.5L782.1 717.0L781.6 717.1L780.6 717.7L778.4 719.4L778.3 719.7L778.4 720.3L777.9 720.6L777.8 720.4L777.6 719.8L778.1 719.0L778.2 718.8L781.1 715.9L786.1 712.3L789.5 710.8L789.8 710.4L790.1 709.5L795.4 706.5L798.4 705.2L802.8 702.8L803.8 702.6L805.7 701.6L807.3 701.1L807.6 700.3L807.4 699.8L807.6 697.9L807.9 697.2L807.3 696.7L806.6 696.5L806.1 696.7L805.8 697.4L803.8 697.0L802.7 697.3L800.9 698.5L798.8 699.4L795.1 700.6L792.2 702.2L791.4 702.8L789.6 703.3L789.1 703.3L788.7 701.9L788.7 701.5L789.6 701.0L790.2 700.4L790.3 699.6L788.9 698.0L790.6 696.1L790.2 695.9L791.9 693.9L791.9 693.3L791.6 692.9L791.1 692.7L789.6 693.0L788.9 693.1L787.0 694.2L786.5 694.3L786.1 693.8L784.7 694.3L783.4 695.3L783.4 696.3L783.5 697.7L782.0 697.9Z" fill="#F1F5F9"><title>Matagorda County — 0 leads</title></path>
+       <path d="M694.8 234.9L694.6 277.2L693.6 277.2L662.2 277.2L657.6 277.2L657.6 274.3L657.7 237.2L658.6 237.9L665.3 240.7L666.1 240.7L668.5 240.0L672.2 237.1L676.1 233.1L678.6 230.0L679.1 229.0L679.5 228.7L680.7 228.3L681.9 228.4L685.4 230.3L686.9 231.6L686.9 231.7L686.3 234.7L686.4 235.1L687.1 236.1L687.5 236.3L689.0 236.5L689.5 236.5L690.2 236.3L692.2 235.1L693.6 234.6L694.6 234.8L694.8 234.9Z" fill="#F1F5F9"><title>Montague County — 0 leads</title></path>
+       <path d="M277.3 127.8L277.3 127.2L277.3 127.0L277.3 125.7L277.3 124.0L277.3 123.8L277.3 123.7L277.3 123.6L277.3 123.6L343.0 123.6L342.9 161.9L316.2 161.9L277.3 161.9L277.3 158.0L277.3 152.9L277.3 148.5L277.3 143.8L277.3 127.8Z" fill="#F1F5F9"><title>Deaf Smith County — 0 leads</title></path>
+       <path d="M703.2 817.7L705.1 817.7L704.9 818.5L703.9 823.6L703.3 827.9L702.9 833.2L702.7 837.9L702.8 842.7L703.3 850.0L703.8 853.3L704.8 858.9L706.2 865.2L708.6 874.1L709.6 877.2L710.5 880.2L710.9 881.2L713.9 891.8L714.4 893.8L716.6 903.0L717.2 906.4L718.2 913.0L719.1 922.1L719.6 924.0L719.1 923.9L718.4 923.0L718.3 920.9L717.7 917.0L717.8 914.3L717.4 911.1L716.6 906.0L715.0 898.8L714.1 896.0L713.1 894.2L713.1 893.8L712.9 891.8L712.6 889.8L712.1 888.5L711.5 887.5L710.4 884.1L709.2 883.5L707.8 881.0L708.0 879.7L708.0 879.2L707.4 877.4L707.3 877.2L706.8 876.2L705.8 873.0L705.9 871.4L705.2 868.4L703.9 867.5L703.4 866.3L703.3 865.2L703.6 864.9L703.8 863.2L703.8 862.5L703.5 861.9L703.4 861.3L703.5 860.0L703.2 858.9L702.1 857.8L702.4 853.0L702.2 851.8L701.8 850.7L701.9 846.8L701.9 837.5L701.9 836.2L702.2 834.8L702.1 834.1L701.8 833.8L701.9 828.3L702.8 824.6L702.6 824.3L702.1 824.1L702.5 822.0L703.0 820.1L703.1 817.8L703.2 817.7ZM683.4 817.4L683.1 818.3L683.2 819.9L683.5 820.4L683.9 820.8L686.3 820.8L687.4 821.0L688.1 821.1L689.0 821.6L690.4 822.0L692.1 821.8L692.9 821.4L693.4 821.0L693.6 820.6L694.7 820.1L696.1 819.8L696.7 819.3L697.4 819.0L699.3 818.9L699.5 819.5L698.5 824.3L697.8 829.4L697.9 831.9L697.2 832.0L696.9 832.4L696.9 833.3L696.5 833.7L695.5 833.4L695.1 833.1L694.3 833.2L693.9 833.8L694.1 835.2L695.3 836.3L695.2 836.6L695.0 836.6L694.6 837.0L694.5 837.4L694.6 839.0L695.3 839.2L695.6 839.5L695.6 840.1L695.2 842.2L695.1 842.3L694.8 842.0L690.9 842.1L689.9 842.4L689.5 842.9L689.8 843.8L689.9 845.1L689.7 846.3L689.5 846.7L689.5 847.5L690.6 850.3L690.6 850.8L690.0 851.3L689.7 851.9L689.7 853.7L689.2 854.0L688.9 855.9L689.7 857.2L690.0 857.5L690.8 857.5L692.9 859.3L694.8 862.8L695.3 863.4L695.8 863.3L696.0 864.8L696.1 867.5L697.8 874.3L697.7 876.4L698.0 877.2L666.5 877.4L659.3 876.2L657.2 875.8L657.2 861.3L657.1 823.7L659.7 821.6L683.4 817.4Z" fill="#F1F5F9"><title>Kenedy County — 0 leads</title></path>
+       <path d="M295.6 395.6L334.0 395.5L334.0 433.7L333.9 433.7L331.7 433.7L298.0 433.7L295.6 433.7L295.6 395.6Z" fill="#F1F5F9"><title>Ector County — 0 leads</title></path>
+       <path d="M39.7 449.9L39.6 449.8L39.4 449.7L39.2 449.3L38.7 448.8L36.1 442.8L28.3 429.3L26.5 426.6L23.8 424.9L22.4 424.5L19.7 424.9L15.5 422.1L15.5 422.0L15.5 421.8L15.5 421.6L15.5 421.6L15.5 421.5L15.3 421.4L15.2 421.4L15.1 421.4L15.1 421.4L15.0 421.0L15.0 420.9L14.9 420.9L14.9 420.8L14.4 420.5L14.4 420.5L14.2 420.3L14.2 420.2L12.8 419.6L12.6 419.5L9.7 416.6L9.6 416.6L9.0 416.6L8.4 416.0L8.2 415.7L8.0 415.4L8.9 407.6L9.0 407.0L10.2 403.0L10.2 403.0L10.4 403.0L11.0 403.0L12.6 403.0L12.7 403.0L24.3 403.0L25.5 403.0L26.8 403.0L31.6 403.0L39.7 403.0L40.1 403.0L41.5 402.9L47.7 402.9L55.3 402.9L55.3 457.0L54.6 456.4L47.7 454.5L45.2 453.6L39.9 450.2L39.7 449.9Z" fill="#CFE3F7" data-leads="4"><title>El Paso County — 4 leads</title></path>
+       <path d="M545.3 220.0L545.2 242.1L545.3 250.9L535.9 246.2L518.2 241.9L506.1 241.9L502.2 241.9L502.3 207.3L506.0 207.8L523.0 219.3L531.9 218.8L539.8 222.6L545.3 220.0Z" fill="#F1F5F9"><title>Foard County — 0 leads</title></path>
+       <path d="M769.0 421.0L802.2 402.0L802.3 402.4L802.3 402.6L801.6 406.9L804.6 406.8L804.2 413.8L806.7 414.9L807.8 422.0L815.6 424.6L816.7 430.6L821.8 432.9L822.3 436.6L788.5 454.6L769.0 421.0Z" fill="#CFE3F7" data-leads="2"><title>Freestone County — 2 leads</title></path>
+       <path d="M339.9 318.9L340.4 357.2L339.8 357.2L275.6 357.3L275.6 351.5L275.6 350.4L275.6 350.3L275.6 348.3L275.6 346.4L275.6 343.2L275.6 342.5L275.6 340.9L275.6 339.3L275.6 334.9L275.6 334.3L275.6 334.2L275.6 330.5L275.6 330.4L275.6 328.5L275.6 327.8L275.6 327.8L275.6 326.9L275.6 325.9L275.6 324.1L275.6 318.9L310.9 318.9L339.9 318.9Z" fill="#F1F5F9"><title>Gaines County — 0 leads</title></path>
+       <path d="M465.4 123.6L465.2 161.7L465.2 161.9L434.9 161.8L423.9 161.8L424.2 123.7L465.4 123.6Z" fill="#F1F5F9"><title>Donley County — 0 leads</title></path>
+       <path d="M928.7 617.8L918.9 622.1L911.8 625.4L909.1 626.9L906.2 628.7L904.4 630.0L903.3 631.1L902.1 632.8L901.6 634.1L900.6 634.1L899.3 634.7L898.0 634.8L897.8 634.5L897.7 633.5L898.9 631.9L899.9 631.3L902.2 629.0L903.5 628.1L905.0 625.5L905.3 625.1L906.0 624.6L906.5 624.5L907.2 624.5L908.0 624.9L909.3 624.7L910.8 624.1L911.9 623.3L911.8 621.9L912.1 621.4L912.9 620.4L914.0 619.8L914.9 620.0L915.4 620.5L916.5 621.0L918.1 620.9L919.3 620.4L918.7 618.8L918.3 618.9L918.1 618.8L925.5 616.2L925.8 614.0L928.6 614.1L928.7 617.8ZM864.6 621.3L864.7 620.3L864.8 620.0L864.8 619.7L864.9 619.4L864.9 619.2L864.9 619.0L865.0 618.3L865.1 618.3L865.1 617.8L865.1 617.7L869.1 622.8L880.0 617.8L880.1 618.4L880.3 619.1L880.4 619.3L881.4 620.7L882.8 621.6L884.5 622.2L886.3 622.5L886.4 622.5L886.4 622.5L888.2 622.9L888.2 622.9L887.9 623.7L887.0 625.3L886.6 626.9L887.5 627.2L889.6 628.4L889.9 630.0L889.9 634.3L889.4 636.8L889.4 639.4L889.9 640.3L890.7 640.8L891.5 640.7L892.7 640.4L894.6 639.6L894.7 638.2L894.8 636.3L895.6 635.5L897.6 637.0L897.9 637.1L898.2 636.9L900.5 637.2L900.6 637.0L901.6 636.8L902.2 637.4L901.6 637.4L898.7 639.7L897.5 641.0L896.2 642.0L879.4 653.5L875.3 656.7L873.1 658.7L872.4 659.7L877.2 648.9L863.9 625.6L864.0 625.0L864.2 624.3L864.5 622.2L864.6 621.3Z" fill="#8FC0EA" data-leads="7"><title>Galveston County — 7 leads</title></path>
+       <path d="M660.1 382.6L650.9 358.2L651.0 354.0L684.8 354.3L685.0 375.1L672.4 375.3L660.1 382.6Z" fill="#F1F5F9"><title>Hood County — 0 leads</title></path>
+       <path d="M860.9 438.9L868.2 439.6L873.8 449.7L881.2 453.5L881.0 453.9L881.3 454.2L881.5 454.0L881.6 454.3L881.8 454.2L881.9 454.5L882.2 454.6L882.3 454.5L882.6 454.6L882.7 454.8L883.2 455.1L883.0 455.3L883.2 455.3L883.2 455.6L883.1 455.8L883.4 455.8L883.7 456.1L883.8 456.0L884.1 456.2L883.9 456.6L884.5 456.8L884.6 456.9L848.7 485.8L835.0 497.0L830.2 492.1L831.6 483.5L824.0 482.6L826.9 467.1L832.0 463.0L825.9 446.7L832.4 443.3L860.9 438.9Z" fill="#F1F5F9"><title>Houston County — 0 leads</title></path>
+       <path d="M131.4 523.9L126.9 518.7L120.6 512.8L114.4 508.5L111.5 508.5L110.3 508.2L100.6 503.3L99.3 500.3L88.4 491.8L86.9 489.2L86.7 487.7L86.3 485.9L85.0 483.7L81.5 480.7L77.0 478.9L73.9 476.4L70.7 473.2L65.0 465.6L62.6 464.6L60.9 463.5L56.6 458.0L55.3 457.0L55.3 402.9L62.6 402.9L63.7 402.9L98.0 403.1L98.1 403.1L98.2 403.1L100.9 403.1L118.7 403.1L119.0 403.1L119.1 403.1L120.3 403.1L120.4 403.1L121.4 403.1L124.4 403.1L124.5 403.1L136.4 403.1L136.4 403.8L137.2 505.3L136.6 505.3L136.5 520.4L131.8 523.4L131.4 523.9Z" fill="#F1F5F9"><title>Hudspeth County — 0 leads</title></path>
+       <path d="M929.9 617.2L929.6 588.6L923.3 588.4L923.1 569.0L923.1 568.8L934.5 568.4L940.8 562.2L947.8 564.6L954.1 576.2L967.0 580.7L968.5 586.2L964.7 592.5L964.1 598.8L964.6 599.3L968.7 605.9L967.6 607.2L966.5 607.4L964.8 607.3L961.7 606.8L956.4 606.7L952.3 607.6L946.6 609.8L929.9 617.2Z" fill="#8FC0EA" data-leads="5"><title>Jefferson County — 5 leads</title></path>
+       <path d="M766.5 355.2L767.0 355.2L767.3 331.7L784.0 331.6L784.0 329.2L800.5 329.5L800.5 329.6L800.6 371.7L772.3 371.6L766.5 355.2Z" fill="#8FC0EA" data-leads="9"><title>Kaufman County — 9 leads</title></path>
+       <path d="M918.1 405.4L911.5 405.5L912.9 385.4L919.6 368.5L930.4 374.1L953.3 368.7L953.3 370.3L953.3 371.2L953.3 379.4L953.3 379.4L953.3 384.0L953.3 385.9L953.3 388.5L953.3 388.5L953.3 389.2L953.3 391.0L953.3 392.6L953.3 398.2L953.3 403.2L955.3 404.9L918.1 405.4Z" fill="#F1F5F9"><title>Panola County — 0 leads</title></path>
+       <path d="M545.5 280.3L545.6 319.1L535.0 319.1L506.7 318.8L506.5 280.4L545.5 280.3Z" fill="#F1F5F9"><title>Haskell County — 0 leads</title></path>
+       <path d="M383.9 123.7L343.0 123.6L343.4 85.3L383.9 85.3L383.9 123.5L383.9 123.7Z" fill="#8FC0EA" data-leads="10"><title>Potter County — 10 leads</title></path>
+      </g>
+      <g class="lbl">
+       <text x="850.8" y="579.2" class="cl" text-anchor="middle">Harris</text><text x="850.8" y="595.2" class="cn" text-anchor="middle">157</text>
+       <text x="767.9" y="341.7" class="cl" text-anchor="middle">Dallas</text><text x="767.9" y="357.7" class="cn" text-anchor="middle">68</text>
+       <text x="675.3" y="341.4" class="cl" text-anchor="middle">Tarrant</text><text x="675.3" y="357.4" class="cn" text-anchor="middle">41</text>
+       <text x="619.0" y="632.1" class="cl" text-anchor="middle">Bexar</text><text x="619.0" y="648.1" class="cn" text-anchor="middle">37</text>
+       <text x="790.6" y="640.4" class="cl" text-anchor="middle">Fort Bend</text><text x="790.6" y="656.4" class="cn" text-anchor="middle">31</text>
+       <text x="647.2" y="558.0" class="cl" text-anchor="middle">Travis</text><text x="647.2" y="574.0" class="cn" text-anchor="middle">20</text>
+      </g>
+      <g class="pol">
+       <line x1="709.3" y1="335.4" x2="711.3" y2="309.4" class="pl"/><circle cx="711.3" cy="309.4" r="13" class="pm"/><text x="711.3" y="313.9" class="pt2" text-anchor="middle">2</text><title>Tarrant County — 2 bound policies</title>
+       <line x1="848.8" y1="593.2" x2="878.8" y2="613.2" class="pl"/><circle cx="878.8" cy="613.2" r="13" class="pm"/><text x="878.8" y="617.7" class="pt2" text-anchor="middle">1</text><title>Harris County — 1 bound policy</title>
+       <line x1="673.2" y1="550.0" x2="693.2" y2="534.0" class="pl"/><circle cx="693.2" cy="534.0" r="13" class="pm"/><text x="693.2" y="538.5" class="pt2" text-anchor="middle">1</text><title>Travis County — 1 bound policy</title>
+       <line x1="859.6" y1="367.0" x2="875.6" y2="353.0" class="pl"/><circle cx="875.6" cy="353.0" r="13" class="pm"/><text x="875.6" y="357.5" class="pt2" text-anchor="middle">1</text><title>Smith County — 1 bound policy</title>
+       <line x1="883.1" y1="638.7" x2="901.1" y2="648.7" class="pl"/><circle cx="901.1" cy="648.7" r="13" class="pm"/><text x="901.1" y="653.2" class="pt2" text-anchor="middle">1</text><title>Galveston County — 1 bound policy</title>
+       <line x1="715.9" y1="442.3" x2="731.9" y2="430.3" class="pl"/><circle cx="731.9" cy="430.3" r="13" class="pm"/><text x="731.9" y="434.8" class="pt2" text-anchor="middle">1</text><title>Mclennan County — 1 bound policy</title>
+       <line x1="606.7" y1="516.9" x2="590.7" y2="502.9" class="pl"/><circle cx="590.7" cy="502.9" r="13" class="pm"/><text x="590.7" y="507.4" class="pt2" text-anchor="middle">1</text><title>Llano County — 1 bound policy</title>
+      </g>
+     </svg>
+     <div class="mlgnd"><span class="mlt">Leads</span><span class="mlg"><span class="sq" style="background:#06437D"></span>100+</span><span class="mlg"><span class="sq" style="background:#0C6EC5"></span>40–99</span><span class="mlg"><span class="sq" style="background:#2D90EE"></span>15–39</span><span class="mlg"><span class="sq" style="background:#8FC0EA"></span>5–14</span><span class="mlg"><span class="sq" style="background:#CFE3F7"></span>1–4</span><span class="mlg"><span class="sq" style="background:#F1F5F9"></span>None</span><span class="mlg" style="margin-left:auto"><span class="pmk">1</span>Bound policies</span></div>
+     <p class="mnote">Shading is lead volume by county. Green markers overlay the 7 counties that produced the 8 bound policies. Hover any county for its lead count.</p>
+    </div>
+      <div class="panel">
+        <table class="ltable cost">
+          <thead><tr><th>County</th><th class="r">Leads</th><th class="r">Auto &middot; Home</th><th class="r">Contact rate</th><th class="r">Quotes</th><th class="r">Quote rate</th><th class="r">Policies</th><th class="r">Cost per quote</th></tr></thead>
+          <tbody>
+            <tr><td><div class="nm"><span class="bd" style="background:#0479DF"></span>Harris</div></td><td class="r">157</td><td class="r">119 &middot; 38</td><td class="r">51.0%</td><td class="r">34</td><td class="r">21.7%</td><td class="r">1</td><td class="r">$90.71</td></tr>
+            <tr><td><div class="nm"><span class="bd" style="background:#2D90EE"></span>Dallas</div></td><td class="r">68</td><td class="r">44 &middot; 24</td><td class="r">45.6%</td><td class="r">17</td><td class="r">25.0%</td><td class="r">0</td><td class="r">$83.84</td></tr>
+            <tr><td><div class="nm"><span class="bd" style="background:#2D90EE"></span>Tarrant</div></td><td class="r">41</td><td class="r">26 &middot; 15</td><td class="r">56.1%</td><td class="r">10</td><td class="r">24.4%</td><td class="r">2</td><td class="r">$99.12</td></tr>
+            <tr><td><div class="nm"><span class="bd" style="background:#F0A93B"></span>Bexar</div></td><td class="r">37</td><td class="r">28 &middot; 9</td><td class="r">40.5%</td><td class="r">4</td><td class="r">10.8%</td><td class="r">0</td><td class="r">$194.66</td></tr>
+            <tr><td><div class="nm"><span class="bd" style="background:#2D90EE"></span>Fort Bend</div></td><td class="r">31</td><td class="r">21 &middot; 10</td><td class="r">48.4%</td><td class="r">7</td><td class="r">22.6%</td><td class="r">0</td><td class="r">$92.58</td></tr>
+            <tr><td><div class="nm"><span class="bd" style="background:#2D90EE"></span>Travis</div></td><td class="r">20</td><td class="r">14 &middot; 6</td><td class="r">45.0%</td><td class="r">3</td><td class="r">15.0%</td><td class="r">1</td><td class="r">$143.02</td></tr>
+            <tr><td><div class="nm"><span class="bd" style="background:#B8C2CE"></span>Smith</div></td><td class="r">14</td><td class="r">12 &middot; 2</td><td class="r">50.0%</td><td class="r">4</td><td class="r">28.6%</td><td class="r">1</td><td class="r">$64.82</td></tr>
+            <tr><td><div class="nm"><span class="bd" style="background:#B8C2CE"></span>Lubbock</div></td><td class="r">13</td><td class="r">9 &middot; 4</td><td class="r">38.5%</td><td class="r">2</td><td class="r">15.4%</td><td class="r">0</td><td class="r">$107.03</td></tr>
+            <tr><td><div class="nm"><span class="bd" style="background:#B8C2CE"></span>Hidalgo</div></td><td class="r">12</td><td class="r">6 &middot; 6</td><td class="r">33.3%</td><td class="r">3</td><td class="r">25.0%</td><td class="r">0</td><td class="r">$86.53</td></tr>
+            <tr><td><div class="nm"><span class="bd" style="background:#B8C2CE"></span>Montgomery</div></td><td class="r">11</td><td class="r">11 &middot; 0</td><td class="r">27.3%</td><td class="r">1</td><td class="r">9.1%</td><td class="r">0</td><td class="r">$223.17</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="fnote" style="margin-top:14px;padding:16px 20px;border:1px solid var(--line);border-radius:12px;background:var(--off);">The ten counties shown account for 404 of 570 leads (71%). Account averages: 45.3% contact rate, 19.8% quote rate, $109.12 per quote.</div>
+    </section>
+
+    <section class="block" id="s3">
+      <div class="bhead"><span class="ix">03</span><div><h2>Quality by county</h2><p>Counties with 15 or more leads &middot; campaign launch through July 30, 2026</p></div></div>
+      <div class="grid2">
+        <div class="fpanel">
+          <div class="pt" style="font-size:13px;font-weight:700;color:var(--ink);text-transform:uppercase;letter-spacing:.04em;margin-bottom:18px;">Quote rate</div>
+          <div class="fstep"><div class="lab">Dallas</div><div class="fbar"><i style="background:#0479DF" data-w="100">25.0%</i></div><div class="pct">17/68</div></div>
+          <div class="fstep"><div class="lab">Tarrant</div><div class="fbar"><i style="background:#2D90EE" data-w="98">24.4%</i></div><div class="pct">10/41</div></div>
+          <div class="fstep"><div class="lab">Fort Bend</div><div class="fbar"><i style="background:#2D90EE" data-w="90">22.6%</i></div><div class="pct">7/31</div></div>
+          <div class="fstep"><div class="lab">Harris</div><div class="fbar"><i style="background:#2D90EE" data-w="87">21.7%</i></div><div class="pct">34/157</div></div>
+          <div class="fstep"><div class="lab">Travis</div><div class="fbar"><i style="background:#3a92e0" data-w="60">15.0%</i></div><div class="pct">3/20</div></div>
+          <div class="fstep"><div class="lab">Bexar</div><div class="fbar"><i style="background:#F0A93B" data-w="43">10.8%</i></div><div class="pct">4/37</div></div>
+        </div>
+        <div class="fpanel">
+          <div class="pt" style="font-size:13px;font-weight:700;color:var(--ink);text-transform:uppercase;letter-spacing:.04em;margin-bottom:18px;">Contact rate</div>
+          <div class="fstep"><div class="lab">Tarrant</div><div class="fbar"><i style="background:#0479DF" data-w="100">56.1%</i></div><div class="pct">23/41</div></div>
+          <div class="fstep"><div class="lab">Harris</div><div class="fbar"><i style="background:#2D90EE" data-w="91">51.0%</i></div><div class="pct">80/157</div></div>
+          <div class="fstep"><div class="lab">Fort Bend</div><div class="fbar"><i style="background:#2D90EE" data-w="86">48.4%</i></div><div class="pct">15/31</div></div>
+          <div class="fstep"><div class="lab">Dallas</div><div class="fbar"><i style="background:#2D90EE" data-w="81">45.6%</i></div><div class="pct">31/68</div></div>
+          <div class="fstep"><div class="lab">Travis</div><div class="fbar"><i style="background:#3a92e0" data-w="80">45.0%</i></div><div class="pct">9/20</div></div>
+          <div class="fstep"><div class="lab">Bexar</div><div class="fbar"><i style="background:#F0A93B" data-w="72">40.5%</i></div><div class="pct">15/37</div></div>
+        </div>
+      </div>
+      <div class="fnote" style="margin-top:14px;padding:16px 20px;border:1px solid var(--line);border-radius:12px;background:var(--off);">Dallas quotes 25.0% of leads at $83.84 per quote; Tarrant contacts 56.1% of leads and holds 2 of the 8 bound policies. Bexar quotes 10.8% of leads at $194.66 per quote.</div>
+    </section>
+
+    <section class="block" id="s4">
+      <div class="bhead"><span class="ix">04</span><div><h2>Policy geography</h2><p>Counties with bound policies &middot; campaign launch through July 30, 2026</p></div></div>
+      <div class="panel">
+        <table class="ltable cost">
+          <thead><tr><th>County</th><th class="r">Campaign</th><th class="r">Leads</th><th class="r">Quotes</th><th class="r">Policies</th></tr></thead>
+          <tbody>
+            <tr><td><div class="nm"><span class="bd" style="background:#0479DF"></span>Tarrant</div></td><td class="r">Auto</td><td class="r">41</td><td class="r">10</td><td class="r">2</td></tr>
+            <tr><td><div class="nm"><span class="bd" style="background:#2D90EE"></span>Harris</div></td><td class="r">Home</td><td class="r">157</td><td class="r">34</td><td class="r">1</td></tr>
+            <tr><td><div class="nm"><span class="bd" style="background:#2D90EE"></span>Travis</div></td><td class="r">Auto</td><td class="r">20</td><td class="r">3</td><td class="r">1</td></tr>
+            <tr><td><div class="nm"><span class="bd" style="background:#2D90EE"></span>Smith</div></td><td class="r">Auto</td><td class="r">14</td><td class="r">4</td><td class="r">1</td></tr>
+            <tr><td><div class="nm"><span class="bd" style="background:#2D90EE"></span>Galveston</div></td><td class="r">Auto</td><td class="r">7</td><td class="r">2</td><td class="r">1</td></tr>
+            <tr><td><div class="nm"><span class="bd" style="background:#2D90EE"></span>McLennan</div></td><td class="r">Auto</td><td class="r">6</td><td class="r">1</td><td class="r">1</td></tr>
+            <tr><td><div class="nm"><span class="bd" style="background:#2D90EE"></span>Llano</div></td><td class="r">Auto</td><td class="r">2</td><td class="r">1</td><td class="r">1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="fnote" style="margin-top:14px;padding:16px 20px;border:1px solid var(--line);border-radius:12px;background:var(--off);">7 of the 8 bound policies are Auto; 1 is Home (Harris). Both Tarrant policies came from Arlington.</div>
+    </section>
+
+    <section class="block" id="s5">
+      <div class="bhead"><span class="ix">05</span><div><h2>City performance</h2><p>Top cities by leads &middot; campaign launch through July 30, 2026</p></div></div>
+      <div class="panel">
+        <table class="ltable cost">
+          <thead><tr><th>City</th><th class="r">Leads</th><th class="r">Contacted</th><th class="r">Contact rate</th><th class="r">Quotes</th><th class="r">Quote rate</th><th class="r">Policies</th></tr></thead>
+          <tbody>
+            <tr><td><div class="nm"><span class="bd" style="background:#0479DF"></span>Houston</div></td><td class="r">97</td><td class="r">55</td><td class="r">56.7%</td><td class="r">20</td><td class="r">20.6%</td><td class="r">0</td></tr>
+            <tr><td><div class="nm"><span class="bd" style="background:#2D90EE"></span>Dallas</div></td><td class="r">29</td><td class="r">11</td><td class="r">37.9%</td><td class="r">5</td><td class="r">17.2%</td><td class="r">0</td></tr>
+            <tr><td><div class="nm"><span class="bd" style="background:#2D90EE"></span>San Antonio</div></td><td class="r">28</td><td class="r">10</td><td class="r">35.7%</td><td class="r">4</td><td class="r">14.3%</td><td class="r">0</td></tr>
+            <tr><td><div class="nm"><span class="bd" style="background:#2D90EE"></span>Fort Worth</div></td><td class="r">24</td><td class="r">12</td><td class="r">50.0%</td><td class="r">6</td><td class="r">25.0%</td><td class="r">0</td></tr>
+            <tr><td><div class="nm"><span class="bd" style="background:#2D90EE"></span>Humble</div></td><td class="r">16</td><td class="r">13</td><td class="r">81.2%</td><td class="r">5</td><td class="r">31.2%</td><td class="r">0</td></tr>
+            <tr><td><div class="nm"><span class="bd" style="background:#2D90EE"></span>Katy</div></td><td class="r">12</td><td class="r">8</td><td class="r">66.7%</td><td class="r">5</td><td class="r">41.7%</td><td class="r">0</td></tr>
+            <tr><td><div class="nm"><span class="bd" style="background:#2D90EE"></span>Arlington</div></td><td class="r">12</td><td class="r">10</td><td class="r">83.3%</td><td class="r">4</td><td class="r">33.3%</td><td class="r">2</td></tr>
+            <tr><td><div class="nm"><span class="bd" style="background:#2D90EE"></span>Missouri City</div></td><td class="r">12</td><td class="r">5</td><td class="r">41.7%</td><td class="r">3</td><td class="r">25.0%</td><td class="r">0</td></tr>
+            <tr><td><div class="nm"><span class="bd" style="background:#2D90EE"></span>Lubbock</div></td><td class="r">12</td><td class="r">5</td><td class="r">41.7%</td><td class="r">2</td><td class="r">16.7%</td><td class="r">0</td></tr>
+            <tr><td><div class="nm"><span class="bd" style="background:#2D90EE"></span>Austin</div></td><td class="r">12</td><td class="r">5</td><td class="r">41.7%</td><td class="r">2</td><td class="r">16.7%</td><td class="r">0</td></tr>
+            <tr><td><div class="nm"><span class="bd" style="background:#2D90EE"></span>Tyler</div></td><td class="r">11</td><td class="r">6</td><td class="r">54.5%</td><td class="r">4</td><td class="r">36.4%</td><td class="r">1</td></tr>
+            <tr><td><div class="nm"><span class="bd" style="background:#2D90EE"></span>Irving</div></td><td class="r">10</td><td class="r">6</td><td class="r">60.0%</td><td class="r">4</td><td class="r">40.0%</td><td class="r">0</td></tr>
+            <tr><td><div class="nm"><span class="bd" style="background:#2D90EE"></span>Amarillo</div></td><td class="r">10</td><td class="r">4</td><td class="r">40.0%</td><td class="r">2</td><td class="r">20.0%</td><td class="r">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="fnote" style="margin-top:14px;padding:16px 20px;border:1px solid var(--line);border-radius:12px;background:var(--off);">The thirteen cities shown account for 285 of 570 leads (50%). Arlington: 83.3% contact rate and 2 bound policies. Humble: 81.2% contact rate. Katy, Irving, and Tyler quote 36&ndash;42% of leads.</div>
+    </section>
+
+    <section class="block" id="s6" style="margin-bottom:0;">
+      <div class="bhead"><span class="ix">06</span><div><h2>Recommendations</h2></div></div>
+      <div class="plan">
+        <div class="pstep"><div class="num">1</div><div><div class="h">Hold the concentration in Harris and the DFW counties</div><div class="b">Harris, Dallas, Tarrant, and Fort Bend account for 297 of 570 leads and 68 of 113 quotes, at $83.84&ndash;$99.12 per quote. Dallas and Tarrant carry the highest quote rates of the major counties (25.0% and 24.4%). County is the most granular geographic lever on the platform; current delivery is already weighted to these markets.</div></div></div>
+        <div class="pstep"><div class="num">2</div><div><div class="h">Close the follow-up gap in Bexar before any targeting change</div><div class="b">Bexar delivered 37 leads with a 40.5% contact rate and a 10.8% quote rate ($194.66 per quote), against 45.3% and 19.8% account-wide. We are routing Bexar leads through the standard follow-up cadence and re-reading the county after the gap closes; no geographic exclusion is recommended.</div></div></div>
+        <div class="pstep"><div class="num">3</div><div><div class="h">Track the high-conversion satellite cities</div><div class="b">Arlington (83.3% contact, 2 policies), Humble (81.2% contact), Katy (41.7% quote rate), Irving (40.0%), and Tyler (36.4%, 1 policy) convert above the account average on 10&ndash;16 leads each. These sit inside currently targeted counties; we are monitoring them as the volume grows.</div></div></div>
+        <div class="pstep"><div class="num">4</div><div><div class="h">Re-run this view against the Allstate target-county list</div><div class="b">The May 2026 ZIP overlap analysis pre-dates this data. Stacking the current county performance against the newer Allstate target-county list aligns carrier priorities with the counties that are producing quotes and policies.</div></div></div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){
+  e.target.querySelectorAll('[data-w]').forEach(b=>{b.style.width=b.dataset.w+'%';});
+  e.target.querySelectorAll('.seg').forEach(s=>{const d=+s.dataset.dash;const o=+(s.dataset.offset||0);
+    s.setAttribute('stroke-dashoffset', -o);
+    s.style.transition='stroke-dasharray 1.1s cubic-bezier(.2,.7,.2,1)';
+    requestAnimationFrame(()=>{ s.setAttribute('stroke-dasharray', d+' '+(100-d)); });});
+  io.unobserve(e.target);}});},{threshold:.2});
+document.querySelectorAll('.fpanel,.split,.panel').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
