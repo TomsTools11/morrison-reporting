@@ -6,8 +6,9 @@ Static performance-review reports for **The Michael Morrison Insurance Agency**,
 
 - `index.html` — account hub / landing page with a card for each current report
 - `reports/` — full, print-ready reports (Structured Dashboard theme):
-  - `auto-performance-review.html` — Auto campaign, last 30 days
-  - `home-performance-review.html` — Home campaign, last 30 days
+  - `blended-performance-review.html` — Auto + Home combined, campaign launch through July 30, 2026
+  - `auto-performance-review.html` — Auto campaign, campaign launch through July 30, 2026
+  - `home-performance-review.html` — Home campaign, campaign launch through July 30, 2026
   - `geographic-targeting-overlap.html` — Texas target ZIPs vs. carrier catastrophe-exclusion list, May 2026
 - `assets/` — GOAL logo marks
 - `vercel.json` — static hosting configuration
