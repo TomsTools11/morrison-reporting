@@ -1,13 +1,13 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Texas Home &amp; Auto — Targeting Overlap (May 2026)</title>
+<title>Texas Home &amp; Auto — Targeting Overlap &amp; Delivery</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
  --blue:#057BE5;--blue-h:#0C6EC5;--sky:#2D90EE;--mint:#3BEECA;
  --navy:#00172D;--navy2:#062c4e;--ink:#0F1B2D;--body:#2B3442;--muted:#6A7482;
- --white:#fff;--off:#F8FAFC;--gray:#EFF2F7;--divider:#EDF1F5;--line:#E2E8F0;--red:#E23A3F;
+ --white:#fff;--off:#F8FAFC;--gray:#EFF2F7;--divider:#EDF1F5;--line:#E2E8F0;--red:#E23A3F;--amber:#F0A93B;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
@@ -92,6 +92,13 @@ table.zt2 tr:last-child td{border-bottom:none}
 .band .stats{display:flex;gap:46px;margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.13)}
 .band .st .n{font-size:38px;font-weight:900;color:#fff;letter-spacing:-.02em;line-height:1}
 .band .st .l{font-size:12px;color:#9fb6cd;margin-top:6px;text-transform:uppercase;letter-spacing:.05em}
+/* Callout */
+.callout{border:1px solid var(--line);border-left:3px solid var(--blue);border-radius:12px;background:var(--off);padding:16px 20px;font-size:12.5px;color:var(--muted);line-height:1.65;margin-top:14px}
+.callout.amber{border-left-color:var(--amber)}
+.callout b{color:var(--ink);font-weight:700}
+.callout .ct{display:block;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);margin-bottom:6px}
+.callout ul{margin:7px 0 0 16px}
+.callout li{margin-bottom:4px}
 @media print{
  body{background:#fff}.shell{display:block;max-width:none}
  .side{position:static;height:auto;flex-direction:row;align-items:center;justify-content:space-between;padding:18px 30px}
@@ -114,7 +121,7 @@ table.zt2 tr:last-child td{border-bottom:none}
   <div class="who">
    <div class="row"><b>Target list</b><br>Sweet Spot Priority #1 Home &amp; Auto</div>
    <div class="row"><b>Exclusion list</b><br>ANAIC (330) HO catastrophe ZIPs</div>
-   <div class="row"><b>Scope</b><br>Texas · May 2026</div>
+   <div class="row"><b>Scope</b><br>Lists · Texas, May 2026<br>Delivery · launch&ndash;July 30, 2026</div>
   </div>
   <nav>
    <a href="#s1"><span class="dot"></span>Overview</a>
@@ -123,13 +130,16 @@ table.zt2 tr:last-child td{border-bottom:none}
    <a href="#s4"><span class="dot"></span>Overlap by region</a>
    <a href="#s5"><span class="dot"></span>Overlap by county</a>
    <a href="#s6"><span class="dot"></span>ZIP-level detail</a>
+   <a href="#s7"><span class="dot"></span>Delivery into the overlap</a>
+   <a href="#s8"><span class="dot"></span>Overlap vs rest of Texas</a>
   </nav>
-  <div class="foot">GOAL Performance Marketing<br>Geographic targeting · May 2026<br>ZIP centroids via GeoNames</div>
+  <div class="foot">GOAL Performance Marketing<br>Geographic targeting &middot; May 2026<br>Delivery &middot; campaign to date<br>ZIP centroids via GeoNames</div>
  </aside>
 
  <main class="main">
   <div class="exec">
    <p>The May 2026 Priority #1 Home &amp; Auto target ZIP list (<b>395 ZIPs</b>) overlaid on the carrier Homeowners catastrophe-exclusion ZIP list (<b>333 ZIPs</b>). <b>112 ZIPs &mdash; 28.4% of the target list &mdash; appear on both.</b> 96 of the 112 fall in the Greater Houston region; 75 are in Harris County.</p>
+   <p style="margin-top:12px">Against that footprint, campaign delivery from launch through July 30, 2026 put <b>215 of 571 leads (37.7%)</b> and <b>$4,353.19 of $12,338.08 in spend (35.3%)</b> into the 16 counties that contain those ZIPs. Those leads quoted at the same rate as the rest of Texas but produced <b>1 of the 8 bound policies</b>. Sections 07 and 08 cover the delivery read; the sample is still small and the caveats are stated there.</p>
   </div>
 
   <section class="block" id="s1">
@@ -246,14 +256,85 @@ table.zt2 tr:last-child td{border-bottom:none}
    </div>
   </section>
 
+
+  <section class="block" id="s7">
+   <div class="bhead"><span class="ix">07</span><div><h2>Delivery into the overlap footprint</h2><p>Campaign launch through July 30, 2026 &middot; Auto and Home combined</p></div></div>
+   <div class="kgrid">
+    <div class="kc"><div class="v red">215</div><div class="k">Leads in overlap counties</div><div class="dd">37.7% of 571 statewide</div></div>
+    <div class="kc"><div class="v red">$4,353</div><div class="k">Spend in overlap counties</div><div class="dd">35.3% of $12,338.08</div></div>
+    <div class="kc"><div class="v">42</div><div class="k">Quotes</div><div class="dd">37.2% of 113 statewide</div></div>
+    <div class="kc"><div class="v">1</div><div class="k">Policies bound</div><div class="dd">Of 8 account-wide</div></div>
+    <div class="kc"><div class="v">213</div><div class="k">Leads in fully-excluded counties</div><div class="dd">Every targeted ZIP on the list</div></div>
+    <div class="kc"><div class="v">9</div><div class="k">Counties producing leads</div><div class="dd">Of the 16 with overlap</div></div>
+   </div>
+   <div class="panel" style="margin-top:14px">
+    <table class="lt">
+     <thead><tr><th>County</th><th class="r">Overlap ZIPs</th><th class="r">Leads</th><th class="r">Spend</th><th class="r">Quotes</th><th class="r">Policies</th></tr></thead>
+     <tbody>
+<tr class="hot"><td><div class="nm">Harris</div><div class="csub">Greater Houston &middot; All targeted ZIPs excluded</div></td><td class="r"><span class="big">75</span></td><td class="r">158</td><td class="r">$3,092.07</td><td class="r">34</td><td class="r">1</td></tr>
+<tr class="hot"><td><div class="nm">Fort Bend</div><div class="csub">Greater Houston &middot; All targeted ZIPs excluded</div></td><td class="r"><span class="big">11</span></td><td class="r">31</td><td class="r">$648.07</td><td class="r">7</td><td class="r">0</td></tr>
+<tr class="hot"><td><div class="nm">Montgomery</div><div class="csub">Greater Houston &middot; All targeted ZIPs excluded</div></td><td class="r"><span class="big">5</span></td><td class="r">11</td><td class="r">$223.17</td><td class="r">1</td><td class="r">0</td></tr>
+<tr class="hot"><td><div class="nm">Liberty</div><div class="csub">Greater Houston &middot; All targeted ZIPs excluded</div></td><td class="r"><span class="big">3</span></td><td class="r">4</td><td class="r">$138.13</td><td class="r">0</td><td class="r">0</td></tr>
+<tr class="hot"><td><div class="nm">Victoria</div><div class="csub">Victoria &amp; Crossroads &middot; All targeted ZIPs excluded</div></td><td class="r"><span class="big">1</span></td><td class="r">4</td><td class="r">$62.10</td><td class="r">0</td><td class="r">0</td></tr>
+<tr class="hot"><td><div class="nm">Orange</div><div class="csub">Southeast Texas &middot; All targeted ZIPs excluded</div></td><td class="r"><span class="big">3</span></td><td class="r">2</td><td class="r">$61.25</td><td class="r">0</td><td class="r">0</td></tr>
+<tr><td><div class="nm">Newton</div><div class="csub">Southeast Texas &middot; 1 of 2 targeted ZIPs excluded</div></td><td class="r"><span class="big">1</span></td><td class="r">2</td><td class="r">$40.86</td><td class="r">0</td><td class="r">0</td></tr>
+<tr class="hot"><td><div class="nm">Hardin</div><div class="csub">Southeast Texas &middot; All targeted ZIPs excluded</div></td><td class="r"><span class="big">1</span></td><td class="r">2</td><td class="r">$45.60</td><td class="r">0</td><td class="r">0</td></tr>
+<tr class="hot"><td><div class="nm">Wharton</div><div class="csub">Victoria &amp; Crossroads &middot; All targeted ZIPs excluded</div></td><td class="r"><span class="big">1</span></td><td class="r">1</td><td class="r">$12.02</td><td class="r">0</td><td class="r">0</td></tr>
+<tr class="hot"><td><div class="nm">Austin</div><div class="csub">Greater Houston &middot; All targeted ZIPs excluded</div></td><td class="r"><span class="big">2</span></td><td class="r">0</td><td class="r">$14.08</td><td class="r">0</td><td class="r">0</td></tr>
+<tr class="hot"><td><div class="nm">Colorado</div><div class="csub">Victoria &amp; Crossroads &middot; All targeted ZIPs excluded</div></td><td class="r"><span class="big">1</span></td><td class="r">0</td><td class="r">$15.84</td><td class="r">0</td><td class="r">0</td></tr>
+<tr class="hot"><td><div class="nm">Cameron</div><div class="csub">Coastal Bend &amp; RGV &middot; All targeted ZIPs excluded</div></td><td class="r"><span class="big">3</span></td><td class="r">0</td><td class="r">$0.00</td><td class="r">0</td><td class="r">0</td></tr>
+<tr class="hot"><td><div class="nm">Matagorda</div><div class="csub">Victoria &amp; Crossroads &middot; All targeted ZIPs excluded</div></td><td class="r"><span class="big">1</span></td><td class="r">0</td><td class="r">$0.00</td><td class="r">0</td><td class="r">0</td></tr>
+<tr class="hot"><td><div class="nm">Nueces</div><div class="csub">Coastal Bend &amp; RGV &middot; All targeted ZIPs excluded</div></td><td class="r"><span class="big">2</span></td><td class="r">&mdash;</td><td class="r">&mdash;</td><td class="r">&mdash;</td><td class="r">&mdash;</td></tr>
+<tr class="hot"><td><div class="nm">Willacy</div><div class="csub">Coastal Bend &amp; RGV &middot; All targeted ZIPs excluded</div></td><td class="r"><span class="big">1</span></td><td class="r">&mdash;</td><td class="r">&mdash;</td><td class="r">&mdash;</td><td class="r">&mdash;</td></tr>
+<tr class="hot"><td><div class="nm">Refugio</div><div class="csub">Coastal Bend &amp; RGV &middot; All targeted ZIPs excluded</div></td><td class="r"><span class="big">1</span></td><td class="r">&mdash;</td><td class="r">&mdash;</td><td class="r">&mdash;</td><td class="r">&mdash;</td></tr>
+      <tr class="total"><td>16 overlap counties</td><td class="r">112</td><td class="r">215</td><td class="r">$4,353.19</td><td class="r">42</td><td class="r">1</td></tr>
+     </tbody>
+    </table>
+   </div>
+   <div class="callout"><span class="ct">How to read this</span>
+    Red counties are those where <b>every</b> targeted ZIP sits on the carrier exclusion list &mdash; 15 of the 16. For those, county-level delivery is a tight proxy for ZIP-level overlap, because there is no targeted ZIP in the county that is <em>not</em> excluded. Newton is the one partial case (1 of 2 targeted ZIPs). Only 9 of the 16 counties produced any leads, and Harris alone accounts for 158 of the 215 (73.5%). Austin and Colorado drew spend but no leads; Cameron, Matagorda, Nueces, Willacy and Refugio drew neither.
+   </div>
+  </section>
+
+  <section class="block" id="s8">
+   <div class="bhead"><span class="ix">08</span><div><h2>Overlap counties vs rest of Texas</h2><p>Same period &middot; conversion at each stage</p></div></div>
+   <div class="panel">
+    <table class="lt">
+     <thead><tr><th>Metric</th><th class="r">Overlap counties</th><th class="r">Rest of Texas</th></tr></thead>
+     <tbody>
+      <tr><td><div class="nm">Leads</div></td><td class="r"><span class="big">215</span></td><td class="r"><span class="big">356</span></td></tr>
+      <tr><td><div class="nm">Spend</div></td><td class="r">$4,353.19</td><td class="r">$7,984.89</td></tr>
+      <tr><td><div class="nm">Quotes</div></td><td class="r">42</td><td class="r">71</td></tr>
+      <tr><td><div class="nm">Policies bound</div></td><td class="r">1</td><td class="r">7</td></tr>
+      <tr><td><div class="nm">Lead &rarr; quote</div><div class="csub">Effectively identical</div></td><td class="r">19.5%</td><td class="r">19.9%</td></tr>
+      <tr><td><div class="nm">Quote &rarr; bind</div><div class="csub">Where the two diverge</div></td><td class="r"><span class="big" style="color:var(--red)">2.4%</span></td><td class="r"><span class="big">9.9%</span></td></tr>
+      <tr><td><div class="nm">Cost per quote</div></td><td class="r">$103.65</td><td class="r">$112.46</td></tr>
+      <tr><td><div class="nm">CPA</div></td><td class="r">$4,353.19</td><td class="r">$1,140.70</td></tr>
+     </tbody>
+    </table>
+   </div>
+   <div class="callout amber"><span class="ct">Early signal &mdash; not yet a conclusion</span>
+    Leads from the overlap counties reach quote at the same rate as everywhere else, then bind at roughly a quarter of the rate. That is the pattern you would expect if the carrier will not write Homeowners in these ZIPs. It is <b>not yet statistically significant</b>: the comparison rests on 1 bound policy against 7, and a Fisher exact test returns <b>p = 0.25</b>. Treat it as a signal to watch as policy volume builds, not as grounds to prune the target list today.
+   </div>
+   <div class="callout"><span class="ct">Scope and limitations</span>
+    <ul>
+     <li>The delivery export is <b>blended Auto and Home</b>; the exclusion list is Homeowners-only. Auto business in these ZIPs is unaffected, so these figures <b>bound the exposure rather than measure it</b>. Splitting it needs an Auto/Home breakout by county.</li>
+     <li>Delivery is reported at <b>county</b> level, not ZIP. See the note in Section 07 on why that is a close proxy here.</li>
+     <li>Delivery totals (571 leads, $12,338.08) differ slightly from the performance reviews (570 leads, $12,330.15) &mdash; a later export pull, not a restatement.</li>
+     <li>A city-level export was reviewed and <b>excluded</b>: 106 leads (18.6%) carried no city, 223 city names were case-duplicated, and several rows reported quotes against zero leads.</li>
+    </ul>
+   </div>
+  </section>
+
   <div class="band">
    <div class="be">Summary</div>
-   <h3>112 of 395 target ZIPs are on the carrier exclusion list</h3>
-   <p>Target list: 395 ZIPs. Exclusion list: 333 ZIPs. On both: 112 (28.4% of the target list), across 16 counties. By carrier zone: 7 require a wind/hail exclusion (Coastal 1A), 90 fall in Coastal Zone 2 North, 15 in Catastrophe-Score groups.</p>
+   <h3>112 target ZIPs are excluded &mdash; and they took 37.7% of the leads</h3>
+   <p>Target list: 395 ZIPs. Exclusion list: 333 ZIPs. On both: 112 (28.4% of the target list), across 16 counties. By carrier zone: 7 require a wind/hail exclusion (Coastal 1A), 90 fall in Coastal Zone 2 North, 15 in Catastrophe-Score groups. Campaign to date, those 16 counties absorbed 215 of 571 leads and $4,353.19 of $12,338.08 in spend, returning 1 of 8 bound policies.</p>
    <div class="stats">
     <div class="st"><div class="n">112</div><div class="l">ZIPs on both lists</div></div>
     <div class="st"><div class="n">16</div><div class="l">Counties affected</div></div>
     <div class="st"><div class="n">96</div><div class="l">In Greater Houston</div></div>
+    <div class="st"><div class="n">37.7%</div><div class="l">Of leads delivered</div></div>
    </div>
   </div>
 
