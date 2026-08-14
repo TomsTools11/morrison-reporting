@@ -6,10 +6,11 @@ Static performance-review reports for **The Michael Morrison Insurance Agency**,
 
 - `index.html` — account hub / landing page with a card for each current report
 - `reports/` — full, print-ready reports (Structured Dashboard theme):
-  - `blended-performance-review.html` — Auto + Home combined, campaign launch through July 30, 2026
-  - `auto-performance-review.html` — Auto campaign, campaign launch through July 30, 2026
-  - `home-performance-review.html` — Home campaign, campaign launch through July 30, 2026
-  - `geographic-performance-review.html` — county and city performance with a statewide county map, campaign launch through July 30, 2026
+  - `blended-performance-review.html` — Auto + Home combined, campaign launch through August 14, 2026
+  - `auto-performance-review.html` — Auto campaign, July 15 – August 14, 2026
+  - `home-performance-review.html` — Home campaign, July 15 – August 14, 2026
+  - `source-performance-review.html` — Auto and Home lead sources, July 15 – August 14, 2026
+  - `geographic-performance-review.html` — county, metro and ZIP performance, July 15 – August 14, 2026
 - `assets/` — GOAL logo marks
 - `vercel.json` — static hosting configuration
 
